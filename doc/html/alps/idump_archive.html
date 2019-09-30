@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class idump_archive</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../osiris/reference.html#header.alps.osiris.dumparchive_h" title="Header &lt;alps/osiris/dumparchive.h&gt;">
+<link rel="prev" href="ODump.html" title="Class ODump">
+<link rel="next" href="odump_archive.html" title="Class odump_archive">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="ODump.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris/reference.html#header.alps.osiris.dumparchive_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="odump_archive.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.idump_archive"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class idump_archive</span></h2>
+<p>alps::idump_archive</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../osiris/reference.html#header.alps.osiris.dumparchive_h" title="Header &lt;alps/osiris/dumparchive.h&gt;">alps/osiris/dumparchive.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="idump_archive.html" title="Class idump_archive">idump_archive</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="idump_archive.html#alps.idump_archiveconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="idump_archive.html#idp140297782496288-bb"><span class="identifier">idump_archive</span></a><span class="special">(</span><a class="link" href="IDump.html" title="Class IDump">IDump</a> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">true</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="idump_archive.html#idp140297782623200-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782590240-bb"><span class="identifier">load_binary</span></a><span class="special">(</span><span class="keyword">void</span> <span class="special">*</span><span class="special">,</span> <span class="identifier">size_t</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782592192-bb"><span class="identifier">load</span></a><span class="special">(</span><span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782435136-bb"><span class="identifier">load</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782430624-bb"><span class="identifier">load_override</span></a><span class="special">(</span><span class="identifier">T</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">BOOST_PFTO</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782433408-bb"><span class="identifier">load_override</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">class_id_optional_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782438288-bb"><span class="identifier">load_override</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">version_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782440240-bb"><span class="identifier">load_override</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">class_id_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782442192-bb"><span class="identifier">load_override</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">class_id_reference_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782444144-bb"><span class="identifier">load_override</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">object_id_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782446096-bb"><span class="identifier">load_override</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">object_reference_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782448048-bb"><span class="identifier">load_override</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">tracking_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="idump_archive.html#idp140297782509792-bb"><span class="identifier">load_override</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">class_name_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204617806288"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204617806688"></a><h3>
+<a name="alps.idump_archiveconstruct-copy-destruct"></a><code class="computeroutput">idump_archive</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp140297782496288-bb"></a><span class="identifier">idump_archive</span><span class="special">(</span><a class="link" href="IDump.html" title="Class IDump">IDump</a> <span class="special">&amp;</span> d<span class="special">,</span> <span class="keyword">bool</span> c <span class="special">=</span> <span class="keyword">true</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204617815904"></a><h3>
+<a name="idp140297782623200-bb"></a><code class="computeroutput">idump_archive</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782590240-bb"></a><span class="identifier">load_binary</span><span class="special">(</span><span class="keyword">void</span> <span class="special">*</span> address<span class="special">,</span> <span class="identifier">size_t</span> count<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a name="idp140297782592192-bb"></a><span class="identifier">load</span><span class="special">(</span><span class="identifier">T</span> <span class="special">&amp;</span> t<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782435136-bb"></a><span class="identifier">load</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> s<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a name="idp140297782430624-bb"></a><span class="identifier">load_override</span><span class="special">(</span><span class="identifier">T</span> <span class="special">&amp;</span> t<span class="special">,</span> <span class="identifier">BOOST_PFTO</span> int<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782433408-bb"></a><span class="identifier">load_override</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">class_id_optional_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782438288-bb"></a><span class="identifier">load_override</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">version_type</span> <span class="special">&amp;</span> t<span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782440240-bb"></a><span class="identifier">load_override</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">class_id_type</span> <span class="special">&amp;</span> t<span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782442192-bb"></a><span class="identifier">load_override</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">class_id_reference_type</span> <span class="special">&amp;</span> t<span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782444144-bb"></a><span class="identifier">load_override</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">object_id_type</span> <span class="special">&amp;</span> t<span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782446096-bb"></a><span class="identifier">load_override</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">object_reference_type</span> <span class="special">&amp;</span> t<span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782448048-bb"></a><span class="identifier">load_override</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">tracking_type</span> <span class="special">&amp;</span> t<span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782509792-bb"></a><span class="identifier">load_override</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">archive</span><span class="special">::</span><span class="identifier">class_name_type</span> <span class="special">&amp;</span> t<span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="ODump.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris/reference.html#header.alps.osiris.dumparchive_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="odump_archive.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

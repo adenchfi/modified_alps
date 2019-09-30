@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class ODump</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../osiris/reference.html#header.alps.osiris.dump_h" title="Header &lt;alps/osiris/dump.h&gt;">
+<link rel="prev" href="IDump.html" title="Class IDump">
+<link rel="next" href="idump_archive.html" title="Class idump_archive">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="IDump.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris/reference.html#header.alps.osiris.dump_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="idump_archive.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.ODump"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class ODump</span></h2>
+<p>alps::ODump</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../osiris/reference.html#header.alps.osiris.dump_h" title="Header &lt;alps/osiris/dump.h&gt;">alps/osiris/dump.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="ODump.html" title="Class ODump">ODump</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="ODump.html#alps.ODumpconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="ODump.html#idp140297782417184-bb"><span class="identifier">ODump</span></a><span class="special">(</span><span class="identifier">uint32_t</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="ODump.html#idp140297782418304-bb"><span class="special">~</span><span class="identifier">ODump</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="ODump.html#idp140297782421328-bb">public member functions</a></span>
+  <span class="identifier">uint32_t</span> <a class="link" href="ODump.html#idp140297782433600-bb"><span class="identifier">version</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="ODump.html#idp140297782469088-bb"><span class="identifier">write_simple</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="ODump.html#idp140297782335360-bb"><span class="identifier">write_simple</span></a><span class="special">(</span><span class="keyword">double</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="ODump.html#idp140297782332512-bb"><span class="identifier">write_complex</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="ODump.html" title="Class ODump">ODump</a> <span class="special">&amp;</span> <a class="link" href="ODump.html#idp140297782427872-bb"><span class="identifier">store</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="ODump.html" title="Class ODump">ODump</a> <span class="special">&amp;</span> <a class="link" href="ODump.html#idp140297782479840-bb"><span class="identifier">store</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
+    <span class="keyword">void</span> <a class="link" href="ODump.html#idp140297782355536-bb"><span class="identifier">write_array</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="ODump.html#idp140297782220608-bb"><span class="identifier">write_string</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="keyword">const</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="ODump.html#idp140297782641760-bb"><span class="identifier">write_string</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204617592064"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204617592464"></a><h3>
+<a name="alps.ODumpconstruct-copy-destruct"></a><code class="computeroutput">ODump</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297782417184-bb"></a><span class="identifier">ODump</span><span class="special">(</span><span class="identifier">uint32_t</span> v <span class="special">=</span> <span class="number">0</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297782418304-bb"></a><span class="special">~</span><span class="identifier">ODump</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204617603520"></a><h3>
+<a name="idp140297782421328-bb"></a><code class="computeroutput">ODump</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="identifier">uint32_t</span> <a name="idp140297782433600-bb"></a><span class="identifier">version</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297782469088-bb"></a><span class="identifier">write_simple</span><span class="special">(</span><span class="keyword">int</span> x<span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297782335360-bb"></a><span class="identifier">write_simple</span><span class="special">(</span><span class="keyword">double</span> x<span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a name="idp140297782332512-bb"></a><span class="identifier">write_complex</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="ODump.html" title="Class ODump">ODump</a> <span class="special">&amp;</span> <a name="idp140297782427872-bb"></a><span class="identifier">store</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="ODump.html" title="Class ODump">ODump</a> <span class="special">&amp;</span> <a name="idp140297782479840-bb"></a><span class="identifier">store</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
+  <span class="keyword">void</span> <a name="idp140297782355536-bb"></a><span class="identifier">write_array</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> n<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">*</span> p<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297782220608-bb"></a><span class="identifier">write_string</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> n<span class="special">,</span> <span class="keyword">const</span> <span class="keyword">char</span> <span class="special">*</span> s<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297782641760-bb"></a><span class="identifier">write_string</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="IDump.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris/reference.html#header.alps.osiris.dump_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="idump_archive.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

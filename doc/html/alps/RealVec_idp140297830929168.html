@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class RealVectorObsevaluatorXMLHandler</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../alea/reference.html#header.alps.alea.observableset_p_h" title="Header &lt;alps/alea/observableset_p.h&gt;">
+<link rel="prev" href="RealObsevaluatorXMLHandler.html" title="Class RealObsevaluatorXMLHandler">
+<link rel="next" href="output_helper.html" title="Struct template output_helper">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="RealObsevaluatorXMLHandler.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea/reference.html#header.alps.alea.observableset_p_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="output_helper.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.RealVec_idp140297830929168"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class RealVectorObsevaluatorXMLHandler</span></h2>
+<p>alps::RealVectorObsevaluatorXMLHandler &#8212; XML parser for the RealVectorObsevaluator class. </p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../alea/reference.html#header.alps.alea.observableset_p_h" title="Header &lt;alps/alea/observableset_p.h&gt;">alps/alea/observableset_p.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="RealVec_idp140297830929168.html" title="Class RealVectorObsevaluatorXMLHandler">RealVectorObsevaluatorXMLHandler</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">CompositeXMLHandler</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="RealVec_idp140297830929168.html#alps.RealVec_idp140297830929168construct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="RealVec_idp140297830929168.html#idp140297830931088-bb"><span class="identifier">RealVectorObsevaluatorXMLHandler</span></a><span class="special">(</span><a class="link" href="../alea/reference.html#alps.RealVectorObsevaluator">RealVectorObsevaluator</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="RealVec_idp140297830929168.html#idp140297830932288-bb"><span class="special">~</span><span class="identifier">RealVectorObsevaluatorXMLHandler</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="RealVec_idp140297830929168.html#idp140297830932560-bb">protected member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="RealVec_idp140297830929168.html#idp140297830933088-bb"><span class="identifier">start_top</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">XMLAttributes</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">xml</span><span class="special">::</span><span class="identifier">tag_type</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="RealVec_idp140297830929168.html#idp140297830935824-bb"><span class="identifier">end_child</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">xml</span><span class="special">::</span><span class="identifier">tag_type</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204638574304"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204638574704"></a><h3>
+<a name="alps.RealVec_idp140297830929168construct-copy-destruct"></a><code class="computeroutput">RealVectorObsevaluatorXMLHandler</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297830931088-bb"></a><span class="identifier">RealVectorObsevaluatorXMLHandler</span><span class="special">(</span><a class="link" href="../alea/reference.html#alps.RealVectorObsevaluator">RealVectorObsevaluator</a> <span class="special">&amp;</span> obs<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297830932288-bb"></a><span class="special">~</span><span class="identifier">RealVectorObsevaluatorXMLHandler</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204638585568"></a><h3>
+<a name="idp140297830932560-bb"></a><code class="computeroutput">RealVectorObsevaluatorXMLHandler</code> protected member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297830933088-bb"></a><span class="identifier">start_top</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">XMLAttributes</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">xml</span><span class="special">::</span><span class="identifier">tag_type</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297830935824-bb"></a><span class="identifier">end_child</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="identifier">xml</span><span class="special">::</span><span class="identifier">tag_type</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2004, 2012 Matthias Troyer, Synge Todo, Maximilian Poprawe</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="RealObsevaluatorXMLHandler.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea/reference.html#header.alps.alea.observableset_p_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="output_helper.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

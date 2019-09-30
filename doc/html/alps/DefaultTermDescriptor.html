@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template DefaultTermDescriptor</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../model/reference.html#header.alps.model.default_term_h" title="Header &lt;alps/model/default_term.h&gt;">
+<link rel="prev" href="BondTermDescriptor.html" title="Class BondTermDescriptor">
+<link rel="next" href="GlobalOperator.html" title="Class GlobalOperator">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="BondTermDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.default_term_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="GlobalOperator.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.DefaultTermDescriptor"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template DefaultTermDescriptor</span></h2>
+<p>alps::DefaultTermDescriptor</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../model/reference.html#header.alps.model.default_term_h" title="Header &lt;alps/model/default_term.h&gt;">alps/model/default_term.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> TERM<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="DefaultTermDescriptor.html" title="Class template DefaultTermDescriptor">DefaultTermDescriptor</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">TERM</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">TERM</span> <a name="alps.DefaultTermDescriptor.term_type"></a><span class="identifier">term_type</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="DefaultTermDescriptor.html#alps.DefaultTermDescriptorconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="DefaultTermDescriptor.html#idp140297832394864-bb"><span class="identifier">DefaultTermDescriptor</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="DefaultTermDescriptor.html#idp140297832395120-bb"><span class="identifier">DefaultTermDescriptor</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="DefaultTermDescriptor.html#idp140297832391792-bb">public member functions</a></span>
+  <span class="identifier">term_type</span> <a class="link" href="DefaultTermDescriptor.html#idp140297832392176-bb"><span class="identifier">get</span></a><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">Parameters</span> <a class="link" href="DefaultTermDescriptor.html#idp140297832393456-bb"><span class="identifier">parms</span></a><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204657378656"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204657379056"></a><h3>
+<a name="alps.DefaultTermDescriptorconstruct-copy-destruct"></a><code class="computeroutput">DefaultTermDescriptor</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297832394864-bb"></a><span class="identifier">DefaultTermDescriptor</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297832395120-bb"></a><span class="identifier">DefaultTermDescriptor</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span> tag<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span> in<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204657392784"></a><h3>
+<a name="idp140297832391792-bb"></a><code class="computeroutput">DefaultTermDescriptor</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="identifier">term_type</span> <a name="idp140297832392176-bb"></a><span class="identifier">get</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> type<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">Parameters</span> <a name="idp140297832393456-bb"></a><span class="identifier">parms</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> type<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="BondTermDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.default_term_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="GlobalOperator.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

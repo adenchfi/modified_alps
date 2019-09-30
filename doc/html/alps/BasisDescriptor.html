@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template BasisDescriptor</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../model/reference.html#header.alps.model.basisdescriptor_h" title="Header &lt;alps/model/basisdescriptor.h&gt;">
+<link rel="prev" href="../model/reference.html" title="Reference">
+<link rel="next" href="site_basis_match.html" title="Class template site_basis_match">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../model/reference.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.basisdescriptor_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="site_basis_match.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.BasisDescriptor"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template BasisDescriptor</span></h2>
+<p>alps::BasisDescriptor</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../model/reference.html#header.alps.model.basisdescriptor_h" title="Header &lt;alps/model/basisdescriptor.h&gt;">alps/model/basisdescriptor.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> I<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="BasisDescriptor.html" title="Class template BasisDescriptor">BasisDescriptor</a> <span class="special">:</span> <span class="keyword">private</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">site_basis_match</span><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">super_type</span><span class="special">::</span><span class="identifier">iterator</span>                                       <a name="alps.BasisDescriptor.iterator"></a><span class="identifier">iterator</span><span class="special">;</span>                    
+  <span class="keyword">typedef</span> <span class="identifier">super_type</span><span class="special">::</span><span class="identifier">const_iterator</span>                                 <a name="alps.BasisDescriptor.const_iterator"></a><span class="identifier">const_iterator</span><span class="special">;</span>              
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <a class="link" href="SiteBasisDescriptor.html" title="Class template SiteBasisDescriptor">SiteBasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&gt;</span>          <a name="alps.BasisDescriptor.sitebasis_map_type"></a><span class="identifier">sitebasis_map_type</span><span class="special">;</span>          
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <a class="link" href="half_integer.html" title="Class template half_integer">half_integer</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <a name="alps.BasisDescriptor.constraints_type"></a><span class="identifier">constraints_type</span><span class="special">;</span>            
+  <span class="keyword">typedef</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">Expression</span>                                           <a name="alps.BasisDescriptor.expression_type"></a><span class="identifier">expression_type</span><span class="special">;</span>             
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <span class="identifier">expression_type</span> <span class="special">&gt;</span> <span class="special">&gt;</span>   <a name="alps.BasisDescriptor.unevalu_idp140297832164080"></a><span class="identifier">unevaluated_constraints_type</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="BasisDescriptor.html#alps.BasisDescriptorconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="BasisDescriptor.html#idp140297832175600-bb"><span class="identifier">BasisDescriptor</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="string">""</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="BasisDescriptor.html#idp140297832176624-bb"><span class="identifier">BasisDescriptor</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> 
+                  <span class="keyword">const</span> <span class="identifier">sitebasis_map_type</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">sitebasis_map_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="BasisDescriptor.html#idp140297832164720-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="BasisDescriptor.html#idp140297832165104-bb"><span class="identifier">write_xml</span></a><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a class="link" href="BasisDescriptor.html#idp140297832166384-bb"><span class="identifier">name</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="BasisDescriptor.html#idp140297832167152-bb"><span class="identifier">set_parameters</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">constraints_type</span> <span class="special">&amp;</span> <a class="link" href="BasisDescriptor.html#idp140297832168304-bb"><span class="identifier">constraints</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">unevaluated_constraints_type</span> <span class="special">&amp;</span> <a class="link" href="BasisDescriptor.html#idp140297832169072-bb"><span class="identifier">unevaluated_constraints</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">unevaluated_constraints_type</span> <span class="special">&amp;</span> <a class="link" href="BasisDescriptor.html#idp140297832169840-bb"><span class="identifier">all_constraints</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <a class="link" href="SiteBasisDescriptor.html" title="Class template SiteBasisDescriptor">SiteBasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="BasisDescriptor.html#idp140297832170608-bb"><span class="identifier">site_basis</span></a><span class="special">(</span><span class="keyword">int</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">const_iterator</span> <a class="link" href="BasisDescriptor.html#idp140297832172528-bb"><span class="identifier">create_site_basis</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> G<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="BasisDescriptor.html#idp140297832173680-bb"><span class="identifier">create_site_bases</span></a><span class="special">(</span><span class="identifier">graph_helper</span><span class="special">&lt;</span> <span class="identifier">G</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="BasisDescriptor.html#idp140297832178672-bb">private member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="BasisDescriptor.html#idp140297832179056-bb"><span class="identifier">check_constraints</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">Parameters</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204654940496"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204654940896"></a><h3>
+<a name="alps.BasisDescriptorconstruct-copy-destruct"></a><code class="computeroutput">BasisDescriptor</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297832175600-bb"></a><span class="identifier">BasisDescriptor</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name <span class="special">=</span> <span class="string">""</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297832176624-bb"></a><span class="identifier">BasisDescriptor</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> 
+                <span class="keyword">const</span> <span class="identifier">sitebasis_map_type</span> <span class="special">&amp;</span> bases_ <span class="special">=</span> <span class="identifier">sitebasis_map_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204654962976"></a><h3>
+<a name="idp140297832164720-bb"></a><code class="computeroutput">BasisDescriptor</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297832165104-bb"></a><span class="identifier">write_xml</span><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a name="idp140297832166384-bb"></a><span class="identifier">name</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297832167152-bb"></a><span class="identifier">set_parameters</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> p<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">constraints_type</span> <span class="special">&amp;</span> <a name="idp140297832168304-bb"></a><span class="identifier">constraints</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">unevaluated_constraints_type</span> <span class="special">&amp;</span> <a name="idp140297832169072-bb"></a><span class="identifier">unevaluated_constraints</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">unevaluated_constraints_type</span> <span class="special">&amp;</span> <a name="idp140297832169840-bb"></a><span class="identifier">all_constraints</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <a class="link" href="SiteBasisDescriptor.html" title="Class template SiteBasisDescriptor">SiteBasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297832170608-bb"></a><span class="identifier">site_basis</span><span class="special">(</span><span class="keyword">int</span> type <span class="special">=</span> <span class="number">0</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">const_iterator</span> <a name="idp140297832172528-bb"></a><span class="identifier">create_site_basis</span><span class="special">(</span><span class="keyword">int</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> G<span class="special">&gt;</span> <span class="keyword">void</span> <a name="idp140297832173680-bb"></a><span class="identifier">create_site_bases</span><span class="special">(</span><span class="identifier">graph_helper</span><span class="special">&lt;</span> <span class="identifier">G</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span> l<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204655025744"></a><h3>
+<a name="idp140297832178672-bb"></a><code class="computeroutput">BasisDescriptor</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297832179056-bb"></a><span class="identifier">check_constraints</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">Parameters</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../model/reference.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.basisdescriptor_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="site_basis_match.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

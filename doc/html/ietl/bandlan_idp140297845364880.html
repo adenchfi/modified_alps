@@ -1,0 +1,95 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template bandlanczos_iteration_nlowest</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="reference.html#header.alps.src.ietl.iteration_h" title="Header &lt;alps/src/ietl/iteration.h&gt;">
+<link rel="prev" href="bandlan_idp140297845349248.html" title="Class template bandlanczos_iteration_nhighest">
+<link rel="next" href="basic_iteration.html" title="Class template basic_iteration">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="bandlan_idp140297845349248.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="reference.html#header.alps.src.ietl.iteration_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="basic_iteration.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="ietl.bandlan_idp140297845364880"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template bandlanczos_iteration_nlowest</span></h2>
+<p>ietl::bandlanczos_iteration_nlowest</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="reference.html#header.alps.src.ietl.iteration_h" title="Header &lt;alps/src/ietl/iteration.h&gt;">alps/src/ietl/iteration.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="bandlan_idp140297845364880.html" title="Class template bandlanczos_iteration_nlowest">bandlanczos_iteration_nlowest</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="bandlan_idp140297845364880.html#ietl.bandlan_idp140297845364880construct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="bandlan_idp140297845364880.html#idp140297845376384-bb"><span class="identifier">bandlanczos_iteration_nlowest</span></a><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">,</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">T</span><span class="special">,</span> <span class="keyword">bool</span><span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="bandlan_idp140297845364880.html#idp140297845366048-bb">public member functions</a></span>
+  <span class="keyword">bool</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845366576-bb"><span class="identifier">finished</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845367600-bb"><span class="keyword">operator</span><span class="special">++</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845368384-bb"><span class="keyword">operator</span><span class="special">--</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845369168-bb"><span class="identifier">first</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">unsigned</span> <span class="keyword">int</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845369952-bb"><span class="identifier">iterations</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">unsigned</span> <span class="keyword">int</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845370736-bb"><span class="identifier">evs</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">unsigned</span> <span class="keyword">int</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845371520-bb"><span class="identifier">max_iter</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">T</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845372304-bb"><span class="identifier">def_tol</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">T</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845373088-bb"><span class="identifier">dep_tol</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">T</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845373872-bb"><span class="identifier">ghost_tol</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845374656-bb"><span class="identifier">ghost_discarding</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="bandlan_idp140297845364880.html#idp140297845375456-bb"><span class="identifier">low</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204672075792"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204672076192"></a><h3>
+<a name="ietl.bandlan_idp140297845364880construct-copy-destruct"></a><code class="computeroutput">bandlanczos_iteration_nlowest</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp140297845376384-bb"></a><span class="identifier">bandlanczos_iteration_nlowest</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> max_iter<span class="special">,</span> <span class="identifier">T</span> def_tol<span class="special">,</span> <span class="identifier">T</span> dep_tol<span class="special">,</span> 
+                              <span class="identifier">T</span> ghost_tol<span class="special">,</span> <span class="keyword">bool</span> ghost_discarding<span class="special">,</span> 
+                              <span class="keyword">unsigned</span> <span class="keyword">int</span> evs<span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204672090000"></a><h3>
+<a name="idp140297845366048-bb"></a><code class="computeroutput">bandlanczos_iteration_nlowest</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297845366576-bb"></a><span class="identifier">finished</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297845367600-bb"></a><span class="keyword">operator</span><span class="special">++</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297845368384-bb"></a><span class="keyword">operator</span><span class="special">--</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297845369168-bb"></a><span class="identifier">first</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">unsigned</span> <span class="keyword">int</span> <a name="idp140297845369952-bb"></a><span class="identifier">iterations</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">unsigned</span> <span class="keyword">int</span> <a name="idp140297845370736-bb"></a><span class="identifier">evs</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">unsigned</span> <span class="keyword">int</span> <a name="idp140297845371520-bb"></a><span class="identifier">max_iter</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">T</span> <a name="idp140297845372304-bb"></a><span class="identifier">def_tol</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">T</span> <a name="idp140297845373088-bb"></a><span class="identifier">dep_tol</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">T</span> <a name="idp140297845373872-bb"></a><span class="identifier">ghost_tol</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297845374656-bb"></a><span class="identifier">ghost_discarding</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297845375456-bb"></a><span class="identifier">low</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2011 Matthias Troyer, Bela Bauer, Robin Jäger</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="bandlan_idp140297845349248.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="reference.html#header.alps.src.ietl.iteration_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="basic_iteration.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

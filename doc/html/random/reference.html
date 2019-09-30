@@ -1,0 +1,314 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Reference</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../random.html" title="Chapter 3. ALPS.Random">
+<link rel="prev" href="../random.html" title="Chapter 3. ALPS.Random">
+<link rel="next" href="../alps/basic_buffered_generator.html" title="Class template basic_buffered_generator">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../random.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../random.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../alps/basic_buffered_generator.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="random.reference"></a>Reference</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="reference.html#header.alps.random.buffered_generator_hpp">Header &lt;alps/random/buffered_generator.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.buffered_rng_h">Header &lt;alps/random/buffered_rng.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.buffered_uniform_01_hpp">Header &lt;alps/random/buffered_uniform_01.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.mersenne_twister_hpp">Header &lt;alps/random/parallel/mersenne_twister.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.multivariate_normal_distribution_hpp">Header &lt;alps/random/multivariate_normal_distribution.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.detail.get_prime_hpp">Header &lt;alps/random/parallel/detail/get_prime.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.detail.primelist_64_hpp">Header &lt;alps/random/parallel/detail/primelist_64.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.primelist_64_hpp">Header &lt;alps/random/parallel/primelist_64.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.detail.seed_macros_hpp">Header &lt;alps/random/parallel/detail/seed_macros.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.keyword_hpp">Header &lt;alps/random/parallel/keyword.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.sprng.keyword_hpp">Header &lt;alps/random/sprng/keyword.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.lcg64_hpp">Header &lt;alps/random/parallel/lcg64.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.sprng.lcg64_hpp">Header &lt;alps/random/sprng/lcg64.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.mpi_hpp">Header &lt;alps/random/parallel/mpi.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.seed_hpp">Header &lt;alps/random/parallel/seed.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.parallel.well_hpp">Header &lt;alps/random/parallel/well.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.pseudo_des_h">Header &lt;alps/random/pseudo_des.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.random_choice_hpp">Header &lt;alps/random/random_choice.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.rngfactory_h">Header &lt;alps/random/rngfactory.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.seed_h">Header &lt;alps/random/seed.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.sprng.cmrg_hpp">Header &lt;alps/random/sprng/cmrg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.sprng.detail.buffer_hpp">Header &lt;alps/random/sprng/detail/buffer.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.sprng.lcg_hpp">Header &lt;alps/random/sprng/lcg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.sprng.lfg_hpp">Header &lt;alps/random/sprng/lfg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.sprng.mlfg_hpp">Header &lt;alps/random/sprng/mlfg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.sprng.pmlcg_hpp">Header &lt;alps/random/sprng/pmlcg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.random.uniform_on_sphere_n_h">Header &lt;alps/random/uniform_on_sphere_n.h&gt;</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.buffered_generator_hpp"></a>Header &lt;<a href="../../../alps/random/buffered_generator.hpp" target="_top">alps/random/buffered_generator.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis">
+
+<a class="link" href="../ALPS_BUFFERED_GENERATOR_BUFFER_SIZE.html" title="Macro ALPS_BUFFERED_GENERATOR_BUFFER_SIZE">ALPS_BUFFERED_GENERATOR_BUFFER_SIZE</a></pre>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Generator<span class="special">,</span> <span class="keyword">typename</span> ResultType<span class="special">&gt;</span> 
+    <span class="keyword">class</span> <a class="link" href="../alps/basic_buffered_generator.html" title="Class template basic_buffered_generator">basic_buffered_generator</a><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> ResultType<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/buffered_generator.html" title="Class template buffered_generator">buffered_generator</a><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.buffered_rng_h"></a>Header &lt;<a href="../../../alps/random/buffered_rng.h" target="_top">alps/random/buffered_rng.h</a>&gt;</h3></div></div></div>
+<p>contains an efficient buffered implementation of a runtime-polymorphic random number generator </p>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RNG<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/buffered_rng.html" title="Class template buffered_rng">buffered_rng</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/buffered_rng_base.html" title="Class buffered_rng_base">buffered_rng_base</a><span class="special">;</span>
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span> <a class="link" href="../alps/operato_idp140297800273232.html" title="Function operator&lt;&lt;"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <a class="link" href="../alps/buffered_rng_base.html" title="Class buffered_rng_base">buffered_rng_base</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span> <a class="link" href="../alps/operato_idp140297800277488.html" title="Function operator&gt;&gt;"><span class="keyword">operator</span><span class="special">&gt;&gt;</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> <a class="link" href="../alps/buffered_rng_base.html" title="Class buffered_rng_base">buffered_rng_base</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.buffered_uniform_01_hpp"></a>Header &lt;<a href="../../../alps/random/buffered_uniform_01.hpp" target="_top">alps/random/buffered_uniform_01.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Engine<span class="special">,</span> <span class="keyword">typename</span> RealType <span class="special">=</span> <span class="keyword">double</span><span class="special">&gt;</span> 
+    <span class="keyword">class</span> <a class="link" href="../alps/basic_buffered_uniform_01.html" title="Class template basic_buffered_uniform_01">basic_buffered_uniform_01</a><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RealType <span class="special">=</span> <span class="keyword">double</span><span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/buffered_uniform_01.html" title="Class template buffered_uniform_01">buffered_uniform_01</a><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.mersenne_twister_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/mersenne_twister.hpp" target="_top">alps/random/parallel/mersenne_twister.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">random</span> <span class="special">{</span>
+    <span class="keyword">namespace</span> <span class="identifier">parallel</span> <span class="special">{</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> UIntType<span class="special">,</span> <span class="keyword">int</span> w<span class="special">,</span> <span class="keyword">int</span> n<span class="special">,</span> <span class="keyword">int</span> m<span class="special">,</span> <span class="keyword">int</span> r<span class="special">,</span> <span class="identifier">UIntType</span> a<span class="special">,</span> 
+               <span class="keyword">int</span> u<span class="special">,</span> <span class="keyword">int</span> s<span class="special">,</span> <span class="identifier">UIntType</span> b<span class="special">,</span> <span class="keyword">int</span> t<span class="special">,</span> <span class="identifier">UIntType</span> c<span class="special">,</span> <span class="keyword">int</span> l<span class="special">,</span> 
+               <span class="identifier">UIntType</span> val<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a name="alps.random.parallel.seed_idp140297800314496"></a><span class="identifier">seed</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">mersenne_twister</span><span class="special">&lt;</span> <span class="identifier">UIntType</span><span class="special">,</span> <span class="identifier">w</span><span class="special">,</span> <span class="identifier">n</span><span class="special">,</span> <span class="identifier">m</span><span class="special">,</span> <span class="identifier">r</span><span class="special">,</span> <span class="identifier">a</span><span class="special">,</span> <span class="identifier">u</span><span class="special">,</span> <span class="identifier">s</span><span class="special">,</span> <span class="identifier">b</span><span class="special">,</span> <span class="identifier">t</span><span class="special">,</span> <span class="identifier">c</span><span class="special">,</span> <span class="identifier">l</span><span class="special">,</span> <span class="identifier">val</span> <span class="special">&gt;</span> <span class="special">&amp;</span> prng<span class="special">,</span> 
+                  <span class="keyword">unsigned</span> <span class="keyword">int</span> num<span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> total<span class="special">)</span><span class="special">;</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> UIntType<span class="special">,</span> <span class="keyword">int</span> w<span class="special">,</span> <span class="keyword">int</span> n<span class="special">,</span> <span class="keyword">int</span> m<span class="special">,</span> <span class="keyword">int</span> r<span class="special">,</span> <span class="identifier">UIntType</span> a<span class="special">,</span> 
+               <span class="keyword">int</span> u<span class="special">,</span> <span class="keyword">int</span> s<span class="special">,</span> <span class="identifier">UIntType</span> b<span class="special">,</span> <span class="keyword">int</span> t<span class="special">,</span> <span class="identifier">UIntType</span> c<span class="special">,</span> <span class="keyword">int</span> l<span class="special">,</span> 
+               <span class="identifier">UIntType</span> val<span class="special">,</span> <span class="keyword">typename</span> SeedType<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a name="alps.random.parallel.seed_idp140297800326720"></a><span class="identifier">seed</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">mersenne_twister</span><span class="special">&lt;</span> <span class="identifier">UIntType</span><span class="special">,</span> <span class="identifier">w</span><span class="special">,</span> <span class="identifier">n</span><span class="special">,</span> <span class="identifier">m</span><span class="special">,</span> <span class="identifier">r</span><span class="special">,</span> <span class="identifier">a</span><span class="special">,</span> <span class="identifier">u</span><span class="special">,</span> <span class="identifier">s</span><span class="special">,</span> <span class="identifier">b</span><span class="special">,</span> <span class="identifier">t</span><span class="special">,</span> <span class="identifier">c</span><span class="special">,</span> <span class="identifier">l</span><span class="special">,</span> <span class="identifier">val</span> <span class="special">&gt;</span> <span class="special">&amp;</span> prng<span class="special">,</span> 
+                  <span class="keyword">unsigned</span> <span class="keyword">int</span> num<span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> total<span class="special">,</span> 
+                  <span class="identifier">SeedType</span> <span class="keyword">const</span> <span class="special">&amp;</span> the_seed<span class="special">)</span><span class="special">;</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> UIntType<span class="special">,</span> <span class="keyword">int</span> w<span class="special">,</span> <span class="keyword">int</span> n<span class="special">,</span> <span class="keyword">int</span> m<span class="special">,</span> <span class="keyword">int</span> r<span class="special">,</span> <span class="identifier">UIntType</span> a<span class="special">,</span> 
+               <span class="keyword">int</span> u<span class="special">,</span> <span class="keyword">int</span> s<span class="special">,</span> <span class="identifier">UIntType</span> b<span class="special">,</span> <span class="keyword">int</span> t<span class="special">,</span> <span class="identifier">UIntType</span> c<span class="special">,</span> <span class="keyword">int</span> l<span class="special">,</span> 
+               <span class="identifier">UIntType</span> val<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a name="alps.random.parallel.seed_idp140297800340032"></a><span class="identifier">seed</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">mersenne_twister</span><span class="special">&lt;</span> <span class="identifier">UIntType</span><span class="special">,</span> <span class="identifier">w</span><span class="special">,</span> <span class="identifier">n</span><span class="special">,</span> <span class="identifier">m</span><span class="special">,</span> <span class="identifier">r</span><span class="special">,</span> <span class="identifier">a</span><span class="special">,</span> <span class="identifier">u</span><span class="special">,</span> <span class="identifier">s</span><span class="special">,</span> <span class="identifier">b</span><span class="special">,</span> <span class="identifier">t</span><span class="special">,</span> <span class="identifier">c</span><span class="special">,</span> <span class="identifier">l</span><span class="special">,</span> <span class="identifier">val</span> <span class="special">&gt;</span> <span class="special">&amp;</span> prng<span class="special">,</span> 
+                  <span class="keyword">unsigned</span> <span class="keyword">int</span> num<span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> total<span class="special">,</span> <a class="link" href="reference.html#alps.lcg64a">lcg64a</a> <span class="special">&amp;</span> engine<span class="special">)</span><span class="special">;</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> UIntType<span class="special">,</span> <span class="keyword">int</span> w<span class="special">,</span> <span class="keyword">int</span> n<span class="special">,</span> <span class="keyword">int</span> m<span class="special">,</span> <span class="keyword">int</span> r<span class="special">,</span> <span class="identifier">UIntType</span> a<span class="special">,</span> 
+               <span class="keyword">int</span> u<span class="special">,</span> <span class="keyword">int</span> s<span class="special">,</span> <span class="identifier">UIntType</span> b<span class="special">,</span> <span class="keyword">int</span> t<span class="special">,</span> <span class="identifier">UIntType</span> c<span class="special">,</span> <span class="keyword">int</span> l<span class="special">,</span> 
+               <span class="identifier">UIntType</span> val<span class="special">,</span> <span class="keyword">typename</span> Iterator<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a name="alps.random.parallel.seed_idp140297800353120"></a><span class="identifier">seed</span><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">mersenne_twister</span><span class="special">&lt;</span> <span class="identifier">UIntType</span><span class="special">,</span> <span class="identifier">w</span><span class="special">,</span> <span class="identifier">n</span><span class="special">,</span> <span class="identifier">m</span><span class="special">,</span> <span class="identifier">r</span><span class="special">,</span> <span class="identifier">a</span><span class="special">,</span> <span class="identifier">u</span><span class="special">,</span> <span class="identifier">s</span><span class="special">,</span> <span class="identifier">b</span><span class="special">,</span> <span class="identifier">t</span><span class="special">,</span> <span class="identifier">c</span><span class="special">,</span> <span class="identifier">l</span><span class="special">,</span> <span class="identifier">val</span> <span class="special">&gt;</span> <span class="special">&amp;</span> prng<span class="special">,</span> 
+                  <span class="keyword">unsigned</span> <span class="keyword">int</span> num<span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> total<span class="special">,</span> <span class="identifier">Iterator</span> <span class="special">&amp;</span> first<span class="special">,</span> 
+                  <span class="identifier">Iterator</span> <span class="keyword">const</span> <span class="special">&amp;</span> last<span class="special">)</span><span class="special">;</span>
+    <span class="special">}</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.multivariate_normal_distribution_hpp"></a>Header &lt;<a href="../../../alps/random/multivariate_normal_distribution.hpp" target="_top">alps/random/multivariate_normal_distribution.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RealType <span class="special">=</span> <span class="keyword">double</span><span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/multiva_idp140297800368576.html" title="Class template multivariate_normal_distribution">multivariate_normal_distribution</a><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.detail.get_prime_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/detail/get_prime.hpp" target="_top">alps/random/parallel/detail/get_prime.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.detail.primelist_64_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/detail/primelist_64.hpp" target="_top">alps/random/parallel/detail/primelist_64.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.primelist_64_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/primelist_64.hpp" target="_top">alps/random/parallel/primelist_64.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis">
+
+<a class="link" href="../PRIMELISTSIZE1.html" title="Macro PRIMELISTSIZE1">PRIMELISTSIZE1</a>
+<a class="link" href="../STEP.html" title="Macro STEP">STEP</a>
+<a class="link" href="../PRIMELISTSIZE2.html" title="Macro PRIMELISTSIZE2">PRIMELISTSIZE2</a></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.detail.seed_macros_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/detail/seed_macros.hpp" target="_top">alps/random/parallel/detail/seed_macros.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis">
+
+<a class="link" href="../ALPS_RANDOM_PARALLEL_CONSTRUCTOR.html" title="Macro ALPS_RANDOM_PARALLEL_CONSTRUCTOR">ALPS_RANDOM_PARALLEL_CONSTRUCTOR</a>(z, n, P)
+<a class="link" href="../ALPS_RANDOM_PARALLEL_ITERATOR_SEED_DEFAULT_IMPL.html" title="Macro ALPS_RANDOM_PARALLEL_ITERATOR_SEED_DEFAULT_IMPL">ALPS_RANDOM_PARALLEL_ITERATOR_SEED_DEFAULT_IMPL</a>(z, n, unused)
+<a class="link" href="../ALPS_RANDOM_PARALLEL_ITERATOR_SEED_IMPL.html" title="Macro ALPS_RANDOM_PARALLEL_ITERATOR_SEED_IMPL">ALPS_RANDOM_PARALLEL_ITERATOR_SEED_IMPL</a>(z, n, unused)
+<a class="link" href="../ALPS_RANDOM_PARALLEL_SEED_PARAMS.html" title="Macro ALPS_RANDOM_PARALLEL_SEED_PARAMS">ALPS_RANDOM_PARALLEL_SEED_PARAMS</a>(RNG, PARAMS, INIT)
+<a class="link" href="../ALPS_RANDOM_PARALLEL_SEED.html" title="Macro ALPS_RANDOM_PARALLEL_SEED">ALPS_RANDOM_PARALLEL_SEED</a>(RNG)
+<a class="link" href="../ALPS_RANDOM_PARALLEL_ITERATOR_SEED_PARAMS.html" title="Macro ALPS_RANDOM_PARALLEL_ITERATOR_SEED_PARAMS">ALPS_RANDOM_PARALLEL_ITERATOR_SEED_PARAMS</a>(PARAMS)
+<a class="link" href="../ALPS_RANDOM_PARALLEL_ITERATOR_SEED.html" title="Macro ALPS_RANDOM_PARALLEL_ITERATOR_SEED">ALPS_RANDOM_PARALLEL_ITERATOR_SEED</a>()
+<a class="link" href="../ALPS_RANDOM_PARALLEL_ITERATOR_SEED_DEFAULT.html" title="Macro ALPS_RANDOM_PARALLEL_ITERATOR_SEED_DEFAULT">ALPS_RANDOM_PARALLEL_ITERATOR_SEED_DEFAULT</a>()</pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.keyword_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/keyword.hpp" target="_top">alps/random/parallel/keyword.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis">
+
+<a class="link" href="../ALPS_RANDOM_MAXARITY.html" title="Macro ALPS_RANDOM_MAXARITY">ALPS_RANDOM_MAXARITY</a></pre>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.sprng.keyword_hpp"></a>Header &lt;<a href="../../../alps/random/sprng/keyword.hpp" target="_top">alps/random/sprng/keyword.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.lcg64_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/lcg64.hpp" target="_top">alps/random/parallel/lcg64.hpp</a>&gt;</h3></div></div></div>
+<p>contains a parallel 64-bit generator template and three good choices of parameters. </p>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">typedef</span> <a class="link" href="../alps/random/parallel/lcg64.html" title="Class template lcg64">random::parallel::lcg64</a><span class="special">&lt;</span> <span class="identifier">uint64_t</span><span class="special">(</span><span class="number">0x87b0b0fdU</span><span class="special">)</span><span class="special">|</span><span class="identifier">uint64_t</span><span class="special">(</span><span class="number">0x27bb2ee6U</span><span class="special">)</span><span class="special">&lt;&lt;</span> <span class="number">32</span><span class="special">,</span> <span class="identifier">uint64_t</span><span class="special">(</span><span class="number">481823773Ul</span><span class="special">)</span><span class="special">+</span><span class="special">(</span><span class="identifier">uint64_t</span><span class="special">(</span><span class="number">3380683238Ul</span><span class="special">)</span><span class="special">&lt;&lt;</span> <span class="number">32</span><span class="special">)</span><span class="special">&gt;</span> <a name="alps.lcg64a"></a><span class="identifier">lcg64a</span><span class="special">;</span>  <span class="comment">// Instantiation of lcg64 with a good choice of multiplier. </span>
+  <span class="keyword">typedef</span> <a class="link" href="../alps/random/parallel/lcg64.html" title="Class template lcg64">random::parallel::lcg64</a><span class="special">&lt;</span> <span class="identifier">uint64_t</span><span class="special">(</span><span class="number">0xe78b6955U</span><span class="special">)</span><span class="special">|</span><span class="identifier">uint64_t</span><span class="special">(</span><span class="number">0x2c6fe96eU</span><span class="special">)</span><span class="special">&lt;&lt;</span> <span class="number">32</span><span class="special">,</span> <span class="identifier">uint64_t</span><span class="special">(</span><span class="number">3274024413Ul</span><span class="special">)</span><span class="special">+</span><span class="special">(</span><span class="identifier">uint64_t</span><span class="special">(</span><span class="number">3475904802Ul</span><span class="special">)</span><span class="special">&lt;&lt;</span> <span class="number">32</span><span class="special">)</span><span class="special">&gt;</span> <a name="alps.lcg64b"></a><span class="identifier">lcg64b</span><span class="special">;</span>  <span class="comment">// Instantiation of lcg64 with a good choice of multiplier. </span>
+  <span class="keyword">typedef</span> <a class="link" href="../alps/random/parallel/lcg64.html" title="Class template lcg64">random::parallel::lcg64</a><span class="special">&lt;</span> <span class="identifier">uint64_t</span><span class="special">(</span><span class="number">0x31a53f85U</span><span class="special">)</span><span class="special">|</span><span class="identifier">uint64_t</span><span class="special">(</span><span class="number">0x369dea0fU</span><span class="special">)</span><span class="special">&lt;&lt;</span> <span class="number">32</span><span class="special">,</span> <span class="identifier">uint64_t</span><span class="special">(</span><span class="number">950651229Ul</span><span class="special">)</span><span class="special">+</span><span class="special">(</span><span class="identifier">uint64_t</span><span class="special">(</span><span class="number">3996309981Ul</span><span class="special">)</span><span class="special">&lt;&lt;</span> <span class="number">32</span><span class="special">)</span><span class="special">&gt;</span> <a name="alps.lcg64c"></a><span class="identifier">lcg64c</span><span class="special">;</span>  <span class="comment">// Instantiation of lcg64 with a good choice of multiplier. </span>
+  <span class="keyword">namespace</span> <span class="identifier">random</span> <span class="special">{</span>
+    <span class="keyword">namespace</span> <span class="identifier">parallel</span> <span class="special">{</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="identifier">uint64_t</span> a<span class="special">,</span> <span class="identifier">uint64_t</span> val<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/random/parallel/lcg64.html" title="Class template lcg64">lcg64</a><span class="special">;</span>
+    <span class="special">}</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.sprng.lcg64_hpp"></a>Header &lt;<a href="../../../alps/random/sprng/lcg64.hpp" target="_top">alps/random/sprng/lcg64.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.mpi_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/mpi.hpp" target="_top">alps/random/parallel/mpi.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">random</span> <span class="special">{</span>
+    <span class="keyword">namespace</span> <span class="identifier">parallel</span> <span class="special">{</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> PRNG<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a class="link" href="../alps/random/parallel/seed_idp140297800448032.html" title="Function template seed"><span class="identifier">seed</span></a><span class="special">(</span><span class="identifier">PRNG</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">mpi</span><span class="special">::</span><span class="identifier">communicator</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> PRNG<span class="special">,</span> <span class="keyword">typename</span> SeedType<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a class="link" href="../alps/random/parallel/seed_idp140297800453408.html" title="Function template seed"><span class="identifier">seed</span></a><span class="special">(</span><span class="identifier">PRNG</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">mpi</span><span class="special">::</span><span class="identifier">communicator</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">SeedType</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> PRNG<span class="special">,</span> <span class="keyword">typename</span> Iterator<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a class="link" href="../alps/random/parallel/seed_idp140297800459872.html" title="Function template seed"><span class="identifier">seed</span></a><span class="special">(</span><span class="identifier">PRNG</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">mpi</span><span class="special">::</span><span class="identifier">communicator</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">Iterator</span> <span class="special">&amp;</span><span class="special">,</span> 
+                  <span class="identifier">Iterator</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> PRNG<span class="special">,</span> <span class="keyword">typename</span> SeedType<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a class="link" href="../alps/random/parallel/broadcast_seed.html" title="Function template broadcast_seed"><span class="identifier">broadcast_seed</span></a><span class="special">(</span><span class="identifier">PRNG</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">mpi</span><span class="special">::</span><span class="identifier">communicator</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">,</span> 
+                            <span class="identifier">SeedType</span><span class="special">)</span><span class="special">;</span>
+    <span class="special">}</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.seed_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/seed.hpp" target="_top">alps/random/parallel/seed.hpp</a>&gt;</h3></div></div></div>
+<p>This header provides default implementations of the parallel seeding functions. </p>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">random</span> <span class="special">{</span>
+    <span class="keyword">namespace</span> <span class="identifier">parallel</span> <span class="special">{</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> PRNG<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="../alps/random/parallel/seed_idp140297800475344.html" title="Function template seed"><span class="identifier">seed</span></a><span class="special">(</span><span class="identifier">PRNG</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> PRNG<span class="special">,</span> <span class="keyword">typename</span> SeedType<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a class="link" href="../alps/random/parallel/seed_idp140297800482000.html" title="Function template seed"><span class="identifier">seed</span></a><span class="special">(</span><span class="identifier">PRNG</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">,</span> <span class="identifier">SeedType</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> PRNG<span class="special">,</span> <span class="keyword">typename</span> Iterator<span class="special">&gt;</span> 
+        <span class="keyword">void</span> <a class="link" href="../alps/random/parallel/seed_idp140297800490192.html" title="Function template seed"><span class="identifier">seed</span></a><span class="special">(</span><span class="identifier">PRNG</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">,</span> <span class="identifier">Iterator</span> <span class="special">&amp;</span><span class="special">,</span> 
+                  <span class="identifier">Iterator</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+    <span class="special">}</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.parallel.well_hpp"></a>Header &lt;<a href="../../../alps/random/parallel/well.hpp" target="_top">alps/random/parallel/well.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">namespace</span> <span class="identifier">random</span> <span class="special">{</span>
+    <span class="keyword">namespace</span> <span class="identifier">parallel</span> <span class="special">{</span>
+      <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> UIntType<span class="special">,</span> <span class="keyword">int</span> statesize<span class="special">,</span> <span class="identifier">UIntType</span> val<span class="special">,</span> <span class="keyword">typename</span> F1<span class="special">,</span> 
+               <span class="keyword">typename</span> F2<span class="special">,</span> <span class="keyword">typename</span> F3<span class="special">,</span> <span class="keyword">typename</span> F4<span class="special">,</span> <span class="keyword">typename</span> F5<span class="special">,</span> 
+               <span class="keyword">typename</span> F6<span class="special">,</span> <span class="keyword">typename</span> F7<span class="special">,</span> <span class="keyword">typename</span> F8<span class="special">,</span> <span class="keyword">int</span> p1<span class="special">,</span> <span class="keyword">int</span> p2<span class="special">,</span> <span class="keyword">int</span> p3<span class="special">,</span> 
+               <span class="identifier">UIntType</span> mask <span class="special">=</span> <span class="identifier">statesize</span><span class="special">-</span><span class="number">1</span><span class="special">,</span> <span class="keyword">typename</span> RNG <span class="special">=</span> <a class="link" href="../alps/random/parallel/lcg64.html" title="Class template lcg64">alps::lcg64a</a><span class="special">&gt;</span> 
+        <span class="keyword">class</span> <a class="link" href="../alps/random/parallel/well.html" title="Class template well">well</a><span class="special">;</span>
+
+      <span class="keyword">typedef</span> <a class="link" href="../alps/random/parallel/well.html" title="Class template well">well</a><span class="special">&lt;</span> <span class="identifier">uint32_t</span><span class="special">,</span> <span class="number">16</span><span class="special">,</span> <span class="number">1584514050u</span><span class="special">,</span> <span class="identifier">mat0neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">16</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat0neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">15</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat0pos</span><span class="special">&lt;</span> <span class="number">11</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">zero</span><span class="special">,</span> <span class="identifier">mat0neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">2</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat0neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">18</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat3neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">28</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat4neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">5</span> <span class="special">&gt;</span><span class="special">,</span> <span class="number">13</span><span class="special">,</span> <span class="number">9</span><span class="special">,</span> <span class="number">1</span> <span class="special">&gt;</span> <a name="alps.random.parallel.well512a"></a><span class="identifier">well512a</span><span class="special">;</span>  <span class="comment">// A 512-bit version of the WELL generator. </span>
+      <span class="keyword">typedef</span> <a class="link" href="../alps/random/parallel/well.html" title="Class template well">well</a><span class="special">&lt;</span> <span class="identifier">uint32_t</span><span class="special">,</span> <span class="number">32</span><span class="special">,</span> <span class="number">2159746073u</span><span class="special">,</span> <span class="identifier">identity</span><span class="special">,</span> <span class="identifier">mat0pos</span><span class="special">&lt;</span> <span class="number">8</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat0neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">19</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat0neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">14</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat0neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">11</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat0neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">7</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">mat0neg</span><span class="special">&lt;</span><span class="special">-</span><span class="number">13</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">zero</span><span class="special">,</span> <span class="number">3</span><span class="special">,</span> <span class="number">24</span><span class="special">,</span> <span class="number">10</span> <span class="special">&gt;</span> <a name="alps.random.parallel.well1024a"></a><span class="identifier">well1024a</span><span class="special">;</span>  <span class="comment">// A 1024-bit version of the WELL generator. </span>
+    <span class="special">}</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.pseudo_des_h"></a>Header &lt;<a href="../../../alps/random/pseudo_des.h" target="_top">alps/random/pseudo_des.h</a>&gt;</h3></div></div></div>
+<p>a random number generator using the pseudo-DES algorithm </p>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/pseudo_des.html" title="Class pseudo_des">pseudo_des</a><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.random_choice_hpp"></a>Header &lt;<a href="../../../alps/random/random_choice.hpp" target="_top">alps/random/random_choice.hpp</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RNG<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/random_choice.html" title="Class template random_choice">random_choice</a><span class="special">;</span>
+
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/random__idp140297800569264.html" title="Class random_choice&lt;double&gt;">random_choice</a><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/random__idp140297800572944.html" title="Class random_choice&lt;unsigned int&gt;">random_choice</a><span class="special">&lt;</span><span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">&gt;</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.rngfactory_h"></a>Header &lt;<a href="../../../alps/random/rngfactory.h" target="_top">alps/random/rngfactory.h</a>&gt;</h3></div></div></div>
+<p>a factory to create random number generators from their name </p>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/RNGFactory.html" title="Class RNGFactory">RNGFactory</a><span class="special">;</span>
+
+  <a class="link" href="../alps/RNGFactory.html" title="Class RNGFactory">RNGFactory</a> <a class="link" href="../alps/rng_factory.html" title="Global rng_factory">rng_factory</a><span class="special">;</span>  <span class="comment">// a factory to create random number generators from their name </span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.seed_h"></a>Header &lt;<a href="../../../alps/random/seed.h" target="_top">alps/random/seed.h</a>&gt;</h3></div></div></div>
+<p>a generic seeding function for random number generators </p>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RNG<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="../alps/seed_with_sequence.html" title="Function template seed_with_sequence"><span class="identifier">seed_with_sequence</span></a><span class="special">(</span><span class="identifier">RNG</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">uint32_t</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RNG<span class="special">,</span> <span class="keyword">typename</span> INIGEN<span class="special">&gt;</span> 
+    <span class="keyword">void</span> <a name="alps.seed_with_generator"></a><span class="identifier">seed_with_generator</span><span class="special">(</span><span class="identifier">RNG</span> <span class="special">&amp;</span> rng<span class="special">,</span> <span class="identifier">INIGEN</span> <span class="special">&amp;</span> inigen<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.sprng.cmrg_hpp"></a>Header &lt;<a href="../../../alps/random/sprng/cmrg.hpp" target="_top">alps/random/sprng/cmrg.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.sprng.detail.buffer_hpp"></a>Header &lt;<a href="../../../alps/random/sprng/detail/buffer.hpp" target="_top">alps/random/sprng/detail/buffer.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.sprng.lcg_hpp"></a>Header &lt;<a href="../../../alps/random/sprng/lcg.hpp" target="_top">alps/random/sprng/lcg.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.sprng.lfg_hpp"></a>Header &lt;<a href="../../../alps/random/sprng/lfg.hpp" target="_top">alps/random/sprng/lfg.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.sprng.mlfg_hpp"></a>Header &lt;<a href="../../../alps/random/sprng/mlfg.hpp" target="_top">alps/random/sprng/mlfg.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.sprng.pmlcg_hpp"></a>Header &lt;<a href="../../../alps/random/sprng/pmlcg.hpp" target="_top">alps/random/sprng/pmlcg.hpp</a>&gt;</h3></div></div></div></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.random.uniform_on_sphere_n_h"></a>Header &lt;<a href="../../../alps/random/uniform_on_sphere_n.h" target="_top">alps/random/uniform_on_sphere_n.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">int</span> N<span class="special">,</span> <span class="keyword">typename</span> RealType <span class="special">=</span> <span class="keyword">double</span><span class="special">,</span> 
+           <span class="keyword">typename</span> Cont <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="identifier">RealType</span><span class="special">&gt;</span> <span class="special">&gt;</span> 
+    <span class="keyword">class</span> <a class="link" href="../alps/uniform_on_sphere_n.html" title="Class template uniform_on_sphere_n">uniform_on_sphere_n</a><span class="special">;</span>
+
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RealType<span class="special">,</span> <span class="keyword">typename</span> Cont<span class="special">&gt;</span> 
+    <span class="keyword">class</span> <a class="link" href="../alps/uniform_idp140297800626176.html" title="Class template uniform_on_sphere_n&lt;1, RealType, Cont&gt;">uniform_on_sphere_n</a><span class="special">&lt;</span><span class="number">1</span><span class="special">,</span> <span class="identifier">RealType</span><span class="special">,</span> <span class="identifier">Cont</span><span class="special">&gt;</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RealType<span class="special">,</span> <span class="keyword">typename</span> Cont<span class="special">&gt;</span> 
+    <span class="keyword">class</span> <a class="link" href="../alps/uniform_idp140297800636528.html" title="Class template uniform_on_sphere_n&lt;2, RealType, Cont&gt;">uniform_on_sphere_n</a><span class="special">&lt;</span><span class="number">2</span><span class="special">,</span> <span class="identifier">RealType</span><span class="special">,</span> <span class="identifier">Cont</span><span class="special">&gt;</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RealType<span class="special">,</span> <span class="keyword">typename</span> Cont<span class="special">&gt;</span> 
+    <span class="keyword">class</span> <a class="link" href="../alps/uniform_idp140297800646880.html" title="Class template uniform_on_sphere_n&lt;3, RealType, Cont&gt;">uniform_on_sphere_n</a><span class="special">&lt;</span><span class="number">3</span><span class="special">,</span> <span class="identifier">RealType</span><span class="special">,</span> <span class="identifier">Cont</span><span class="special">&gt;</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2006-2008 Brigitte Surer,
+      Matthias Troyer</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../random.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../random.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../alps/basic_buffered_generator.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Chapter 8. Alps/Model Library</title>
+<link rel="stylesheet" href="boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="The ALPS Libraries">
+<link rel="up" href="index.html" title="The ALPS Libraries">
+<link rel="prev" href="alps/GraphUnitCell.html" title="Class GraphUnitCell">
+<link rel="next" href="model/reference.html" title="Reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="alps_logo.gif"></td>
+<td align="center"><a href="./index.html">Home</a></td>
+<td align="center"><a href="./overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="./overview/license.html">License</a></td>
+<td align="center"><a href="./overview/support.html">Support</a></td>
+<td align="center"><a href="./overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="alps/GraphUnitCell.html"><img src="images/prev.png" alt="Prev"></a><a accesskey="u" href="index.html"><img src="images/up.png" alt="Up"></a><a accesskey="h" href="index.html"><img src="images/home.png" alt="Home"></a><a accesskey="n" href="model/reference.html"><img src="images/next.png" alt="Next"></a>
+</div>
+<div class="chapter">
+<div class="titlepage"><div>
+<div><h1 class="title">
+<a name="model"></a>Chapter 8. Alps/Model Library</h1></div>
+<div><p class="copyright">Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</p></div>
+</div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl class="toc">
+<dt><span class="section"><a href="model.html#model.introduction">Introduction</a></span></dt>
+<dt><span class="section"><a href="model/reference.html">Reference</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.basisdescriptor_h">Header &lt;alps/model/basisdescriptor.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.basisstates_h">Header &lt;alps/model/basisstates.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.blochbasisstates_h">Header &lt;alps/model/blochbasisstates.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.bondoperator_h">Header &lt;alps/model/bondoperator.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.bondterm_h">Header &lt;alps/model/bondterm.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.default_term_h">Header &lt;alps/model/default_term.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.globaloperator_h">Header &lt;alps/model/globaloperator.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.half_integer_h">Header &lt;alps/model/half_integer.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.hamiltonian_h">Header &lt;alps/model/hamiltonian.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.hamiltonian_matrix_hpp">Header &lt;alps/model/hamiltonian_matrix.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.integer_state_h">Header &lt;alps/model/integer_state.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.model_helper_h">Header &lt;alps/model/model_helper.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.modellibrary_h">Header &lt;alps/model/modellibrary.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.operator_h">Header &lt;alps/model/operator.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.operatordescriptor_h">Header &lt;alps/model/operatordescriptor.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.operatorsubstitution_h">Header &lt;alps/model/operatorsubstitution.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.quantumnumber_h">Header &lt;alps/model/quantumnumber.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.sign_h">Header &lt;alps/model/sign.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.sitebasisdescriptor_h">Header &lt;alps/model/sitebasisdescriptor.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.sitebasisstates_h">Header &lt;alps/model/sitebasisstates.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.siteoperator_h">Header &lt;alps/model/siteoperator.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.sitestate_h">Header &lt;alps/model/sitestate.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.siteterm_h">Header &lt;alps/model/siteterm.h&gt;</a></span></dt>
+<dt><span class="section"><a href="model/reference.html#header.alps.model.substitute_h">Header &lt;alps/model/substitute.h&gt;</a></span></dt>
+</dl></dd>
+</dl>
+</div>
+<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="model.introduction"></a>Introduction</h2></div></div></div></div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"><small><p>Last revised:  ,  at  GMT</p></small></td>
+<td align="right"><small></small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="alps/GraphUnitCell.html"><img src="images/prev.png" alt="Prev"></a><a accesskey="u" href="index.html"><img src="images/up.png" alt="Up"></a><a accesskey="h" href="index.html"><img src="images/home.png" alt="Home"></a><a accesskey="n" href="model/reference.html"><img src="images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

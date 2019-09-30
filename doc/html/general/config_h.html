@@ -1,0 +1,347 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>alps/config.h</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../general.html" title="Chapter 2. Alps/General Library">
+<link rel="prev" href="../general.html" title="Chapter 2. Alps/General Library">
+<link rel="next" href="reference.html" title="Reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../general.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../general.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="reference.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="general.config_h"></a>alps/config.h</h2></div></div></div>
+<p>
+      Header alps/config.h contains configuration options determined by the ALPS
+      configure script. In addition please see the <a href="http://www.boost.org/" target="_top">Boost</a>
+      configuration macros.
+    </p>
+<p>
+      Note that this header file should be included <span class="emphasis"><em>before</em></span> any
+      Boost header files.
+    </p>
+<h2>
+<a name="config_h.macros"></a>
+      Macros
+    </h2>
+<div class="table">
+<a name="general.config_h.t0"></a><p class="title"><b>Table 2.1. macros defined/undefined in alps/config.h</b></p>
+<div class="table-contents"><table class="table" summary="macros defined/undefined in alps/config.h">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+              <p>
+                Name
+              </p>
+            </th>
+<th>
+              <p>
+                Description
+              </p>
+            </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+              <p>
+                ALPS_WITHOUT_XML
+              </p>
+            </td>
+<td>
+              <p>
+                defined if ALPS was build without ALPS/xml library
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_WITHOUT_OSIRIS
+              </p>
+            </td>
+<td>
+              <p>
+                defined if ALPS was build without ALPS/osiris library
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_WITHOUT_ALEA
+              </p>
+            </td>
+<td>
+              <p>
+                defined if ALPS was build without ALPS/alea library
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_WITHOUT_LATTICE
+              </p>
+            </td>
+<td>
+              <p>
+                defined if ALPS was build without ALPS/lattice library
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_WITHOUT_SCHEDULER
+              </p>
+            </td>
+<td>
+              <p>
+                defined if ALPS was build without ALPS/scheduler library
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_UNISTD_H
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the header &lt;unistd.h&gt; exists
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_SYS_SYSTEMINFO_H
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the header &lt;sys/systeminfo.h&gt; exists
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_SYS_TIME_H
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the header &lt;sys/time.h&gt; exists
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_SYS_TYPES_H
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the header &lt;sys/types.h&gt; exists
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_INTTYPES_H
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the header &lt;inttypes.h&gt; exists
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_BIND_BITYPES_H
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the header &lt;bind/bitypes.h&gt; exists
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_SYS_INT_TYPES_H
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the header &lt;sys/int_types.h&gt; exists
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAS_INT64
+              </p>
+            </td>
+<td>
+              <p>
+                defined if 64 bit integer types exist
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_VALARRAY
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the std::valarray class exists
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_MPI
+              </p>
+            </td>
+<td>
+              <p>
+                defined if an MPI library exists and was specified in the configuration
+                step.
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_HDF5
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the HDF5 library exists and was specified in the configuration
+                step.
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_PTHREAD
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the pthread library exists and was specified in the configuration
+                step.
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_EXPAT
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the expat XML parser exists and was specified in the configuration
+                step.
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                ALPS_HAVE_XERCES
+              </p>
+            </td>
+<td>
+              <p>
+                defined if the Xerces XML parser exists and was specified in the
+                configuration step.
+              </p>
+            </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break"><h2>
+<a name="config_h.types"></a>
+      Types
+    </h2>
+<p>
+      The header has to include the system headers defining the types
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+          <code class="literal">int8_t</code>
+        </li>
+<li class="listitem">
+          <code class="literal">uint8_t</code>
+        </li>
+<li class="listitem">
+          <code class="literal">int16_t</code>
+        </li>
+<li class="listitem">
+          <code class="literal">uint16_t</code>
+        </li>
+<li class="listitem">
+          <code class="literal">int32_t</code>
+        </li>
+<li class="listitem">
+          <code class="literal">uint32_t</code>
+        </li>
+</ul></div>
+<p>
+      In addition, if <code class="literal">ALPS_NO_INT64</code> is not defined it also has
+      to include definitions for the types
+    </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+          <code class="literal">int64_t</code>
+        </li>
+<li class="listitem">
+          ==uint64_t=
+        </li>
+</ul></div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../general.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../general.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="reference.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

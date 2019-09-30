@@ -1,0 +1,118 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template SiteBasisDescriptor</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../model/reference.html#header.alps.model.operatordescriptor_h" title="Header &lt;alps/model/operatordescriptor.h&gt;">
+<link rel="prev" href="OperatorDescriptor.html" title="Class template OperatorDescriptor">
+<link rel="next" href="OperatorSubstitution.html" title="Class template OperatorSubstitution">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="OperatorDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.operatordescriptor_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="OperatorSubstitution.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.SiteBasisDescriptor"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template SiteBasisDescriptor</span></h2>
+<p>alps::SiteBasisDescriptor</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../model/reference.html#header.alps.model.operatordescriptor_h" title="Header &lt;alps/model/operatordescriptor.h&gt;">alps/model/operatordescriptor.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> I<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="SiteBasisDescriptor.html" title="Class template SiteBasisDescriptor">SiteBasisDescriptor</a> <span class="special">:</span>
+  <span class="keyword">public</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">QuantumNumberDescriptor</span><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&gt;</span>
+<span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="SiteBasisDescriptor.html#alps.SiteBasisDescriptorconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="SiteBasisDescriptor.html#idp140297835006480-bb"><span class="identifier">SiteBasisDescriptor</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="SiteBasisDescriptor.html#idp140297835006752-bb"><span class="identifier">SiteBasisDescriptor</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">Parameters</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                      <span class="keyword">const</span> <span class="identifier">operator_map</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">operator_map</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="SiteBasisDescriptor.html#idp140297835009536-bb"><span class="identifier">SiteBasisDescriptor</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="SiteBasisDescriptor.html#idp140297834986304-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="SiteBasisDescriptor.html#idp140297834986832-bb"><span class="identifier">write_xml</span></a><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a class="link" href="SiteBasisDescriptor.html#idp140297834988496-bb"><span class="identifier">name</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="SiteBasisDescriptor.html#idp140297834989536-bb"><span class="identifier">valid</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <a class="link" href="half_integer.html" title="Class template half_integer">half_integer</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a class="link" href="SiteBasisDescriptor.html#idp140297834991632-bb"><span class="identifier">num_states</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="SiteBasisDescriptor.html#idp140297834992656-bb"><span class="identifier">set_parameters</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> <a class="link" href="SiteBasisDescriptor.html#idp140297834995008-bb"><span class="identifier">get_parameters</span></a><span class="special">(</span><span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">operator_map</span> <span class="special">&amp;</span> <a class="link" href="SiteBasisDescriptor.html#idp140297834996960-bb"><span class="identifier">operators</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="SiteBasisDescriptor.html#idp140297834998000-bb"><span class="identifier">has_operator</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> STATE<span class="special">,</span> <span class="keyword">typename</span> T<span class="special">&gt;</span> 
+    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">tuple</span><span class="special">&lt;</span> <span class="identifier">STATE</span><span class="special">,</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">&gt;</span> 
+    <a class="link" href="SiteBasisDescriptor.html#idp140297834999680-bb"><span class="identifier">apply</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">STATE</span><span class="special">,</span> 
+          <span class="keyword">const</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">ParameterEvaluator</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="SiteBasisDescriptor.html#idp140297835004656-bb"><span class="identifier">is_fermionic</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="SiteBasisDescriptor.html#idp140297835011088-bb">private member functions</a></span>
+  <span class="keyword">bool</span> <a class="link" href="SiteBasisDescriptor.html#idp140297835011616-bb"><span class="identifier">evaluate</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="SiteBasisDescriptor.html#idp140297835012400-bb"><span class="identifier">init_dependencies</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204661610336"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204661610736"></a><h3>
+<a name="alps.SiteBasisDescriptorconstruct-copy-destruct"></a><code class="computeroutput">SiteBasisDescriptor</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297835006480-bb"></a><span class="identifier">SiteBasisDescriptor</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297835006752-bb"></a><span class="identifier">SiteBasisDescriptor</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> 
+                    <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> parms <span class="special">=</span> <span class="identifier">Parameters</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                    <span class="keyword">const</span> <span class="identifier">operator_map</span> <span class="special">&amp;</span> ops <span class="special">=</span> <span class="identifier">operator_map</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297835009536-bb"></a><span class="identifier">SiteBasisDescriptor</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204661639840"></a><h3>
+<a name="idp140297834986304-bb"></a><code class="computeroutput">SiteBasisDescriptor</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297834986832-bb"></a><span class="identifier">write_xml</span><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a name="idp140297834988496-bb"></a><span class="identifier">name</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297834989536-bb"></a><span class="identifier">valid</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <a class="link" href="half_integer.html" title="Class template half_integer">half_integer</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <a name="idp140297834991632-bb"></a><span class="identifier">num_states</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297834992656-bb"></a><span class="identifier">set_parameters</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> <a name="idp140297834995008-bb"></a><span class="identifier">get_parameters</span><span class="special">(</span><span class="keyword">bool</span> all <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">operator_map</span> <span class="special">&amp;</span> <a name="idp140297834996960-bb"></a><span class="identifier">operators</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297834998000-bb"></a><span class="identifier">has_operator</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> STATE<span class="special">,</span> <span class="keyword">typename</span> T<span class="special">&gt;</span> 
+  <span class="identifier">boost</span><span class="special">::</span><span class="identifier">tuple</span><span class="special">&lt;</span> <span class="identifier">STATE</span><span class="special">,</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">&gt;</span> 
+  <a name="idp140297834999680-bb"></a><span class="identifier">apply</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="identifier">STATE</span> state<span class="special">,</span> 
+        <span class="keyword">const</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">ParameterEvaluator</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span> eval<span class="special">,</span> <span class="keyword">bool</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297835004656-bb"></a><span class="identifier">is_fermionic</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204661735248"></a><h3>
+<a name="idp140297835011088-bb"></a><code class="computeroutput">SiteBasisDescriptor</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297835011616-bb"></a><span class="identifier">evaluate</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297835012400-bb"></a><span class="identifier">init_dependencies</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="OperatorDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.operatordescriptor_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="OperatorSubstitution.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

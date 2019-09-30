@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Struct template lattice_traits&lt;hypercubic_lattice&lt; BASE, EX &gt;&gt;</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../lattice/reference.html#header.alps.lattice.hypercubic_h" title="Header &lt;alps/lattice/hypercubic.h&gt;">
+<link rel="prev" href="hypercubic_lattice/momentum_iterator.html" title="Class momentum_iterator">
+<link rel="next" href="../M_PI.html" title="Macro M_PI">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="hypercubic_lattice/momentum_iterator.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../lattice/reference.html#header.alps.lattice.hypercubic_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../M_PI.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.lattice_idp140297831226832"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Struct template lattice_traits&lt;hypercubic_lattice&lt; BASE, EX &gt;&gt;</span></h2>
+<p>alps::lattice_traits&lt;hypercubic_lattice&lt; BASE, EX &gt;&gt;</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../lattice/reference.html#header.alps.lattice.hypercubic_h" title="Header &lt;alps/lattice/hypercubic.h&gt;">alps/lattice/hypercubic.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> BASE<span class="special">,</span> <span class="keyword">typename</span> EX<span class="special">&gt;</span> 
+<span class="keyword">struct</span> <a class="link" href="lattice_idp140297831226832.html" title="Struct template lattice_traits&lt;hypercubic_lattice&lt; BASE, EX &gt;&gt;">lattice_traits</a><span class="special">&lt;</span><span class="identifier">hypercubic_lattice</span><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">&gt;</span> <span class="special">{</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">unit_cell_type</span>         <a name="alps.lattice_idp140297831226832.unit_cell_type"></a><span class="identifier">unit_cell_type</span><span class="special">;</span>        
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">cell_descriptor</span>        <a name="alps.lattice_idp140297831226832.cell_descriptor"></a><span class="identifier">cell_descriptor</span><span class="special">;</span>       
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">offset_type</span>            <a name="alps.lattice_idp140297831226832.offset_type"></a><span class="identifier">offset_type</span><span class="special">;</span>           
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">extent_type</span>            <a name="alps.lattice_idp140297831226832.extent_type"></a><span class="identifier">extent_type</span><span class="special">;</span>           
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">basis_vector_iterator</span>  <a name="alps.lattice_idp140297831226832.basis_vector_iterator"></a><span class="identifier">basis_vector_iterator</span><span class="special">;</span> 
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span>momentum_iterator      <a name="alps.lattice_idp140297831226832.momentum_iterator"></a><span class="identifier">momentum_iterator</span><span class="special">;</span>     
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span>cell_iterator          <a name="alps.lattice_idp140297831226832.cell_iterator"></a><span class="identifier">cell_iterator</span><span class="special">;</span>         
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">size_type</span>              <a name="alps.lattice_idp140297831226832.size_type"></a><span class="identifier">size_type</span><span class="special">;</span>             
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">vector_type</span>            <a name="alps.lattice_idp140297831226832.vector_type"></a><span class="identifier">vector_type</span><span class="special">;</span>           
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <span class="identifier">BASE</span><span class="special">,</span> <span class="identifier">EX</span> <span class="special">&gt;</span><span class="special">::</span>boundary_crossing_type <a name="alps.lattice_idp140297831226832.boundary_crossing_type"></a><span class="identifier">boundary_crossing_type</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="hypercubic_lattice/momentum_iterator.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../lattice/reference.html#header.alps.lattice.hypercubic_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../M_PI.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

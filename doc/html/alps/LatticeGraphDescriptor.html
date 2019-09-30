@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class LatticeGraphDescriptor</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../lattice/reference.html#header.alps.lattice.latticegraphdescriptor_h" title="Header &lt;alps/lattice/latticegraphdescriptor.h&gt;">
+<link rel="prev" href="lattice_idp140297831433104.html" title="Struct lattice_traits&lt;LatticeGraphDescriptor&gt;">
+<link rel="next" href="LatticeLibrary.html" title="Class LatticeLibrary">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="lattice_idp140297831433104.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../lattice/reference.html#header.alps.lattice.latticegraphdescriptor_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="LatticeLibrary.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.LatticeGraphDescriptor"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class LatticeGraphDescriptor</span></h2>
+<p>alps::LatticeGraphDescriptor</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../lattice/reference.html#header.alps.lattice.latticegraphdescriptor_h" title="Header &lt;alps/lattice/latticegraphdescriptor.h&gt;">alps/lattice/latticegraphdescriptor.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="LatticeGraphDescriptor.html" title="Class LatticeGraphDescriptor">LatticeGraphDescriptor</a> <span class="special">:</span> <span class="keyword">public</span> alps::hypercubic_lattice&lt; coordinate_lattice&lt; simple_lattice&lt; GraphUnitCell &gt;, std::vector&lt; StringValue &gt; &gt;, std::vector&lt; StringValue &gt; &gt;
+<span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <a class="link" href="hypercubic_lattice.html" title="Class template hypercubic_lattice">hypercubic_lattice</a><span class="special">&lt;</span> <a class="link" href="coordinate_lattice.html" title="Class template coordinate_lattice">coordinate_lattice</a><span class="special">&lt;</span> <a class="link" href="simple_lattice.html" title="Class template simple_lattice">simple_lattice</a><span class="special">&lt;</span> <a class="link" href="GraphUnitCell.html" title="Class GraphUnitCell">GraphUnitCell</a> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">StringValue</span> <span class="special">&gt;</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">StringValue</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <a name="alps.LatticeGraphDescriptor.base_type"></a><span class="identifier">base_type</span><span class="special">;</span>             
+  <span class="keyword">typedef</span> <a class="link" href="lattice_traits.html" title="Struct template lattice_traits">lattice_traits</a><span class="special">&lt;</span> <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptor.base_type">base_type</a> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">unit_cell_type</span>                                                                                         <a name="alps.LatticeGraphDescriptor.unit_cell_type"></a><span class="identifier">unit_cell_type</span><span class="special">;</span>        
+  <span class="keyword">typedef</span> <a class="link" href="lattice_traits.html" title="Struct template lattice_traits">lattice_traits</a><span class="special">&lt;</span> <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptor.base_type">base_type</a> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">offset_type</span>                                                                                            <a name="alps.LatticeGraphDescriptor.offset_type"></a><span class="identifier">offset_type</span><span class="special">;</span>           
+  <span class="keyword">typedef</span> <a class="link" href="lattice_traits.html" title="Struct template lattice_traits">lattice_traits</a><span class="special">&lt;</span> <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptor.base_type">base_type</a> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">extent_type</span>                                                                                            <a name="alps.LatticeGraphDescriptor.extent_type"></a><span class="identifier">extent_type</span><span class="special">;</span>           
+  <span class="keyword">typedef</span> <a class="link" href="lattice_traits.html" title="Struct template lattice_traits">lattice_traits</a><span class="special">&lt;</span> <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptor.base_type">base_type</a> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">cell_descriptor</span>                                                                                        <a name="alps.LatticeGraphDescriptor.cell_descriptor"></a><span class="identifier">cell_descriptor</span><span class="special">;</span>       
+  <span class="keyword">typedef</span> <a class="link" href="lattice_traits.html" title="Struct template lattice_traits">lattice_traits</a><span class="special">&lt;</span> <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptor.base_type">base_type</a> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">vector_type</span>                                                                                            <a name="alps.LatticeGraphDescriptor.vector_type"></a><span class="identifier">vector_type</span><span class="special">;</span>           
+  <span class="keyword">typedef</span> <a class="link" href="lattice_traits.html" title="Struct template lattice_traits">lattice_traits</a><span class="special">&lt;</span> <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptor.base_type">base_type</a> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">basis_vector_iterator</span>                                                                                  <a name="alps.LatticeGraphDescriptor.basis_vector_iterator"></a><span class="identifier">basis_vector_iterator</span><span class="special">;</span> 
+  <span class="keyword">typedef</span> <a class="link" href="lattice_traits.html" title="Struct template lattice_traits">lattice_traits</a><span class="special">&lt;</span> <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptor.base_type">base_type</a> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">cell_iterator</span>                                                                                          <a name="alps.LatticeGraphDescriptor.cell_iterator"></a><span class="identifier">cell_iterator</span><span class="special">;</span>         
+  <span class="keyword">typedef</span> <a class="link" href="lattice_traits.html" title="Struct template lattice_traits">lattice_traits</a><span class="special">&lt;</span> <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptor.base_type">base_type</a> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">size_type</span>                                                                                              <a name="alps.LatticeGraphDescriptor.size_type"></a><span class="identifier">size_type</span><span class="special">;</span>             
+  <span class="keyword">typedef</span> <a class="link" href="lattice_traits.html" title="Struct template lattice_traits">lattice_traits</a><span class="special">&lt;</span> <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptor.base_type">base_type</a> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">boundary_crossing_type</span>                                                                                 <a name="alps.LatticeGraphDescriptor.boundary_crossing_type"></a><span class="identifier">boundary_crossing_type</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="LatticeGraphDescriptor.html#alps.LatticeGraphDescriptorconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="LatticeGraphDescriptor.html#idp140297829749344-bb"><span class="identifier">LatticeGraphDescriptor</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="LatticeGraphDescriptor.html#idp140297829749616-bb"><span class="identifier">LatticeGraphDescriptor</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">UnitCellMap</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="LatticeGraphDescriptor.html#idp140297829751200-bb"><span class="identifier">LatticeGraphDescriptor</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> 
+                         <span class="keyword">const</span> <span class="identifier">LatticeMap</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">LatticeMap</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                         <span class="keyword">const</span> <span class="identifier">FiniteLatticeMap</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">FiniteLatticeMap</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                         <span class="keyword">const</span> <span class="identifier">UnitCellMap</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">UnitCellMap</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="LatticeGraphDescriptor.html#idp140297829741616-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="LatticeGraphDescriptor.html#idp140297829742144-bb"><span class="identifier">write_xml</span></a><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a class="link" href="LatticeGraphDescriptor.html#idp140297829743808-bb"><span class="identifier">name</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="LatticeGraphDescriptor.html#idp140297829744848-bb"><span class="identifier">set_parameters</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <a class="link" href="InhomogeneityDescriptor.html" title="Class InhomogeneityDescriptor">InhomogeneityDescriptor</a> <span class="special">&amp;</span> <a class="link" href="LatticeGraphDescriptor.html#idp140297829746288-bb"><span class="identifier">inhomogeneity</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <a class="link" href="DepletionDescriptor.html" title="Class DepletionDescriptor">DepletionDescriptor</a> <span class="special">&amp;</span> <a class="link" href="LatticeGraphDescriptor.html#idp140297829747744-bb"><span class="identifier">depletion</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204652538096"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204652538496"></a><h3>
+<a name="alps.LatticeGraphDescriptorconstruct-copy-destruct"></a><code class="computeroutput">LatticeGraphDescriptor</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297829749344-bb"></a><span class="identifier">LatticeGraphDescriptor</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297829749616-bb"></a><span class="identifier">LatticeGraphDescriptor</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> unitcell<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">UnitCellMap</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297829751200-bb"></a><span class="identifier">LatticeGraphDescriptor</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> 
+                       <span class="keyword">const</span> <span class="identifier">LatticeMap</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">LatticeMap</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                       <span class="keyword">const</span> <span class="identifier">FiniteLatticeMap</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">FiniteLatticeMap</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                       <span class="keyword">const</span> <span class="identifier">UnitCellMap</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">UnitCellMap</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204652574736"></a><h3>
+<a name="idp140297829741616-bb"></a><code class="computeroutput">LatticeGraphDescriptor</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297829742144-bb"></a><span class="identifier">write_xml</span><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a name="idp140297829743808-bb"></a><span class="identifier">name</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297829744848-bb"></a><span class="identifier">set_parameters</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <a class="link" href="InhomogeneityDescriptor.html" title="Class InhomogeneityDescriptor">InhomogeneityDescriptor</a> <span class="special">&amp;</span> <a name="idp140297829746288-bb"></a><span class="identifier">inhomogeneity</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <a class="link" href="DepletionDescriptor.html" title="Class DepletionDescriptor">DepletionDescriptor</a> <span class="special">&amp;</span> <a name="idp140297829747744-bb"></a><span class="identifier">depletion</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="lattice_idp140297831433104.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../lattice/reference.html#header.alps.lattice.latticegraphdescriptor_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="LatticeLibrary.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

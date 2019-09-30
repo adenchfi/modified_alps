@@ -1,0 +1,360 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Analyzing Monte-Carlo data</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../alea.html" title="Chapter 6. Alps/Alea Library">
+<link rel="prev" href="../alea.html" title="Chapter 6. Alps/Alea Library">
+<link rel="next" href="reference.html" title="Reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../alea.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="reference.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="alea.analyzing_monte_carlo_data"></a>Analyzing Monte-Carlo data</h2></div></div></div>
+<div class="toc"><dl class="toc"><dt><span class="section"><a href="analyzing_monte_carlo_data.html#alea.mean">Mean</a></span></dt></dl></div>
+<p>
+      There is a range of functions that allow the calculation of statistical properties
+      of Monte-Carlo data.
+    </p>
+<p>
+      In general, when running a simulation, the results are recorded with an Observable-class
+      and stored in a HDF5 file. These files can then later be read and statistical
+      properties can be calculated. These results can also be written back into the
+      file. There are several examples on how to do this in the examples/alea folder.
+    </p>
+<p>
+      Here is an overview of the functions available
+    </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+              <p>
+                Function Name
+              </p>
+            </th>
+<th>
+              <p>
+                Argument(s)
+              </p>
+            </th>
+<th>
+              <p>
+                Options
+              </p>
+            </th>
+<th>
+              <p>
+                Return Type
+              </p>
+            </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">mean</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Timeseries
+              </p>
+            </td>
+<td>
+              <p>
+                None
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">AverageType</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">variance</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Timeseries
+              </p>
+            </td>
+<td>
+              <p>
+                None
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">AverageType</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">error</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Timeseries
+              </p>
+            </td>
+<td>
+              <p>
+                uncorrelated, binning
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">AverageType</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">autocorrelation</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Timeseries
+              </p>
+            </td>
+<td>
+              <p>
+                _distance, _limit
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">mctimeseries</span><span class="special">&lt;</span><span class="identifier">AverageType</span><span class="special">&gt;</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">exponential_autocorrelation_time</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Scalar MCTimeseries
+              </p>
+            </td>
+<td>
+              <p>
+                _from &amp; _to, _max &amp; _min
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span><span class="identifier">AverageType</span><span class="special">,</span>
+                <span class="identifier">AverageType</span><span class="special">&gt;</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">integrated_autocorrelation_time</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Scalar MCTimeseries, <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span><span class="identifier">AverageType</span><span class="special">,</span> <span class="identifier">AverageType</span><span class="special">&gt;</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                None
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">AverageType</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">running_mean</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Timeseries
+              </p>
+            </td>
+<td>
+              <p>
+                None
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">mctimeseries</span><span class="special">&lt;</span><span class="identifier">AverageType</span><span class="special">&gt;</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">reverse_running_mean</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Timeseries
+              </p>
+            </td>
+<td>
+              <p>
+                None
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">mctimeseries</span><span class="special">&lt;</span><span class="identifier">AverageType</span><span class="special">&gt;</span></code>
+              </p>
+            </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+      where <code class="computeroutput"><span class="identifier">AverageType</span></code> is <code class="computeroutput"><span class="keyword">typename</span> <span class="identifier">average_type</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;::</span><span class="identifier">type</span><span class="special">,\\</span> </code>Timeseries<code class="computeroutput"> <span class="identifier">is</span>
+      <span class="identifier">one</span> <span class="identifier">of</span>
+      <span class="identifier">mcdata</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;,</span>
+      <span class="identifier">mctimeseries</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;</span> <span class="keyword">or</span> <span class="identifier">mctimeseries_view</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;[</span><span class="identifier">newline</span><span class="special">]</span> <span class="keyword">and</span> </code>Scalar
+      MCTimeseries` is one of mctimeseries&lt;double&gt; or mctimeseries_view&lt;double&gt;\
+    </p>
+<p>
+      The objects <code class="computeroutput"><span class="identifier">mctimeseries</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;</span></code>
+      and <code class="computeroutput"><span class="identifier">mctimeseries_view</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;</span></code>
+      are essentially wrapped boost::shared_ptr's to the timeseries. while the constructor
+      of the mctimeseries class copies the whole data, the constructor of the mctimeseries_view
+      class only creates a reference. One can easily create views of timeseries by
+      using the functions cut_head and cut_tail:
+    </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+              <p>
+                Function Name
+              </p>
+            </th>
+<th>
+              <p>
+                Argument(s)
+              </p>
+            </th>
+<th>
+              <p>
+                Options
+              </p>
+            </th>
+<th>
+              <p>
+                Return Type
+              </p>
+            </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">cut_head</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Timeseries
+              </p>
+            </td>
+<td>
+              <p>
+                _distance, _limit
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">mctimeseries_view</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;</span></code>
+              </p>
+            </td>
+</tr>
+<tr>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">cut_tail</span></code>
+              </p>
+            </td>
+<td>
+              <p>
+                Timeseries
+              </p>
+            </td>
+<td>
+              <p>
+                _distance, _limit
+              </p>
+            </td>
+<td>
+              <p>
+                <code class="computeroutput"><span class="identifier">mctimeseries_view</span><span class="special">&lt;</span><span class="identifier">ValueType</span><span class="special">&gt;</span></code>
+              </p>
+            </td>
+</tr>
+</tbody>
+</table></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="alea.mean"></a>Mean</h3></div></div></div>
+<p>
+        Mean
+      </p>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2004, 2012 Matthias Troyer, Synge Todo, Maximilian Poprawe</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../alea.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="reference.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

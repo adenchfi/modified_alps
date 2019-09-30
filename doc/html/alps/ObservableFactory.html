@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class ObservableFactory</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../alea/reference.html#header.alps.alea.observablefactory_h" title="Header &lt;alps/alea/observablefactory.h&gt;">
+<link rel="prev" href="Observable.html" title="Global Observable">
+<link rel="next" href="ObservableSet.html" title="Class ObservableSet">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="Observable.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea/reference.html#header.alps.alea.observablefactory_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="ObservableSet.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.ObservableFactory"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class ObservableFactory</span></h2>
+<p>alps::ObservableFactory</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../alea/reference.html#header.alps.alea.observablefactory_h" title="Header &lt;alps/alea/observablefactory.h&gt;">alps/alea/observablefactory.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="ObservableFactory.html" title="Class ObservableFactory">ObservableFactory</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">factory</span><span class="special">&lt;</span> <span class="identifier">uint32_t</span><span class="special">,</span> <span class="identifier">Observable</span> <span class="special">&gt;</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="ObservableFactory.html#alps.ObservableFactoryconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="ObservableFactory.html#idp140297828375104-bb"><span class="identifier">ObservableFactory</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="ObservableFactory.html#idp140297828372848-bb">public member functions</a></span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="ObservableFactory.html#idp140297828373376-bb"><span class="identifier">register_observable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204629060096"></a><h2>Description</h2>
+<p><a class="link" href="A.html" title="Class A">A</a> class to collect the various measurements performed in a simulation It is implemented as a map, with std::string as key type </p>
+<div class="refsect2">
+<a name="idp140204629061664"></a><h3>
+<a name="alps.ObservableFactoryconstruct-copy-destruct"></a><code class="computeroutput">ObservableFactory</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp140297828375104-bb"></a><span class="identifier">ObservableFactory</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204629067104"></a><h3>
+<a name="idp140297828372848-bb"></a><code class="computeroutput">ObservableFactory</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">void</span> <a name="idp140297828373376-bb"></a><span class="identifier">register_observable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2004, 2012 Matthias Troyer, Synge Todo, Maximilian Poprawe</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="Observable.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea/reference.html#header.alps.alea.observablefactory_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="ObservableSet.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

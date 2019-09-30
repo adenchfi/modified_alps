@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template site_basis_match</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../model/reference.html#header.alps.model.basisdescriptor_h" title="Header &lt;alps/model/basisdescriptor.h&gt;">
+<link rel="prev" href="BasisDescriptor.html" title="Class template BasisDescriptor">
+<link rel="next" href="basis_states.html" title="Class template basis_states">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="BasisDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.basisdescriptor_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="basis_states.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.site_basis_match"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template site_basis_match</span></h2>
+<p>alps::site_basis_match</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../model/reference.html#header.alps.model.basisdescriptor_h" title="Header &lt;alps/model/basisdescriptor.h&gt;">alps/model/basisdescriptor.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> I<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="site_basis_match.html" title="Class template site_basis_match">site_basis_match</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">SiteBasisDescriptor</span><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <a class="link" href="SiteBasisDescriptor.html" title="Class template SiteBasisDescriptor">SiteBasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span>                          <a name="alps.site_basis_match.super_type"></a><span class="identifier">super_type</span><span class="special">;</span>        
+  <span class="keyword">typedef</span> <span class="identifier">super_type</span><span class="special">::</span><span class="identifier">const_iterator</span>                        <a name="alps.site_basis_match.const_iterator"></a><span class="identifier">const_iterator</span><span class="special">;</span>    
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <a class="link" href="SiteBasisDescriptor.html" title="Class template SiteBasisDescriptor">SiteBasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <a name="alps.site_basis_match.sitebasis_map_type"></a><span class="identifier">sitebasis_map_type</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="site_basis_match.html#alps.site_basis_matchconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="site_basis_match.html#idp140297832190192-bb"><span class="identifier">site_basis_match</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="site_basis_match.html#idp140297832190448-bb"><span class="identifier">site_basis_match</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="site_basis_match.html#alps.site_basis_match.super_type">super_type</a> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="site_basis_match.html#idp140297832192112-bb"><span class="identifier">site_basis_match</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="site_basis_match.html#idp140297832193392-bb"><span class="identifier">site_basis_match</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> 
+                   <span class="keyword">const</span> <span class="identifier">sitebasis_map_type</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">sitebasis_map_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="site_basis_match.html#idp140297832184432-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="site_basis_match.html#idp140297832184816-bb"><span class="identifier">write_xml</span></a><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="site_basis_match.html#idp140297832186096-bb"><span class="identifier">match_type</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="site_basis_match.html#idp140297832187376-bb"><span class="identifier">set_type</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">,</span> <span class="identifier">Parameters</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">Parameters</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">int</span> <a class="link" href="site_basis_match.html#idp140297832189296-bb"><span class="identifier">type</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204655122576"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204655122976"></a><h3>
+<a name="alps.site_basis_matchconstruct-copy-destruct"></a><code class="computeroutput">site_basis_match</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297832190192-bb"></a><span class="identifier">site_basis_match</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297832190448-bb"></a><span class="identifier">site_basis_match</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="site_basis_match.html#alps.site_basis_match.super_type">super_type</a> <span class="special">&amp;</span> site_basis<span class="special">,</span> <span class="keyword">int</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297832192112-bb"></a><span class="identifier">site_basis_match</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="keyword">int</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297832193392-bb"></a><span class="identifier">site_basis_match</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> 
+                 <span class="keyword">const</span> <span class="identifier">sitebasis_map_type</span> <span class="special">&amp;</span> bases_ <span class="special">=</span> <span class="identifier">sitebasis_map_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204655155408"></a><h3>
+<a name="idp140297832184432-bb"></a><code class="computeroutput">site_basis_match</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297832184816-bb"></a><span class="identifier">write_xml</span><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297832186096-bb"></a><span class="identifier">match_type</span><span class="special">(</span><span class="keyword">int</span> type<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297832187376-bb"></a><span class="identifier">set_type</span><span class="special">(</span><span class="keyword">int</span> type<span class="special">,</span> <span class="identifier">Parameters</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">Parameters</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">int</span> <a name="idp140297832189296-bb"></a><span class="identifier">type</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="BasisDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.basisdescriptor_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="basis_states.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

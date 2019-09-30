@@ -1,0 +1,442 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Reference</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../osiris.html" title="Chapter 4. Alps/Osiris Library">
+<link rel="prev" href="../osiris.html" title="Chapter 4. Alps/Osiris Library">
+<link rel="next" href="../alps/archive_idump.html" title="Class template archive_idump">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../osiris.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../alps/archive_idump.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="osiris.reference"></a>Reference</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="reference.html#header.alps.osiris.archivedump_h">Header &lt;alps/osiris/archivedump.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.boost.array_h">Header &lt;alps/osiris/boost/array.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.boost.ublas_h">Header &lt;alps/osiris/boost/ublas.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.buffer_h">Header &lt;alps/osiris/buffer.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.comm_h">Header &lt;alps/osiris/comm.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.dump_h">Header &lt;alps/osiris/dump.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.dumparchive_h">Header &lt;alps/osiris/dumparchive.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.mpdump_h">Header &lt;alps/osiris/mpdump.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.process_h">Header &lt;alps/osiris/process.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.deque_h">Header &lt;alps/osiris/std/deque.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.impl_h">Header &lt;alps/osiris/std/impl.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.list_h">Header &lt;alps/osiris/std/list.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.map_h">Header &lt;alps/osiris/std/map.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.pair_h">Header &lt;alps/osiris/std/pair.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.set_h">Header &lt;alps/osiris/std/set.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.stack_h">Header &lt;alps/osiris/std/stack.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.string_h">Header &lt;alps/osiris/std/string.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.valarray_h">Header &lt;alps/osiris/std/valarray.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.std.vector_h">Header &lt;alps/osiris/std/vector.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.xdrcore_h">Header &lt;alps/osiris/xdrcore.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.osiris.xdrdump_h">Header &lt;alps/osiris/xdrdump.h&gt;</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.archivedump_h"></a>Header &lt;<a href="../../../alps/osiris/archivedump.h" target="_top">alps/osiris/archivedump.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> ARCHIVE<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/archive_idump.html" title="Class template archive_idump">archive_idump</a><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> ARCHIVE<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/archive_odump.html" title="Class template archive_odump">archive_odump</a><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.boost.array_h"></a>Header &lt;<a href="../../../alps/osiris/boost/array.h" target="_top">alps/osiris/boost/array.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> N<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782463424"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">array</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> N<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782567568"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">array</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">N</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.boost.ublas_h"></a>Header &lt;<a href="../../../alps/osiris/boost/ublas.h" target="_top">alps/osiris/boost/ublas.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> STORAGE<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782624000"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> 
+               <span class="identifier">boost</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">::</span><span class="identifier">ublas</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">STORAGE</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a boost::numeric::ublas::vector container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> STORAGE<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782461904"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> 
+               <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">::</span><span class="identifier">ublas</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">STORAGE</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section"><div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.buffer_h"></a>Header &lt;<a href="../../../alps/osiris/buffer.h" target="_top">alps/osiris/buffer.h</a>&gt;</h3></div></div></div></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.comm_h"></a>Header &lt;<a href="../../../alps/osiris/comm.h" target="_top">alps/osiris/comm.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="identifier">ALPS_DECL</span> <span class="keyword">void</span> <a name="alps.comm_init"></a><span class="identifier">comm_init</span><span class="special">(</span><span class="keyword">int</span> <span class="special">&amp;</span> argc<span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">*</span><span class="special">&amp;</span> argv<span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="keyword">void</span> <a name="alps.comm_exit"></a><span class="identifier">comm_exit</span><span class="special">(</span><span class="keyword">bool</span> kill_slaves <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="keyword">bool</span> <a name="alps.runs_parallel"></a><span class="identifier">runs_parallel</span><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="keyword">bool</span> <a name="alps.is_master"></a><span class="identifier">is_master</span><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="../alps/Process.html" title="Class Process">Process</a> <a name="alps.local_process"></a><span class="identifier">local_process</span><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ProcessList</span> <a name="alps.all_processes"></a><span class="identifier">all_processes</span><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="../alps/Process.html" title="Class Process">Process</a> <a name="alps.master_process"></a><span class="identifier">master_process</span><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.dump_h"></a>Header &lt;<a href="../../../alps/osiris/dump.h" target="_top">alps/osiris/dump.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/IDump.html" title="Class IDump">IDump</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/ODump.html" title="Class ODump">ODump</a><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="../alps/ODump.html" title="Class ODump">ODump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782418688"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">ODump</a> <span class="special">&amp;</span> d<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">ODump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782465328"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">ODump</a> <span class="special">&amp;</span> d<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="../alps/IDump.html" title="Class IDump">IDump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782429488"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">IDump</a> <span class="special">&amp;</span> d<span class="special">,</span> <span class="identifier">T</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="../alps/IDump.html" title="Class IDump">IDump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782424112"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">IDump</a> <span class="special">&amp;</span> d<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.dumparchive_h"></a>Header &lt;<a href="../../../alps/osiris/dumparchive.h" target="_top">alps/osiris/dumparchive.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/idump_archive.html" title="Class idump_archive">idump_archive</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/odump_archive.html" title="Class odump_archive">odump_archive</a><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> ARCHIVE<span class="special">&gt;</span> <span class="identifier">T</span> <a name="alps.get_idp140297782472000"></a><span class="identifier">get</span><span class="special">(</span><span class="identifier">ARCHIVE</span> <span class="special">&amp;</span> ar<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.mpdump_h"></a>Header &lt;<a href="../../../alps/osiris/mpdump.h" target="_top">alps/osiris/mpdump.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/IMPDump.html" title="Class IMPDump">IMPDump</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/OMPDump.html" title="Class OMPDump">OMPDump</a><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.process_h"></a>Header &lt;<a href="../../../alps/osiris/process.h" target="_top">alps/osiris/process.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/Process.html" title="Class Process">Process</a><span class="special">;</span>
+
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <a class="link" href="../alps/Process.html" title="Class Process">Process</a> <span class="special">&gt;</span> <a name="alps.ProcessList"></a><span class="identifier">ProcessList</span><span class="special">;</span>
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span> <a name="alps.operato_idp140297782550112"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span> out<span class="special">,</span> <span class="keyword">const</span> <a class="link" href="../alps/Process.html" title="Class Process">alps::Process</a> <span class="special">&amp;</span> p<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.deque_h"></a>Header &lt;<a href="../../../alps/osiris/std/deque.h" target="_top">alps/osiris/std/deque.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+
+  <span class="comment">// deserialize a std::deque container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782553664"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">deque</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::deque container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782557600"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">deque</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.impl_h"></a>Header &lt;<a href="../../../alps/osiris/std/impl.h" target="_top">alps/osiris/std/impl.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis">
+
+<a class="link" href="../_HAS_ARRAY.html" title="Macro _HAS_ARRAY">_HAS_ARRAY</a>(T)</pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.list_h"></a>Header &lt;<a href="../../../alps/osiris/std/list.h" target="_top">alps/osiris/std/list.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+
+  <span class="comment">// deserialize a std::list container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782565024"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">list</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::list container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782570736"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">list</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.map_h"></a>Header &lt;<a href="../../../alps/osiris/std/map.h" target="_top">alps/osiris/std/map.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+
+  <span class="comment">// deserialize a std::map container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Key<span class="special">,</span> <span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Compare<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782576640"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">Key</span><span class="special">,</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Compare</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::map container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Key<span class="special">,</span> <span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Compare<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782581536"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> 
+               <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">Key</span><span class="special">,</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Compare</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// deserialize a std::multimap container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Key<span class="special">,</span> <span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Compare<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782586480"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> 
+               <span class="identifier">std</span><span class="special">::</span><span class="identifier">multimap</span><span class="special">&lt;</span> <span class="identifier">Key</span><span class="special">,</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Compare</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::multimap container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Key<span class="special">,</span> <span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Compare<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782599808"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> 
+               <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">multimap</span><span class="special">&lt;</span> <span class="identifier">Key</span><span class="special">,</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Compare</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.pair_h"></a>Header &lt;<a href="../../../alps/osiris/std/pair.h" target="_top">alps/osiris/std/pair.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T1<span class="special">,</span> <span class="keyword">typename</span> T2<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782607200"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span> <span class="identifier">T1</span><span class="special">,</span> <span class="identifier">T2</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T1<span class="special">,</span> <span class="keyword">typename</span> T2<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782610880"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span> <span class="identifier">T1</span><span class="special">,</span> <span class="identifier">T2</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.set_h"></a>Header &lt;<a href="../../../alps/osiris/std/set.h" target="_top">alps/osiris/std/set.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+
+  <span class="comment">// deserialize a std::set container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Compare<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782615776"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">set</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Compare</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::set container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Compare<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782626736"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> 
+               <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">set</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Compare</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// deserialize a std::multiset container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Compare<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782632624"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">multiset</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Compare</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::multiset container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Compare<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782637040"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> 
+               <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">multiset</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Compare</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.stack_h"></a>Header &lt;<a href="../../../alps/osiris/std/stack.h" target="_top">alps/osiris/std/stack.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Sequence<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782646272"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">stack</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Sequence</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Sequence<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782652528"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">stack</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Sequence</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.string_h"></a>Header &lt;<a href="../../../alps/osiris/std/string.h" target="_top">alps/osiris/std/string.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> charT<span class="special">,</span> <span class="keyword">typename</span> traits<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782657328"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> 
+               <span class="identifier">std</span><span class="special">::</span><span class="identifier">basic_string</span><span class="special">&lt;</span> <span class="identifier">charT</span><span class="special">,</span> <span class="identifier">traits</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> s<span class="special">)</span><span class="special">;</span>
+  <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782662176"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> s<span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> charT<span class="special">,</span> <span class="keyword">typename</span> traits<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782664768"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> 
+               <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">basic_string</span><span class="special">&lt;</span> <span class="identifier">charT</span><span class="special">,</span> <span class="identifier">traits</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> s<span class="special">)</span><span class="special">;</span>
+  <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782669008"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> s<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.valarray_h"></a>Header &lt;<a href="../../../alps/osiris/std/valarray.h" target="_top">alps/osiris/std/valarray.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+
+  <span class="comment">// deserialize a std::valarray container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782691152"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">valarray</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::valarray container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> <a name="alps.operato_idp140297782699920"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">valarray</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.std.vector_h"></a>Header &lt;<a href="../../../alps/osiris/std/vector.h" target="_top">alps/osiris/std/vector.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782686272"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::vector container </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782695312"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::vector&lt;bool&gt; from compressed form </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782719648"></a><span class="keyword">operator</span><span class="special">&gt;&gt;</span><span class="special">(</span><a class="link" href="../alps/IDump.html" title="Class IDump">alps::IDump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">bool</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// serialize a std::vector&lt;bool&gt; in compressed form </span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Allocator<span class="special">&gt;</span> 
+    <a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> 
+    <a name="alps.operato_idp140297782725600"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><a class="link" href="../alps/ODump.html" title="Class ODump">alps::ODump</a> <span class="special">&amp;</span> dump<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">bool</span><span class="special">,</span> <span class="identifier">Allocator</span> <span class="special">&gt;</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.xdrcore_h"></a>Header &lt;<a href="../../../alps/osiris/xdrcore.h" target="_top">alps/osiris/xdrcore.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis">
+
+<a class="link" href="../bool_t.html" title="Macro bool_t">bool_t</a>
+<a class="link" href="../enum_t.html" title="Macro enum_t">enum_t</a>
+<a class="link" href="../FALSE.html" title="Macro FALSE">FALSE</a>
+<a class="link" href="../TRUE.html" title="Macro TRUE">TRUE</a>
+<a class="link" href="../BYTES_PER_XDR_UNIT.html" title="Macro BYTES_PER_XDR_UNIT">BYTES_PER_XDR_UNIT</a>
+<a class="link" href="../RNDUP.html" title="Macro RNDUP">RNDUP</a>(x)
+<a class="link" href="../XDR_GETINT32_idp140297782807088.html" title="Macro XDR_GETINT32">XDR_GETINT32</a>(xdrs, int32p)
+<a class="link" href="../xdr_getint32_idp140297782754688.html" title="Macro xdr_getint32">xdr_getint32</a>(xdrs, int32p)
+<a class="link" href="../XDR_PUTINT32_idp140297782735184.html" title="Macro XDR_PUTINT32">XDR_PUTINT32</a>(xdrs, int32p)
+<a class="link" href="../xdr_putint32_idp140297782736704.html" title="Macro xdr_putint32">xdr_putint32</a>(xdrs, int32p)
+<a class="link" href="../XDR_GETLONG_idp140297782738112.html" title="Macro XDR_GETLONG">XDR_GETLONG</a>(xdrs, longp)
+<a class="link" href="../xdr_getlong_idp140297782739520.html" title="Macro xdr_getlong">xdr_getlong</a>(xdrs, longp)
+<a class="link" href="../XDR_PUTLONG_idp140297782740928.html" title="Macro XDR_PUTLONG">XDR_PUTLONG</a>(xdrs, longp)
+<a class="link" href="../xdr_putlong_idp140297782746704.html" title="Macro xdr_putlong">xdr_putlong</a>(xdrs, longp)
+<a class="link" href="../XDR_GETBYTES_idp140297782748112.html" title="Macro XDR_GETBYTES">XDR_GETBYTES</a>(xdrs, addr, len)
+<a class="link" href="../xdr_getbytes_idp140297782749872.html" title="Macro xdr_getbytes">xdr_getbytes</a>(xdrs, addr, len)
+<a class="link" href="../XDR_PUTBYTES_idp140297782751632.html" title="Macro XDR_PUTBYTES">XDR_PUTBYTES</a>(xdrs, addr, len)
+<a class="link" href="../xdr_putbytes_idp140297782744720.html" title="Macro xdr_putbytes">xdr_putbytes</a>(xdrs, addr, len)
+<a class="link" href="../XDR_GETPOS_idp140297782785680.html" title="Macro XDR_GETPOS">XDR_GETPOS</a>(xdrs)
+<a class="link" href="../xdr_getpos_idp140297782765904.html" title="Macro xdr_getpos">xdr_getpos</a>(xdrs)
+<a class="link" href="../XDR_SETPOS_idp140297782766960.html" title="Macro XDR_SETPOS">XDR_SETPOS</a>(xdrs, pos)
+<a class="link" href="../xdr_setpos_idp140297782768368.html" title="Macro xdr_setpos">xdr_setpos</a>(xdrs, pos)
+<a class="link" href="../XDR_INLINE_idp140297782758368.html" title="Macro XDR_INLINE">XDR_INLINE</a>(xdrs, len)
+<a class="link" href="../xdr_inline_idp140297782759776.html" title="Macro xdr_inline">xdr_inline</a>(xdrs, len)
+<a class="link" href="../XDR_DESTROY_idp140297782761184.html" title="Macro XDR_DESTROY">XDR_DESTROY</a>(xdrs)
+<a class="link" href="../xdr_destroy_idp140297782762288.html" title="Macro xdr_destroy">xdr_destroy</a>(xdrs)
+<a class="link" href="../NULL_xdrproc_t.html" title="Macro NULL_xdrproc_t">NULL_xdrproc_t</a>
+<a class="link" href="../IXDR_GET_INT32.html" title="Macro IXDR_GET_INT32">IXDR_GET_INT32</a>(buf)
+<a class="link" href="../IXDR_PUT_INT32.html" title="Macro IXDR_PUT_INT32">IXDR_PUT_INT32</a>(buf, v)
+<a class="link" href="../IXDR_GET_U_INT32.html" title="Macro IXDR_GET_U_INT32">IXDR_GET_U_INT32</a>(buf)
+<a class="link" href="../IXDR_PUT_U_INT32.html" title="Macro IXDR_PUT_U_INT32">IXDR_PUT_U_INT32</a>(buf, v)
+<a class="link" href="../IXDR_GET_LONG.html" title="Macro IXDR_GET_LONG">IXDR_GET_LONG</a>(buf)
+<a class="link" href="../IXDR_PUT_LONG.html" title="Macro IXDR_PUT_LONG">IXDR_PUT_LONG</a>(buf, v)
+<a class="link" href="../IXDR_GET_U_LONG.html" title="Macro IXDR_GET_U_LONG">IXDR_GET_U_LONG</a>(buf)
+<a class="link" href="../IXDR_PUT_U_LONG.html" title="Macro IXDR_PUT_U_LONG">IXDR_PUT_U_LONG</a>(buf, v)
+<a class="link" href="../IXDR_GET_BOOL.html" title="Macro IXDR_GET_BOOL">IXDR_GET_BOOL</a>(buf)
+<a class="link" href="../IXDR_GET_ENUM.html" title="Macro IXDR_GET_ENUM">IXDR_GET_ENUM</a>(buf, t)
+<a class="link" href="../IXDR_GET_SHORT.html" title="Macro IXDR_GET_SHORT">IXDR_GET_SHORT</a>(buf)
+<a class="link" href="../IXDR_GET_U_SHORT.html" title="Macro IXDR_GET_U_SHORT">IXDR_GET_U_SHORT</a>(buf)
+<a class="link" href="../IXDR_PUT_BOOL.html" title="Macro IXDR_PUT_BOOL">IXDR_PUT_BOOL</a>(buf, v)
+<a class="link" href="../IXDR_PUT_ENUM.html" title="Macro IXDR_PUT_ENUM">IXDR_PUT_ENUM</a>(buf, v)
+<a class="link" href="../IXDR_PUT_SHORT.html" title="Macro IXDR_PUT_SHORT">IXDR_PUT_SHORT</a>(buf, v)
+<a class="link" href="../IXDR_PUT_U_SHORT.html" title="Macro IXDR_PUT_U_SHORT">IXDR_PUT_U_SHORT</a>(buf, v)
+<a class="link" href="../MAX_NETOBJ_SZ.html" title="Macro MAX_NETOBJ_SZ">MAX_NETOBJ_SZ</a></pre>
+<pre class="synopsis">
+<span class="keyword">struct</span> <a class="link" href="reference.html#XDR">XDR</a><span class="special">;</span>
+<span class="keyword">struct</span> <a class="link" href="../xdr_discrim.html" title="Struct xdr_discrim">xdr_discrim</a><span class="special">;</span>
+<span class="keyword">struct</span> <a class="link" href="reference.html#netobj">netobj</a><span class="special">;</span>
+
+<span class="keyword">typedef</span> <span class="keyword">struct</span> <a class="link" href="reference.html#XDR">XDR</a> <a name="XDR"></a><span class="identifier">XDR</span><span class="special">;</span>
+<span class="keyword">typedef</span> <span class="identifier">bool_t</span><span class="special">(</span><span class="special">*</span> <a name="xdrproc_t"></a><span class="identifier">xdrproc_t</span><span class="special">;</span>
+<span class="keyword">typedef</span> <span class="keyword">struct</span> <a class="link" href="reference.html#netobj">netobj</a> <a name="netobj"></a><span class="identifier">netobj</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_void"></a><span class="identifier">xdr_void</span><span class="special">(</span><span class="keyword">void</span><span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_short"></a><span class="identifier">xdr_short</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">short</span> <span class="special">*</span> __sp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_u_short"></a><span class="identifier">xdr_u_short</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">u_short</span> <span class="special">*</span> __usp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_int"></a><span class="identifier">xdr_int</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">int</span> <span class="special">*</span> __ip<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_u_int"></a><span class="identifier">xdr_u_int</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">u_int</span> <span class="special">*</span> __up<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_long"></a><span class="identifier">xdr_long</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">long</span> <span class="special">*</span> __lp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_u_long"></a><span class="identifier">xdr_u_long</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">u_long</span> <span class="special">*</span> __ulp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_int8_t"></a><span class="identifier">xdr_int8_t</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">int8_t</span> <span class="special">*</span> __ip<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_uint8_t"></a><span class="identifier">xdr_uint8_t</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">uint8_t</span> <span class="special">*</span> __up<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_int16_t"></a><span class="identifier">xdr_int16_t</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">int16_t</span> <span class="special">*</span> __ip<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_uint16_t"></a><span class="identifier">xdr_uint16_t</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">uint16_t</span> <span class="special">*</span> __up<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_int32_t"></a><span class="identifier">xdr_int32_t</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">int32_t</span> <span class="special">*</span> __ip<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_uint32_t"></a><span class="identifier">xdr_uint32_t</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">uint32_t</span> <span class="special">*</span> __up<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_int64_t"></a><span class="identifier">xdr_int64_t</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">int64_t</span> <span class="special">*</span> __ip<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_uint64_t"></a><span class="identifier">xdr_uint64_t</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">uint64_t</span> <span class="special">*</span> __up<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_bool"></a><span class="identifier">xdr_bool</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">bool_t</span> <span class="special">*</span> __bp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_enum"></a><span class="identifier">xdr_enum</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">enum_t</span> <span class="special">*</span> __ep<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_array"></a><span class="identifier">xdr_array</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> _xdrs<span class="special">,</span> <span class="identifier">caddr_t</span> <span class="special">*</span> __addrp<span class="special">,</span> <span class="identifier">u_int</span> <span class="special">*</span> __sizep<span class="special">,</span> 
+                 <span class="identifier">u_int</span> __maxsize<span class="special">,</span> <span class="identifier">u_int</span> __elsize<span class="special">,</span> <span class="identifier">xdrproc_t</span> __elproc<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_bytes"></a><span class="identifier">xdr_bytes</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">*</span> __cpp<span class="special">,</span> <span class="identifier">u_int</span> <span class="special">*</span> __sizep<span class="special">,</span> 
+                 <span class="identifier">u_int</span> __maxsize<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_opaque"></a><span class="identifier">xdr_opaque</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">caddr_t</span> __cp<span class="special">,</span> <span class="identifier">u_int</span> __cnt<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_string"></a><span class="identifier">xdr_string</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">*</span> __cpp<span class="special">,</span> <span class="identifier">u_int</span> __maxsize<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_union"></a><span class="identifier">xdr_union</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">enum_t</span> <span class="special">*</span> __dscmp<span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span> __unp<span class="special">,</span> 
+                 <span class="identifier">__const</span> <span class="keyword">struct</span> <a class="link" href="../xdr_discrim.html" title="Struct xdr_discrim">xdr_discrim</a> <span class="special">*</span> __choices<span class="special">,</span> <span class="identifier">xdrproc_t</span> dfault<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_char"></a><span class="identifier">xdr_char</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span> __cp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_u_char"></a><span class="identifier">xdr_u_char</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">u_char</span> <span class="special">*</span> __cp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_vector"></a><span class="identifier">xdr_vector</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span> __basep<span class="special">,</span> <span class="identifier">u_int</span> __nelem<span class="special">,</span> 
+                  <span class="identifier">u_int</span> __elemsize<span class="special">,</span> <span class="identifier">xdrproc_t</span> __xdr_elem<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_float"></a><span class="identifier">xdr_float</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">float</span> <span class="special">*</span> __fp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_double"></a><span class="identifier">xdr_double</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">double</span> <span class="special">*</span> __dp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_reference"></a><span class="identifier">xdr_reference</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">caddr_t</span> <span class="special">*</span> __xpp<span class="special">,</span> <span class="identifier">u_int</span> __size<span class="special">,</span> 
+                     <span class="identifier">xdrproc_t</span> __proc<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_pointer"></a><span class="identifier">xdr_pointer</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">*</span> __objpp<span class="special">,</span> <span class="identifier">u_int</span> __obj_size<span class="special">,</span> 
+                   <span class="identifier">xdrproc_t</span> __xdr_obj<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_wrapstring"></a><span class="identifier">xdr_wrapstring</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">*</span> __cpp<span class="special">)</span><span class="special">;</span>
+<span class="identifier">u_long</span> <a name="xdr_sizeof"></a><span class="identifier">xdr_sizeof</span><span class="special">(</span><span class="identifier">xdrproc_t</span><span class="special">,</span> <span class="keyword">void</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdr_netobj"></a><span class="identifier">xdr_netobj</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="keyword">struct</span> <a class="link" href="reference.html#netobj">netobj</a> <span class="special">*</span> __np<span class="special">)</span><span class="special">;</span>
+<span class="keyword">void</span> <a name="xdrmem_create"></a><span class="identifier">xdrmem_create</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">__const</span> <span class="identifier">caddr_t</span> __addr<span class="special">,</span> <span class="identifier">u_int</span> __size<span class="special">,</span> 
+                   <span class="keyword">enum</span> <span class="identifier">xdr_op</span> __xop<span class="special">)</span><span class="special">;</span>
+<span class="keyword">void</span> <a name="xdrstdio_create"></a><span class="identifier">xdrstdio_create</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">FILE</span> <span class="special">*</span> __file<span class="special">,</span> <span class="keyword">enum</span> <span class="identifier">xdr_op</span> __xop<span class="special">)</span><span class="special">;</span>
+<span class="keyword">void</span> <a name="xdrrec_create"></a><span class="identifier">xdrrec_create</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">u_int</span> __sendsize<span class="special">,</span> <span class="identifier">u_int</span> __recvsize<span class="special">,</span> 
+                   <span class="identifier">caddr_t</span> __tcp_handle<span class="special">,</span> 
+                   <span class="keyword">int</span><span class="special">(</span><span class="special">*</span><span class="special">)</span><span class="special">(</span><span class="keyword">char</span> <span class="special">*</span><span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span> __readit<span class="special">,</span> 
+                   <span class="keyword">int</span><span class="special">(</span><span class="special">*</span><span class="special">)</span><span class="special">(</span><span class="keyword">char</span> <span class="special">*</span><span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span> __writeit<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdrrec_endofrecord"></a><span class="identifier">xdrrec_endofrecord</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">,</span> <span class="identifier">bool_t</span> __sendnow<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdrrec_skiprecord"></a><span class="identifier">xdrrec_skiprecord</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">)</span><span class="special">;</span>
+<span class="identifier">bool_t</span> <a name="xdrrec_eof"></a><span class="identifier">xdrrec_eof</span><span class="special">(</span><a class="link" href="reference.html#XDR">XDR</a> <span class="special">*</span> __xdrs<span class="special">)</span><span class="special">;</span>
+<span class="keyword">void</span> <a name="xdr_free"></a><span class="identifier">xdr_free</span><span class="special">(</span><span class="identifier">xdrproc_t</span> __proc<span class="special">,</span> <span class="keyword">char</span> <span class="special">*</span> __objp<span class="special">)</span><span class="special">;</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.osiris.xdrdump_h"></a>Header &lt;<a href="../../../alps/osiris/xdrdump.h" target="_top">alps/osiris/xdrdump.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/IXDRDump.html" title="Class IXDRDump">IXDRDump</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/IXDRFileDump.html" title="Class IXDRFileDump">IXDRFileDump</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/OXDRDump.html" title="Class OXDRDump">OXDRDump</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/OXDRFileDump.html" title="Class OXDRFileDump">OXDRFileDump</a><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../osiris.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../alps/archive_idump.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

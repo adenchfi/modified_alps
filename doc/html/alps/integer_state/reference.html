@@ -1,0 +1,74 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class reference</title>
+<link rel="stylesheet" href="../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../../index.html" title="The ALPS Libraries">
+<link rel="up" href="../integer_state.html#idp140204659794976" title="Description">
+<link rel="prev" href="../hamiltonian_matrix.html" title="Class template hamiltonian_matrix">
+<link rel="next" href="../integer_idp140297834821888.html" title="Class template integer_state&lt;I, 1&gt;">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../../alps_logo.gif"></td>
+<td align="center"><a href="../.././index.html">Home</a></td>
+<td align="center"><a href="../.././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="../.././overview/license.html">License</a></td>
+<td align="center"><a href="../.././overview/support.html">Support</a></td>
+<td align="center"><a href="../.././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../hamiltonian_matrix.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../integer_state.html#idp140204659794976"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="../integer_idp140297834821888.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.integer_state.reference"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class reference</span></h2>
+<p>alps::integer_state::reference</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../model/reference.html#header.alps.model.integer_state_h" title="Header &lt;alps/model/integer_state.h&gt;">alps/model/integer_state.h</a>&gt;
+
+</span>
+
+<span class="keyword">class</span> <a class="link" href="reference.html" title="Class reference">reference</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="reference.html#alps.integer_state.referenceconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="reference.html#idp140297834807424-bb"><span class="identifier">reference</span></a><span class="special">(</span><span class="identifier">I</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="reference.html" title="Class reference">reference</a> <span class="special">&amp;</span> <a class="link" href="reference.html#idp140297834808704-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="identifier">T</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="reference.html#idp140297834806144-bb">public member functions</a></span>
+  <a class="link" href="reference.html#idp140297834806528-bb"><span class="keyword">operator</span> <span class="keyword">int</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204659883664"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204659884064"></a><h3>
+<a name="alps.integer_state.referenceconstruct-copy-destruct"></a><code class="computeroutput">reference</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297834807424-bb"></a><span class="identifier">reference</span><span class="special">(</span><span class="identifier">I</span> <span class="special">&amp;</span> s<span class="special">,</span> <span class="keyword">int</span> i<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="reference.html" title="Class reference">reference</a> <span class="special">&amp;</span> <a name="idp140297834808704-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="identifier">T</span> x<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204659900288"></a><h3>
+<a name="idp140297834806144-bb"></a><code class="computeroutput">reference</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp140297834806528-bb"></a><span class="keyword">operator</span> <span class="keyword">int</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../hamiltonian_matrix.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../integer_state.html#idp140204659794976"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="../integer_idp140297834821888.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

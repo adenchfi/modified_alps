@@ -1,0 +1,114 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class MCSimulation</title>
+<link rel="stylesheet" href="../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../../index.html" title="The ALPS Libraries">
+<link rel="up" href="../../scheduler/reference.html#header.alps.scheduler.montecarlo_h" title="Header &lt;alps/scheduler/montecarlo.h&gt;">
+<link rel="prev" href="MCRun.html" title="Class MCRun">
+<link rel="next" href="SimpleMCFactory.html" title="Class template SimpleMCFactory">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../../alps_logo.gif"></td>
+<td align="center"><a href="../.././index.html">Home</a></td>
+<td align="center"><a href="../.././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="../.././overview/license.html">License</a></td>
+<td align="center"><a href="../.././overview/support.html">Support</a></td>
+<td align="center"><a href="../.././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="MCRun.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../scheduler/reference.html#header.alps.scheduler.montecarlo_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="SimpleMCFactory.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.scheduler.MCSimulation"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class MCSimulation</span></h2>
+<p>alps::scheduler::MCSimulation</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../scheduler/reference.html#header.alps.scheduler.montecarlo_h" title="Header &lt;alps/scheduler/montecarlo.h&gt;">alps/scheduler/montecarlo.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="MCSimulation.html" title="Class MCSimulation">MCSimulation</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">scheduler</span><span class="special">::</span><span class="identifier">WorkerTask</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="MCSimulation.html#alps.scheduler.MCSimulationconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="MCSimulation.html#idp140297830293264-bb"><span class="identifier">MCSimulation</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="MCSimulation.html#idp140297830294736-bb"><span class="identifier">MCSimulation</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="MCSimulation.html#idp140297830282448-bb">public member functions</a></span>
+  <span class="identifier">ObservableSet</span> <a class="link" href="MCSimulation.html#idp140297830282928-bb"><span class="identifier">get_measurements</span></a><span class="special">(</span><span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">ObservableSet</span> <a class="link" href="MCSimulation.html#idp140297830284752-bb"><span class="identifier">get_and_remove_observable</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="MCSimulation.html" title="Class MCSimulation">MCSimulation</a> <span class="special">&amp;</span> <a class="link" href="MCSimulation.html#idp140297830286960-bb"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Observable</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="MCSimulation.html#idp140297830288560-bb"><span class="identifier">addObservable</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Observable</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <a class="link" href="../../scheduler/reference.html#alps.scheduler.ResultType">ResultType</a> <a class="link" href="MCSimulation.html#idp140297830289904-bb"><span class="identifier">get_summary</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <a class="link" href="../../scheduler/reference.html#alps.scheduler.ResultType">ResultType</a> <a class="link" href="MCSimulation.html#idp140297830291216-bb"><span class="identifier">get_summary</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="MCSimulation.html#idp140297830296208-bb">public static functions</a></span>
+  <span class="keyword">static</span> <span class="keyword">void</span> <a class="link" href="MCSimulation.html#idp140297830296688-bb"><span class="identifier">print_copyright</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="MCSimulation.html#idp140297830298384-bb">private member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="MCSimulation.html#idp140297830298864-bb"><span class="identifier">accumulate_measurements</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="identifier">ObservableSet</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">,</span> 
+                               <span class="identifier">ObservableSet</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a class="link" href="MCSimulation.html#idp140297830301040-bb"><span class="identifier">worker_tag</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> 
+  <a class="link" href="MCSimulation.html#idp140297830302224-bb"><span class="identifier">write_xml_body</span></a><span class="special">(</span><span class="identifier">alps</span><span class="special">::</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="MCSimulation.html#idp140297830305232-bb"><span class="identifier">handle_tag</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204665869328"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204665869728"></a><h3>
+<a name="alps.scheduler.MCSimulationconstruct-copy-destruct"></a><code class="computeroutput">MCSimulation</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297830293264-bb"></a><span class="identifier">MCSimulation</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span> w<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span> p<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297830294736-bb"></a><span class="identifier">MCSimulation</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span> w<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> p<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204665889552"></a><h3>
+<a name="idp140297830282448-bb"></a><code class="computeroutput">MCSimulation</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="identifier">ObservableSet</span> <a name="idp140297830282928-bb"></a><span class="identifier">get_measurements</span><span class="special">(</span><span class="keyword">bool</span> compact <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">ObservableSet</span> 
+<a name="idp140297830284752-bb"></a><span class="identifier">get_and_remove_observable</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> obsname<span class="special">,</span> <span class="keyword">bool</span> compact <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a class="link" href="MCSimulation.html" title="Class MCSimulation">MCSimulation</a> <span class="special">&amp;</span> <a name="idp140297830286960-bb"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Observable</span> <span class="special">&amp;</span> obs<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297830288560-bb"></a><span class="identifier">addObservable</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Observable</span> <span class="special">&amp;</span> obs<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <a class="link" href="../../scheduler/reference.html#alps.scheduler.ResultType">ResultType</a> <a name="idp140297830289904-bb"></a><span class="identifier">get_summary</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <a class="link" href="../../scheduler/reference.html#alps.scheduler.ResultType">ResultType</a> <a name="idp140297830291216-bb"></a><span class="identifier">get_summary</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204665933472"></a><h3>
+<a name="idp140297830296208-bb"></a><code class="computeroutput">MCSimulation</code> public static functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">static</span> <span class="keyword">void</span> <a name="idp140297830296688-bb"></a><span class="identifier">print_copyright</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204665942320"></a><h3>
+<a name="idp140297830298384-bb"></a><code class="computeroutput">MCSimulation</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297830298864-bb"></a><span class="identifier">accumulate_measurements</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="identifier">ObservableSet</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span> all_measurements<span class="special">,</span> 
+                             <span class="identifier">ObservableSet</span> <span class="keyword">const</span> <span class="special">&amp;</span> measurements<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a name="idp140297830301040-bb"></a><span class="identifier">worker_tag</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> 
+<a name="idp140297830302224-bb"></a><span class="identifier">write_xml_body</span><span class="special">(</span><span class="identifier">alps</span><span class="special">::</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="keyword">const</span> <span class="special">&amp;</span> fn<span class="special">,</span> <span class="keyword">bool</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297830305232-bb"></a><span class="identifier">handle_tag</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="MCRun.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../scheduler/reference.html#header.alps.scheduler.montecarlo_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="SimpleMCFactory.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Examples</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../hdf5.html" title="Chapter 11. Alps/HDF5 Library">
+<link rel="prev" href="../hdf5.html" title="Chapter 11. Alps/HDF5 Library">
+<link rel="next" href="../ietl.html" title="Chapter 12. IETL">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../hdf5.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../hdf5.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../ietl.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="hdf5.examples"></a>Examples</h2></div></div></div>
+<p>
+      write a scalar to hdf5
+</p>
+<pre class="programlisting"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">oarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="identifier">ar</span> <span class="special">&lt;&lt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/value"</span><span class="special">,</span> <span class="number">42</span><span class="special">);</span>
+</pre>
+<p>
+      read a scalar from hdf5
+</p>
+<pre class="programlisting"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">iarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="keyword">int</span> <span class="identifier">i</span><span class="special">;</span>
+<span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/value"</span><span class="special">,</span> <span class="identifier">i</span><span class="special">);</span>
+</pre>
+<p>
+      reading a scalar as string
+</p>
+<pre class="programlisting"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">iarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"bela.h5"</span><span class="special">);</span>
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">s</span><span class="special">;</span>
+<span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/value"</span><span class="special">,</span> <span class="identifier">s</span><span class="special">);</span>
+</pre>
+<p>
+      write a std::vector to hdf5
+</p>
+<pre class="programlisting"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">oarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;</span> <span class="identifier">vec</span><span class="special">(</span><span class="number">5</span><span class="special">,</span> <span class="number">42</span><span class="special">);</span>
+<span class="identifier">ar</span> <span class="special">&lt;&lt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/path/2/vec"</span><span class="special">,</span> <span class="identifier">vec</span><span class="special">);</span>
+</pre>
+<p>
+      read a std::vector from hdf5
+</p>
+<pre class="programlisting"><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;</span> <span class="identifier">vec</span><span class="special">;</span>
+<span class="comment">// fill the vector</span>
+<span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">iarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/path/2/vec"</span><span class="special">,</span> <span class="identifier">vec</span><span class="special">);</span>
+</pre>
+<p>
+    </p>
+<p>
+      write a string to hdf5
+</p>
+<pre class="programlisting"><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">str</span><span class="special">(</span><span class="string">"foobar"</span><span class="special">);</span>
+<span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">oarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="identifier">ar</span> <span class="special">&lt;&lt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/foo/bar"</span><span class="special">,</span> <span class="identifier">str</span><span class="special">);</span>
+</pre>
+<p>
+      read a string form hdf5
+</p>
+<pre class="programlisting"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">iarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">str</span><span class="special">;</span>
+<span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/foo/bar"</span><span class="special">,</span> <span class="identifier">s</span><span class="special">);</span>
+</pre>
+<p>
+    </p>
+<p>
+      write a c-array to hdf5
+</p>
+<pre class="programlisting"><span class="keyword">long</span> <span class="special">*</span><span class="identifier">d</span> <span class="special">=</span> <span class="keyword">new</span> <span class="keyword">int</span><span class="special">[</span><span class="number">17</span><span class="special">];</span>
+<span class="comment">// fill the array</span>
+<span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">oarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="identifier">ar</span> <span class="special">&lt;&lt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/c/array"</span><span class="special">,</span> <span class="identifier">d</span><span class="special">,</span> <span class="number">17</span><span class="special">);</span>
+<span class="keyword">delete</span><span class="special">[]</span> <span class="identifier">d</span><span class="special">;</span>
+</pre>
+<p>
+      read a c-array from hdf5
+</p>
+<pre class="programlisting"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">iarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="identifier">size</span> <span class="special">=</span> <span class="identifier">ar</span><span class="special">.</span><span class="identifier">extends</span><span class="special">(</span><span class="string">"/c/array"</span><span class="special">)[</span><span class="number">0</span><span class="special">];</span>
+<span class="keyword">long</span> <span class="special">*</span><span class="identifier">d</span> <span class="special">=</span> <span class="keyword">new</span> <span class="keyword">long</span><span class="special">[</span><span class="identifier">size</span><span class="special">];</span>
+<span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/c/array"</span><span class="special">,</span> <span class="identifier">d</span><span class="special">,</span> <span class="identifier">size</span><span class="special">);</span>
+<span class="keyword">delete</span><span class="special">[]</span> <span class="identifier">d</span><span class="special">;</span>
+</pre>
+<p>
+    </p>
+<p>
+      write / read a class to / from hdf5 (if the path inside a class does not start
+      with "/", it is taken as a relative path. e.g d will be saved to
+      "/my/class/value")
+</p>
+<pre class="programlisting"><span class="keyword">class</span> <span class="identifier">my_class</span> <span class="special">{</span>
+	<span class="keyword">public</span><span class="special">:</span>
+		<span class="identifier">my_class</span><span class="special">(</span><span class="keyword">double</span> <span class="identifier">v</span> <span class="special">=</span> <span class="number">0</span><span class="special">):</span> <span class="identifier">d</span><span class="special">(</span><span class="identifier">v</span><span class="special">)</span> <span class="special">{}</span>
+		<span class="keyword">double</span> <span class="identifier">get_value</span><span class="special">()</span> <span class="special">{</span> <span class="keyword">return</span> <span class="identifier">d</span><span class="special">;</span> <span class="special">}</span>
+		<span class="keyword">void</span> <span class="identifier">serialize</span><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">iarchive</span> <span class="special">&amp;</span> <span class="identifier">ar</span><span class="special">)</span> <span class="special">{</span> <span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"value"</span><span class="special">,</span> <span class="identifier">d</span><span class="special">);</span> <span class="special">}</span>
+		<span class="keyword">void</span> <span class="identifier">serialize</span><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">oarchive</span> <span class="special">&amp;</span> <span class="identifier">ar</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">{</span> <span class="identifier">ar</span> <span class="special">&lt;&lt;</span> <span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"value"</span><span class="special">,</span> <span class="identifier">d</span><span class="special">);</span> <span class="special">}</span>
+	<span class="keyword">private</span><span class="special">:</span>
+		<span class="keyword">double</span> <span class="identifier">d</span><span class="special">;</span>
+	<span class="special">};</span>
+<span class="identifier">main</span><span class="special">(...)</span> <span class="special">{</span>
+	<span class="special">{</span>
+		<span class="identifier">my_class</span> <span class="identifier">c</span><span class="special">(</span><span class="number">42</span><span class="special">);</span>
+		<span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">oarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+		<span class="identifier">ar</span> <span class="special">&lt;&lt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/my/class"</span><span class="special">,</span> <span class="identifier">c</span><span class="special">);</span>
+	<span class="special">}</span>
+	<span class="special">{</span>
+		<span class="identifier">my_class</span> <span class="identifier">c</span><span class="special">();</span>
+		<span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">iarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+		<span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/my/class"</span><span class="special">,</span> <span class="identifier">c</span><span class="special">);</span>
+	<span class="special">}</span>
+</pre>
+<p>
+      write / read an custom type to / from hdf5
+</p>
+<pre class="programlisting"><span class="keyword">typedef</span> <span class="keyword">enum</span> <span class="special">{</span> <span class="identifier">A</span> <span class="special">=</span> <span class="number">13</span><span class="special">,</span> <span class="identifier">B</span> <span class="special">=</span> <span class="number">23</span> <span class="special">}</span> <span class="identifier">enum_type</span><span class="special">;</span>
+<span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+	<span class="keyword">namespace</span> <span class="identifier">hdf5</span> <span class="special">{</span>
+		<span class="keyword">template</span> <span class="special">&lt;&gt;</span> <span class="identifier">oarchive</span> <span class="special">&amp;</span> <span class="identifier">serialize</span><span class="special">(</span><span class="identifier">oarchive</span> <span class="special">&amp;</span> <span class="identifier">ar</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="identifier">p</span><span class="special">,</span> <span class="identifier">enum_type</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="identifier">v</span><span class="special">)</span> <span class="special">{</span>
+			<span class="identifier">ar</span> <span class="special">&lt;&lt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="identifier">p</span><span class="special">,</span> <span class="keyword">int</span><span class="special">(</span><span class="identifier">v</span><span class="special">));</span>
+			<span class="keyword">return</span> <span class="identifier">ar</span><span class="special">;</span>
+		<span class="special">}</span>
+		<span class="keyword">template</span> <span class="special">&lt;&gt;</span> <span class="identifier">iarchive</span> <span class="special">&amp;</span> <span class="identifier">serialize</span><span class="special">(</span><span class="identifier">iarchive</span> <span class="special">&amp;</span> <span class="identifier">ar</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="identifier">p</span><span class="special">,</span> <span class="identifier">enum_type</span> <span class="special">&amp;</span> <span class="identifier">v</span><span class="special">)</span> <span class="special">{</span>
+			<span class="keyword">int</span> <span class="identifier">tmp</span><span class="special">;</span>
+			<span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="identifier">p</span><span class="special">,</span> <span class="identifier">tmp</span><span class="special">);</span>
+			<span class="keyword">switch</span> <span class="special">(</span><span class="identifier">tmp</span><span class="special">)</span> <span class="special">{</span>
+				<span class="keyword">case</span> <span class="number">13</span><span class="special">:</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">A</span><span class="special">;</span> <span class="keyword">break</span><span class="special">;</span>
+				<span class="keyword">case</span> <span class="number">23</span><span class="special">:</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">B</span><span class="special">;</span> <span class="keyword">break</span><span class="special">;</span>
+			<span class="special">}</span>
+			<span class="keyword">return</span> <span class="identifier">ar</span><span class="special">;</span>
+		<span class="special">}</span>
+	<span class="special">}</span>
+<span class="special">}</span>
+<span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span> <span class="special">{</span>
+	<span class="special">{</span>
+		<span class="identifier">enum_type</span> <span class="identifier">e</span> <span class="special">=</span> <span class="identifier">A</span><span class="special">;</span>
+		<span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">oarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+		<span class="identifier">ar</span> <span class="special">&lt;&lt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/my/enum"</span><span class="special">,</span> <span class="identifier">e</span><span class="special">);</span>
+	<span class="special">}</span>
+	<span class="special">{</span>
+		<span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">iarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+		<span class="identifier">enum_type</span> <span class="identifier">e</span><span class="special">;</span>
+		<span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/my/enum"</span><span class="special">,</span> <span class="identifier">e</span><span class="special">);</span>
+	<span class="special">}</span>
+<span class="special">}</span>
+</pre>
+<p>
+      write an attribute to hdf5 (an attributes can only be scalar type or string)
+</p>
+<pre class="programlisting"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">oarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="comment">// the parent of an attribute must exist</span>
+<span class="identifier">ar</span><span class="special">.</span><span class="identifier">serialize</span><span class="special">(</span><span class="string">"/foo"</span><span class="special">);</span>
+<span class="identifier">ar</span> <span class="special">&lt;&lt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/foo/@bar"</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">(</span><span class="string">"hello"</span><span class="special">));</span>
+</pre>
+<p>
+      read an attribute from hdf5
+</p>
+<pre class="programlisting"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">iarchive</span> <span class="identifier">ar</span><span class="special">(</span><span class="string">"data.h5"</span><span class="special">);</span>
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">s</span><span class="special">;</span>
+<span class="identifier">ar</span> <span class="special">&gt;&gt;</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">make_pvp</span><span class="special">(</span><span class="string">"/foo/@bar"</span><span class="special">,</span> <span class="identifier">s</span><span class="special">);</span>
+</pre>
+<p>
+    </p>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2009, 2010 Lukas Gamper</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../hdf5.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../hdf5.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../ietl.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

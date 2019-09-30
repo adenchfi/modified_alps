@@ -1,0 +1,123 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template bandlanczos</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="reference.html#header.alps.src.ietl.bandlanczos_h" title="Header &lt;alps/src/ietl/bandlanczos.h&gt;">
+<link rel="prev" href="reference.html" title="Reference">
+<link rel="next" href="indexer.html" title="Class indexer">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="reference.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="reference.html#header.alps.src.ietl.bandlanczos_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="indexer.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="ietl.bandlanczos"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template bandlanczos</span></h2>
+<p>ietl::bandlanczos</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="reference.html#header.alps.src.ietl.bandlanczos_h" title="Header &lt;alps/src/ietl/bandlanczos.h&gt;">alps/src/ietl/bandlanczos.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> MATRIX<span class="special">,</span> <span class="keyword">typename</span> VS<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="bandlanczos.html" title="Class template bandlanczos">bandlanczos</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">VS</span><span class="special">::</span><span class="identifier">vector_type</span>                                    <a name="ietl.bandlanczos.vector_type"></a><span class="identifier">vector_type</span><span class="special">;</span>   
+  <span class="keyword">typedef</span> <span class="identifier">VS</span><span class="special">::</span><span class="identifier">scalar_type</span>                                    <a name="ietl.bandlanczos.scalar_type"></a><span class="identifier">scalar_type</span><span class="special">;</span>   
+  <span class="keyword">typedef</span> <a class="link" href="number_traits.html" title="Struct template number_traits">ietl::number_traits</a><span class="special">&lt;</span> <span class="identifier">scalar_type</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">magnitude_type</span> <a name="ietl.bandlanczos.magnitude_type"></a><span class="identifier">magnitude_type</span><span class="special">;</span>
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">scalar_type</span> <span class="special">&gt;</span>                         <a name="ietl.bandlanczos.eigenvec_type"></a><span class="identifier">eigenvec_type</span><span class="special">;</span> 
+
+  <span class="comment">// <a class="link" href="bandlanczos.html#ietl.bandlanczosconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="bandlanczos.html#idp140297845123248-bb"><span class="identifier">bandlanczos</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">MATRIX</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">VS</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="keyword">int</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="bandlanczos.html#idp140297845125440-bb"><span class="special">~</span><span class="identifier">bandlanczos</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="bandlanczos.html#idp140297845113392-bb">public member functions</a></span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> GEN<span class="special">,</span> <span class="keyword">typename</span> ITER<span class="special">&gt;</span> 
+    <span class="keyword">void</span> <a class="link" href="bandlanczos.html#idp140297845113920-bb"><span class="identifier">calculate_eigenvalues</span></a><span class="special">(</span><span class="identifier">ITER</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">GEN</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> GEN<span class="special">,</span> <span class="keyword">typename</span> ITER<span class="special">&gt;</span> 
+    <span class="keyword">void</span> <a class="link" href="bandlanczos.html#idp140297845117296-bb"><span class="identifier">calculate_eigenvectors</span></a><span class="special">(</span><span class="identifier">ITER</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">GEN</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">vector_type</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="bandlanczos.html#idp140297845120672-bb"><span class="identifier">eigenvectors</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="bandlanczos.html#idp140297845121488-bb"><span class="identifier">multiplicities</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">magnitude_type</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="bandlanczos.html#idp140297845122288-bb"><span class="identifier">eigenvalues</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="bandlanczos.html#idp140297845125712-bb">private member functions</a></span>
+  <span class="keyword">bool</span> <a class="link" href="bandlanczos.html#idp140297845126240-bb"><span class="identifier">convergence_test</span></a><span class="special">(</span><span class="keyword">const</span> <span class="keyword">int</span><span class="special">,</span> <span class="keyword">int</span><span class="special">,</span> <span class="keyword">int</span><span class="special">,</span> <span class="identifier">magnitude_type</span><span class="special">,</span> <span class="identifier">magnitude_type</span><span class="special">,</span> 
+                        <span class="keyword">bool</span><span class="special">,</span> <span class="keyword">bool</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">int</span> <a class="link" href="bandlanczos.html#idp140297845131536-bb"><span class="identifier">calc_approx_eigenvalues</span></a><span class="special">(</span><span class="keyword">const</span> <span class="keyword">int</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span><span class="special">,</span> <span class="identifier">magnitude_type</span><span class="special">,</span> <span class="keyword">bool</span><span class="special">,</span> <span class="keyword">bool</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="bandlanczos.html#idp140297845135552-bb"><span class="identifier">getev_</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">fortran_int_t</span><span class="special">,</span> <span class="keyword">double</span><span class="special">,</span> <span class="identifier">fortran_int_t</span><span class="special">,</span> <span class="keyword">double</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="bandlanczos.html#idp140297845138912-bb"><span class="identifier">getev_</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">fortran_int_t</span><span class="special">,</span> <span class="keyword">float</span><span class="special">,</span> <span class="identifier">fortran_int_t</span><span class="special">,</span> <span class="keyword">float</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="bandlanczos.html#idp140297845142272-bb"><span class="identifier">getev_</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">fortran_int_t</span><span class="special">,</span> <span class="keyword">double</span><span class="special">,</span> <span class="identifier">fortran_int_t</span><span class="special">,</span> 
+              <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="keyword">double</span> <span class="special">&gt;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="bandlanczos.html#idp140297845145648-bb"><span class="identifier">getev_</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">fortran_int_t</span><span class="special">,</span> <span class="keyword">float</span><span class="special">,</span> <span class="identifier">fortran_int_t</span><span class="special">,</span> 
+              <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="keyword">float</span> <span class="special">&gt;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204670444688"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204670445088"></a><h3>
+<a name="ietl.bandlanczosconstruct-copy-destruct"></a><code class="computeroutput">bandlanczos</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297845123248-bb"></a><span class="identifier">bandlanczos</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">MATRIX</span> <span class="special">&amp;</span> matrix<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">VS</span> <span class="special">&amp;</span> vec<span class="special">,</span> <span class="keyword">const</span> <span class="keyword">int</span> <span class="special">&amp;</span> p<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297845125440-bb"></a><span class="special">~</span><span class="identifier">bandlanczos</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204670461440"></a><h3>
+<a name="idp140297845113392-bb"></a><code class="computeroutput">bandlanczos</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> GEN<span class="special">,</span> <span class="keyword">typename</span> ITER<span class="special">&gt;</span> 
+  <span class="keyword">void</span> <a name="idp140297845113920-bb"></a><span class="identifier">calculate_eigenvalues</span><span class="special">(</span><span class="identifier">ITER</span> <span class="special">&amp;</span> iter<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">GEN</span> <span class="special">&amp;</span> gen<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> GEN<span class="special">,</span> <span class="keyword">typename</span> ITER<span class="special">&gt;</span> 
+  <span class="keyword">void</span> <a name="idp140297845117296-bb"></a><span class="identifier">calculate_eigenvectors</span><span class="special">(</span><span class="identifier">ITER</span> <span class="special">&amp;</span> iter<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">GEN</span> <span class="special">&amp;</span> gen<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">vector_type</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297845120672-bb"></a><span class="identifier">eigenvectors</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297845121488-bb"></a><span class="identifier">multiplicities</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">magnitude_type</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297845122288-bb"></a><span class="identifier">eigenvalues</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204670526864"></a><h3>
+<a name="idp140297845125712-bb"></a><code class="computeroutput">bandlanczos</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297845126240-bb"></a><span class="identifier">convergence_test</span><span class="special">(</span><span class="keyword">const</span> <span class="keyword">int</span> dim<span class="special">,</span> <span class="keyword">int</span> pc<span class="special">,</span> <span class="keyword">int</span> evs<span class="special">,</span> <span class="identifier">magnitude_type</span> dep_tol<span class="special">,</span> 
+                      <span class="identifier">magnitude_type</span> ghost_tol<span class="special">,</span> <span class="keyword">bool</span> ghost_discarding<span class="special">,</span> 
+                      <span class="keyword">bool</span> low<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">int</span> <a name="idp140297845131536-bb"></a><span class="identifier">calc_approx_eigenvalues</span><span class="special">(</span><span class="keyword">const</span> <span class="keyword">int</span> <span class="special">&amp;</span> dim<span class="special">,</span> <span class="keyword">int</span> evs<span class="special">,</span> 
+                            <span class="identifier">magnitude_type</span> ghost_tol<span class="special">,</span> <span class="keyword">bool</span> ghost_discarding<span class="special">,</span> 
+                            <span class="keyword">bool</span> low<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297845135552-bb"></a><span class="identifier">getev_</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">fortran_int_t</span> dim<span class="special">,</span> <span class="keyword">double</span> w<span class="special">,</span> <span class="identifier">fortran_int_t</span> info<span class="special">,</span> 
+            <span class="keyword">double</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297845138912-bb"></a><span class="identifier">getev_</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">fortran_int_t</span> dim<span class="special">,</span> <span class="keyword">float</span> w<span class="special">,</span> <span class="identifier">fortran_int_t</span> info<span class="special">,</span> <span class="keyword">float</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297845142272-bb"></a><span class="identifier">getev_</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">fortran_int_t</span> dim<span class="special">,</span> <span class="keyword">double</span> w<span class="special">,</span> <span class="identifier">fortran_int_t</span> info<span class="special">,</span> 
+            <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="keyword">double</span> <span class="special">&gt;</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297845145648-bb"></a><span class="identifier">getev_</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">fortran_int_t</span> dim<span class="special">,</span> <span class="keyword">float</span> w<span class="special">,</span> <span class="identifier">fortran_int_t</span> info<span class="special">,</span> 
+            <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span> <span class="keyword">float</span> <span class="special">&gt;</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2011 Matthias Troyer, Bela Bauer, Robin Jäger</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="reference.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="reference.html#header.alps.src.ietl.bandlanczos_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="indexer.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

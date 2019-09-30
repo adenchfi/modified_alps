@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class OXDRFileDump</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../osiris/reference.html#header.alps.osiris.xdrdump_h" title="Header &lt;alps/osiris/xdrdump.h&gt;">
+<link rel="prev" href="OXDRDump.html" title="Class OXDRDump">
+<link rel="next" href="../parser.html" title="Chapter 5. Alps/Parser Library">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="OXDRDump.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris/reference.html#header.alps.osiris.xdrdump_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../parser.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.OXDRFileDump"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class OXDRFileDump</span></h2>
+<p>alps::OXDRFileDump</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../osiris/reference.html#header.alps.osiris.xdrdump_h" title="Header &lt;alps/osiris/xdrdump.h&gt;">alps/osiris/xdrdump.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="OXDRFileDump.html" title="Class OXDRFileDump">OXDRFileDump</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">OXDRDump</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="OXDRFileDump.html#alps.OXDRFileDumpconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="OXDRFileDump.html#idp140297794499376-bb"><span class="identifier">OXDRFileDump</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="OXDRFileDump.html#idp140297794526864-bb"><span class="special">~</span><span class="identifier">OXDRFileDump</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="OXDRFileDump.html#idp140297794516480-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="OXDRFileDump.html#idp140297794516960-bb"><span class="identifier">flush</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="OXDRFileDump.html#idp140297794527120-bb">private member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="OXDRFileDump.html#idp140297794527600-bb"><span class="identifier">open_file</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204620707088"></a><h2>Description</h2>
+<p>a dump for serializing objects into a file using the <a class="link" href="../osiris/reference.html#XDR">XDR</a> format. </p>
+<div class="refsect2">
+<a name="idp140204620708496"></a><h3>
+<a name="alps.OXDRFileDumpconstruct-copy-destruct"></a><code class="computeroutput">OXDRFileDump</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><a name="idp140297794499376-bb"></a><span class="identifier">OXDRFileDump</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="keyword">bool</span> append <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span></pre>open a new dump file with the given name </li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297794526864-bb"></a><span class="special">~</span><span class="identifier">OXDRFileDump</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204620724416"></a><h3>
+<a name="idp140297794516480-bb"></a><code class="computeroutput">OXDRFileDump</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297794516960-bb"></a><span class="identifier">flush</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204620730480"></a><h3>
+<a name="idp140297794527120-bb"></a><code class="computeroutput">OXDRFileDump</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp140297794527600-bb"></a><span class="identifier">open_file</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span></pre>open a file </li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="OXDRDump.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris/reference.html#header.alps.osiris.xdrdump_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../parser.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

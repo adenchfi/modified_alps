@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template DiagTask</title>
+<link rel="stylesheet" href="../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../../index.html" title="The ALPS Libraries">
+<link rel="up" href="../../scheduler/reference.html#header.alps.scheduler.diag_hpp" title="Header &lt;alps/scheduler/diag.hpp&gt;">
+<link rel="prev" href="../../scheduler/reference.html" title="Reference">
+<link rel="next" href="BasicFactory.html" title="Class template BasicFactory">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../../alps_logo.gif"></td>
+<td align="center"><a href="../.././index.html">Home</a></td>
+<td align="center"><a href="../.././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="../.././overview/license.html">License</a></td>
+<td align="center"><a href="../.././overview/support.html">Support</a></td>
+<td align="center"><a href="../.././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../../scheduler/reference.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../scheduler/reference.html#header.alps.scheduler.diag_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="BasicFactory.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.scheduler.DiagTask"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template DiagTask</span></h2>
+<p>alps::scheduler::DiagTask</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../scheduler/reference.html#header.alps.scheduler.diag_hpp" title="Header &lt;alps/scheduler/diag.hpp&gt;">alps/scheduler/diag.hpp</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> G <span class="special">=</span> <span class="keyword">typename</span> <span class="identifier">graph_helper</span><span class="special">&lt;</span><span class="special">&gt;</span><span class="special">::</span><span class="identifier">graph_type</span><span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="DiagTask.html" title="Class template DiagTask">DiagTask</a> <span class="special">:</span> <span class="keyword">public</span> alps::scheduler::Task,
+                 <span class="keyword">public</span> graph_helper&lt; G &gt;,
+                 <span class="keyword">public</span> model_helper&lt;&gt;,
+                 <span class="keyword">public</span> alps::MeasurementOperators
+<span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">T</span>                                                                                            <a name="alps.scheduler.DiagTask.value_type"></a><span class="identifier">value_type</span><span class="special">;</span>          
+  <span class="keyword">typedef</span> <span class="identifier">norm_type</span><span class="special">&lt;</span> <span class="identifier">value_type</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">type</span>                                                                <a name="alps.scheduler.DiagTask.magnitude_type"></a><span class="identifier">magnitude_type</span><span class="special">;</span>      
+  <span class="keyword">typedef</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">value_type</span> <span class="special">&gt;</span>                                                          <a name="alps.scheduler.DiagTask.vector_type"></a><span class="identifier">vector_type</span><span class="special">;</span>         
+  <span class="keyword">typedef</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">magnitude_type</span> <span class="special">&gt;</span>                                                      <a name="alps.scheduler.DiagTask.mag_vector_type"></a><span class="identifier">mag_vector_type</span><span class="special">;</span>     
+  <span class="keyword">typedef</span> <span class="identifier">model_helper</span><span class="special">::</span><span class="identifier">half_integer_type</span>                                                              <a name="alps.scheduler.DiagTask.half_integer_type"></a><span class="identifier">half_integer_type</span><span class="special">;</span>   
+  <span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">::</span><span class="identifier">ublas</span><span class="special">::</span><span class="identifier">mapped_vector_of_mapped_vector</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">::</span><span class="identifier">ublas</span><span class="special">::</span><span class="identifier">row_major</span> <span class="special">&gt;</span> <a name="alps.scheduler.DiagTask.operator_matrix_type"></a><span class="identifier">operator_matrix_type</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="DiagTask.html#alps.scheduler.DiagTaskconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="DiagTask.html#idp140297832428720-bb"><span class="identifier">DiagTask</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="DiagTask.html#idp140297832424176-bb">public member functions</a></span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="DiagTask.html#idp140297832424560-bb"><span class="identifier">dostep</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="DiagTask.html#idp140297832425328-bb"><span class="identifier">save</span></a><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">archive</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="DiagTask.html#idp140297832427024-bb"><span class="identifier">load</span></a><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">archive</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="DiagTask.html#idp140297832431056-bb">protected member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="DiagTask.html#idp140297832431536-bb"><span class="identifier">write_xml_body</span></a><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="DiagTask.html#idp140297832434320-bb"><span class="identifier">handle_tag</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="DiagTask.html#idp140297832436496-bb"><span class="identifier">calc_vectors</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="DiagTask.html#idp140297832437456-bb"><span class="identifier">print_vectors</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204664334272"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204664334672"></a><h3>
+<a name="alps.scheduler.DiagTaskconstruct-copy-destruct"></a><code class="computeroutput">DiagTask</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp140297832428720-bb"></a><span class="identifier">DiagTask</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span> where<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span> p<span class="special">,</span> 
+         <span class="keyword">bool</span> delay_construct <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204664349040"></a><h3>
+<a name="idp140297832424176-bb"></a><code class="computeroutput">DiagTask</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297832424560-bb"></a><span class="identifier">dostep</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297832425328-bb"></a><span class="identifier">save</span><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">archive</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297832427024-bb"></a><span class="identifier">load</span><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">archive</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204664369952"></a><h3>
+<a name="idp140297832431056-bb"></a><code class="computeroutput">DiagTask</code> protected member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297832431536-bb"></a><span class="identifier">write_xml_body</span><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297832434320-bb"></a><span class="identifier">handle_tag</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span> infile<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span> tag<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297832436496-bb"></a><span class="identifier">calc_vectors</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297832437456-bb"></a><span class="identifier">print_vectors</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../../scheduler/reference.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../scheduler/reference.html#header.alps.scheduler.diag_hpp"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="BasicFactory.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

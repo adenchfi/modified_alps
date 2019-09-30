@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class MeasurementOperators</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../scheduler/reference.html#header.alps.scheduler.measurement_operators_h" title="Header &lt;alps/scheduler/measurement_operators.h&gt;">
+<link rel="prev" href="MeasurementLabels.html" title="Class MeasurementLabels">
+<link rel="next" href="scheduler/DummyMCRun.html" title="Class DummyMCRun">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="MeasurementLabels.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../scheduler/reference.html#header.alps.scheduler.measurement_operators_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="scheduler/DummyMCRun.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.MeasurementOperators"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class MeasurementOperators</span></h2>
+<p>alps::MeasurementOperators</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../scheduler/reference.html#header.alps.scheduler.measurement_operators_h" title="Header &lt;alps/scheduler/measurement_operators.h&gt;">alps/scheduler/measurement_operators.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="MeasurementOperators.html" title="Class MeasurementOperators">MeasurementOperators</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="MeasurementOperators.html#alps.MeasurementOperatorsconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="MeasurementOperators.html#idp140297830230608-bb"><span class="identifier">MeasurementOperators</span></a><span class="special">(</span><span class="identifier">Parameters</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="MeasurementOperators.html#idp140297830229040-bb">public member functions</a></span>
+  <span class="keyword">bool</span> <a class="link" href="MeasurementOperators.html#idp140297830229520-bb"><span class="identifier">calc_averages</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="MeasurementOperators.html#idp140297830231472-bb">protected member functions</a></span>
+  <span class="keyword">bool</span> <a class="link" href="MeasurementOperators.html#idp140297830231952-bb"><span class="identifier">calc_labels</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204665283840"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204665284240"></a><h3>
+<a name="alps.MeasurementOperatorsconstruct-copy-destruct"></a><code class="computeroutput">MeasurementOperators</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp140297830230608-bb"></a><span class="identifier">MeasurementOperators</span><span class="special">(</span><span class="identifier">Parameters</span> <span class="keyword">const</span> <span class="special">&amp;</span> p<span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204665291568"></a><h3>
+<a name="idp140297830229040-bb"></a><code class="computeroutput">MeasurementOperators</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297830229520-bb"></a><span class="identifier">calc_averages</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204665298272"></a><h3>
+<a name="idp140297830231472-bb"></a><code class="computeroutput">MeasurementOperators</code> protected member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297830231952-bb"></a><span class="identifier">calc_labels</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="MeasurementLabels.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../scheduler/reference.html#header.alps.scheduler.measurement_operators_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="scheduler/DummyMCRun.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

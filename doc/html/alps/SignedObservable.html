@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template SignedObservable</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../alea/reference.html#header.alps.alea.signedobservable_h" title="Header &lt;alps/alea/signedobservable.h&gt;">
+<link rel="prev" href="AbstractSignedObservable.html" title="Class template AbstractSignedObservable">
+<link rel="next" href="SimpleBinning.html" title="Class template SimpleBinning">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="AbstractSignedObservable.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea/reference.html#header.alps.alea.signedobservable_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="SimpleBinning.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.SignedObservable"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template SignedObservable</span></h2>
+<p>alps::SignedObservable</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../alea/reference.html#header.alps.alea.signedobservable_h" title="Header &lt;alps/alea/signedobservable.h&gt;">alps/alea/signedobservable.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> OBS<span class="special">,</span> <span class="keyword">typename</span> SIGN <span class="special">=</span> <span class="keyword">double</span><span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="SignedObservable.html" title="Class template SignedObservable">SignedObservable</a> <span class="special">:</span> <span class="keyword">public</span> alps::AbstractSignedObservable&lt; OBS, SIGN &gt;,
+                         <span class="keyword">public</span> alps::RecordableObservable&lt; OBS::value_type, SIGN &gt;
+<span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">OBS</span>                                           <a name="alps.SignedObservable.observable_type"></a><span class="identifier">observable_type</span><span class="special">;</span>
+  <span class="keyword">typedef</span> <span class="identifier">SIGN</span>                                          <a name="alps.SignedObservable.sign_type"></a><span class="identifier">sign_type</span><span class="special">;</span>      
+  <span class="keyword">typedef</span> <a class="link" href="AbstractSignedObservable.html" title="Class template AbstractSignedObservable">AbstractSignedObservable</a><span class="special">&lt;</span> <span class="identifier">OBS</span><span class="special">,</span> <span class="identifier">SIGN</span> <span class="special">&gt;</span>         <a name="alps.SignedObservable.base_type"></a><span class="identifier">base_type</span><span class="special">;</span>      
+  <span class="keyword">typedef</span> <span class="identifier">observable_type</span><span class="special">::</span><span class="identifier">value_type</span>                   <a name="alps.SignedObservable.value_type"></a><span class="identifier">value_type</span><span class="special">;</span>     
+  <span class="keyword">typedef</span> <span class="identifier">average_type</span><span class="special">&lt;</span> <span class="identifier">value_type</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">type</span>              <a name="alps.SignedObservable.result_type"></a><span class="identifier">result_type</span><span class="special">;</span>    
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span>                                   <a name="alps.SignedObservable.count_type"></a><span class="identifier">count_type</span><span class="special">;</span>     
+  <span class="keyword">typedef</span> <span class="identifier">change_value_type</span><span class="special">&lt;</span> <span class="identifier">value_type</span><span class="special">,</span> <span class="keyword">double</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">type</span> <a name="alps.SignedObservable.time_type"></a><span class="identifier">time_type</span><span class="special">;</span>      
+  <span class="keyword">typedef</span> <span class="identifier">super_type</span><span class="special">::</span><span class="identifier">label_type</span>                        <a name="alps.SignedObservable.label_type"></a><span class="identifier">label_type</span><span class="special">;</span>     
+
+  <span class="comment">// <a class="link" href="SignedObservable.html#alps.SignedObservableconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="SignedObservable.html#idp140297802690608-bb"><span class="identifier">SignedObservable</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">OBS</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="string">"Sign"</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="SignedObservable.html#idp140297802692336-bb"><span class="identifier">SignedObservable</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="string">""</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="string">"Sign"</span><span class="special">,</span> 
+                   <span class="keyword">const</span> <span class="identifier">label_type</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">label_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="SignedObservable.html#idp140297802695184-bb"><span class="identifier">SignedObservable</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">,</span> 
+                   <span class="keyword">const</span> <span class="identifier">label_type</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">label_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> ARG<span class="special">&gt;</span> 
+    <a class="link" href="SignedObservable.html#idp140297802697520-bb"><span class="identifier">SignedObservable</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">ARG</span> <span class="special">&amp;</span><span class="special">,</span> 
+                     <span class="keyword">const</span> <span class="identifier">label_type</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">label_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> ARG<span class="special">&gt;</span> 
+    <a class="link" href="SignedObservable.html#idp140297802700592-bb"><span class="identifier">SignedObservable</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">ARG</span> <span class="special">&amp;</span><span class="special">,</span> 
+                     <span class="keyword">const</span> <span class="identifier">label_type</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">label_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="SignedObservable.html#idp140297802704272-bb"><span class="special">~</span><span class="identifier">SignedObservable</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="SignedObservable.html#idp140297831094960-bb">public member functions</a></span>
+  <span class="keyword">virtual</span> <a class="link" href="Observable.html" title="Class Observable">Observable</a> <span class="special">*</span> <a class="link" href="SignedObservable.html#idp140297831095488-bb"><span class="identifier">clone</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="SignedObservable.html#idp140297802000000-bb"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">value_type</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="SignedObservable.html#idp140297802680816-bb"><span class="identifier">add</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">value_type</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="SignedObservable.html#idp140297802682160-bb"><span class="identifier">add</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">value_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">sign_type</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="SignedObservable.html#idp140297802684112-bb"><span class="identifier">write_hdf5</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="special">=</span> <span class="number">0</span><span class="special">,</span> 
+                  <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="SignedObservable.html#idp140297802687408-bb"><span class="identifier">read_hdf5</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="special">=</span> <span class="number">0</span><span class="special">,</span> 
+                 <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204639951648"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204639952048"></a><h3>
+<a name="alps.SignedObservableconstruct-copy-destruct"></a><code class="computeroutput">SignedObservable</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297802690608-bb"></a><span class="identifier">SignedObservable</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">OBS</span> <span class="special">&amp;</span> obs<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> s <span class="special">=</span> <span class="string">"Sign"</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297802692336-bb"></a><span class="identifier">SignedObservable</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name <span class="special">=</span> <span class="string">""</span><span class="special">,</span> 
+                 <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> s <span class="special">=</span> <span class="string">"Sign"</span><span class="special">,</span> 
+                 <span class="keyword">const</span> <span class="identifier">label_type</span> <span class="special">&amp;</span> l <span class="special">=</span> <span class="identifier">label_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297802695184-bb"></a><span class="identifier">SignedObservable</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="keyword">const</span> <span class="keyword">char</span> <span class="special">*</span> s<span class="special">,</span> 
+                 <span class="keyword">const</span> <span class="identifier">label_type</span> <span class="special">&amp;</span> l <span class="special">=</span> <span class="identifier">label_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> ARG<span class="special">&gt;</span> 
+  <a name="idp140297802697520-bb"></a><span class="identifier">SignedObservable</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">ARG</span> <span class="special">&amp;</span> arg<span class="special">,</span> 
+                   <span class="keyword">const</span> <span class="identifier">label_type</span> <span class="special">&amp;</span> l <span class="special">=</span> <span class="identifier">label_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> ARG<span class="special">&gt;</span> 
+  <a name="idp140297802700592-bb"></a><span class="identifier">SignedObservable</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> s<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">ARG</span> <span class="special">&amp;</span> arg<span class="special">,</span> 
+                   <span class="keyword">const</span> <span class="identifier">label_type</span> <span class="special">&amp;</span> l <span class="special">=</span> <span class="identifier">label_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297802704272-bb"></a><span class="special">~</span><span class="identifier">SignedObservable</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204640032864"></a><h3>
+<a name="idp140297831094960-bb"></a><code class="computeroutput">SignedObservable</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">virtual</span> <a class="link" href="Observable.html" title="Class Observable">Observable</a> <span class="special">*</span> <a name="idp140297831095488-bb"></a><span class="identifier">clone</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
+<p>clones the observable </p>
+</li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297802000000-bb"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">value_type</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297802680816-bb"></a><span class="identifier">add</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">value_type</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297802682160-bb"></a><span class="identifier">add</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">value_type</span> <span class="special">&amp;</span> x<span class="special">,</span> <span class="identifier">sign_type</span> s<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297802684112-bb"></a><span class="identifier">write_hdf5</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span> fn_hdf<span class="special">,</span> 
+                <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> realization <span class="special">=</span> <span class="number">0</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> clone <span class="special">=</span> <span class="number">0</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297802687408-bb"></a><span class="identifier">read_hdf5</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span> fn_hdf<span class="special">,</span> 
+               <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> realization <span class="special">=</span> <span class="number">0</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span> clone <span class="special">=</span> <span class="number">0</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2004, 2012 Matthias Troyer, Synge Todo, Maximilian Poprawe</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="AbstractSignedObservable.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea/reference.html#header.alps.alea.signedobservable_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="SimpleBinning.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

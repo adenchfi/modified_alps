@@ -1,0 +1,115 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class GlobalOperator</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../model/reference.html#header.alps.model.globaloperator_h" title="Header &lt;alps/model/globaloperator.h&gt;">
+<link rel="prev" href="DefaultTermDescriptor.html" title="Class template DefaultTermDescriptor">
+<link rel="next" href="half_integer.html" title="Class template half_integer">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="DefaultTermDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.globaloperator_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="half_integer.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.GlobalOperator"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class GlobalOperator</span></h2>
+<p>alps::GlobalOperator</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../model/reference.html#header.alps.model.globaloperator_h" title="Header &lt;alps/model/globaloperator.h&gt;">alps/model/globaloperator.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="GlobalOperator.html" title="Class GlobalOperator">GlobalOperator</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="GlobalOperator.html#alps.GlobalOperatorconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="GlobalOperator.html#idp140297801817920-bb"><span class="identifier">GlobalOperator</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="GlobalOperator.html#idp140297801818176-bb"><span class="identifier">GlobalOperator</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="GlobalOperator.html#idp140297832405616-bb">public member functions</a></span>
+  <span class="identifier">XMLTag</span> <a class="link" href="GlobalOperator.html#idp140297832406000-bb"><span class="identifier">read_xml</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="GlobalOperator.html#idp140297832407664-bb"><span class="identifier">write_xml</span></a><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a class="link" href="GlobalOperator.html#idp140297832408944-bb"><span class="identifier">name</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <a class="link" href="SiteTermDescriptor.html" title="Class SiteTermDescriptor">SiteTermDescriptor</a> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="GlobalOperator.html#idp140297832409712-bb"><span class="identifier">site_terms</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <a class="link" href="BondTermDescriptor.html" title="Class BondTermDescriptor">BondTermDescriptor</a> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="GlobalOperator.html#idp140297832410864-bb"><span class="identifier">bond_terms</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <a class="link" href="SiteOperator.html" title="Class SiteOperator">SiteOperator</a> <a class="link" href="GlobalOperator.html#idp140297832412016-bb"><span class="identifier">site_term</span></a><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <a class="link" href="BondOperator.html" title="Class BondOperator">BondOperator</a> <a class="link" href="GlobalOperator.html#idp140297832413680-bb"><span class="identifier">bond_term</span></a><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="GlobalOperator.html#idp140297832415344-bb"><span class="identifier">substitute_operators</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="ModelLibrary.html" title="Class ModelLibrary">ModelLibrary</a> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">boost</span><span class="special">::</span><span class="identifier">optional</span><span class="special">&lt;</span> <span class="identifier">Parameters</span> <span class="special">&gt;</span> <a class="link" href="GlobalOperator.html#idp140297832417392-bb"><span class="identifier">create_site_term</span></a><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">boost</span><span class="special">::</span><span class="identifier">optional</span><span class="special">&lt;</span> <span class="identifier">Parameters</span> <span class="special">&gt;</span> <a class="link" href="GlobalOperator.html#idp140297801834240-bb"><span class="identifier">create_bond_term</span></a><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> G<span class="special">&gt;</span> <span class="identifier">Parameters</span> <a class="link" href="GlobalOperator.html#idp140297801816000-bb"><span class="identifier">create_terms</span></a><span class="special">(</span><span class="identifier">graph_helper</span><span class="special">&lt;</span> <span class="identifier">G</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="GlobalOperator.html#idp140297801819456-bb">protected member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="GlobalOperator.html#idp140297801819840-bb"><span class="identifier">write_operators_xml</span></a><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="GlobalOperator.html#idp140297801821248-bb">private member functions</a></span>
+  <span class="identifier">Parameters</span> <a class="link" href="GlobalOperator.html#idp140297801821632-bb"><span class="identifier">create_site_terms</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">set</span><span class="special">&lt;</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">Parameters</span> <a class="link" href="GlobalOperator.html#idp140297801859824-bb"><span class="identifier">create_bond_terms</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">set</span><span class="special">&lt;</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204657561216"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204657561616"></a><h3>
+<a name="alps.GlobalOperatorconstruct-copy-destruct"></a><code class="computeroutput">GlobalOperator</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297801817920-bb"></a><span class="identifier">GlobalOperator</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297801818176-bb"></a><span class="identifier">GlobalOperator</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204657575056"></a><h3>
+<a name="idp140297832405616-bb"></a><code class="computeroutput">GlobalOperator</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="identifier">XMLTag</span> <a name="idp140297832406000-bb"></a><span class="identifier">read_xml</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297832407664-bb"></a><span class="identifier">write_xml</span><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a name="idp140297832408944-bb"></a><span class="identifier">name</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <a class="link" href="SiteTermDescriptor.html" title="Class SiteTermDescriptor">SiteTermDescriptor</a> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297832409712-bb"></a><span class="identifier">site_terms</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <a class="link" href="BondTermDescriptor.html" title="Class BondTermDescriptor">BondTermDescriptor</a> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297832410864-bb"></a><span class="identifier">bond_terms</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a class="link" href="SiteOperator.html" title="Class SiteOperator">SiteOperator</a> <a name="idp140297832412016-bb"></a><span class="identifier">site_term</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> type <span class="special">=</span> <span class="number">0</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a class="link" href="BondOperator.html" title="Class BondOperator">BondOperator</a> <a name="idp140297832413680-bb"></a><span class="identifier">bond_term</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> type <span class="special">=</span> <span class="number">0</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297832415344-bb"></a><span class="identifier">substitute_operators</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="ModelLibrary.html" title="Class ModelLibrary">ModelLibrary</a> <span class="special">&amp;</span> m<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> p<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">optional</span><span class="special">&lt;</span> <span class="identifier">Parameters</span> <span class="special">&gt;</span> <a name="idp140297832417392-bb"></a><span class="identifier">create_site_term</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">optional</span><span class="special">&lt;</span> <span class="identifier">Parameters</span> <span class="special">&gt;</span> <a name="idp140297801834240-bb"></a><span class="identifier">create_bond_term</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> type<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> G<span class="special">&gt;</span> <span class="identifier">Parameters</span> <a name="idp140297801816000-bb"></a><span class="identifier">create_terms</span><span class="special">(</span><span class="identifier">graph_helper</span><span class="special">&lt;</span> <span class="identifier">G</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span> l<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204657665328"></a><h3>
+<a name="idp140297801819456-bb"></a><code class="computeroutput">GlobalOperator</code> protected member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297801819840-bb"></a><span class="identifier">write_operators_xml</span><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204657673168"></a><h3>
+<a name="idp140297801821248-bb"></a><code class="computeroutput">GlobalOperator</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="identifier">Parameters</span> <a name="idp140297801821632-bb"></a><span class="identifier">create_site_terms</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">set</span><span class="special">&lt;</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">Parameters</span> <a name="idp140297801859824-bb"></a><span class="identifier">create_bond_terms</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">set</span><span class="special">&lt;</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="DefaultTermDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.globaloperator_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="half_integer.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

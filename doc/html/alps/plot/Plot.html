@@ -1,0 +1,136 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template Plot</title>
+<link rel="stylesheet" href="../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../../index.html" title="The ALPS Libraries">
+<link rel="up" href="../../general/reference.html#header.alps.plot_h" title="Header &lt;alps/plot.h&gt;">
+<link rel="prev" href="../parseargs.html" title="Struct parseargs">
+<link rel="next" href="Point.html" title="Class template Point">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../../alps_logo.gif"></td>
+<td align="center"><a href="../.././index.html">Home</a></td>
+<td align="center"><a href="../.././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="../.././overview/license.html">License</a></td>
+<td align="center"><a href="../.././overview/support.html">Support</a></td>
+<td align="center"><a href="../.././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../parseargs.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../general/reference.html#header.alps.plot_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="Point.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.plot.Plot"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template Plot</span></h2>
+<p>alps::plot::Plot &#8212; a class describing a plot, consisting of a number of data sets </p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../general/reference.html#header.alps.plot_h" title="Header &lt;alps/plot.h&gt;">alps/plot.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> C<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="Plot.html" title="Class template Plot">Plot</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">Set</span><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="Plot.html#alps.plot.Plotconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="Plot.html#idp140297798023072-bb"><span class="identifier">Plot</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">=</span> <span class="string">""</span><span class="special">,</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">Parameters</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">Parameters</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+       <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">true</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="Plot.html#idp140297797348960-bb">public member functions</a></span>
+  <a class="link" href="Plot.html" title="Class template Plot">Plot</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="Plot.html#idp140297797349440-bb"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="Plot.html" title="Class template Plot">Plot</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="Plot.html#idp140297797351680-bb"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a class="link" href="Plot.html#idp140297797353536-bb"><span class="identifier">name</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a class="link" href="Plot.html#idp140297797354752-bb"><span class="identifier">xaxis</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a class="link" href="Plot.html#idp140297797355968-bb"><span class="identifier">yaxis</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="Plot.html#idp140297797357184-bb"><span class="identifier">show_legend</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="Plot.html#idp140297797358400-bb"><span class="identifier">set_name</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="Plot.html#idp140297797360000-bb"><span class="identifier">set_labels</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="Plot.html#idp140297797362208-bb"><span class="identifier">show_legend</span></a><span class="special">(</span><span class="keyword">bool</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">int</span> <a class="link" href="Plot.html#idp140297798018560-bb"><span class="identifier">size</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="Plot.html#idp140297798019776-bb"><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">Parameters</span> <span class="keyword">const</span> <span class="special">&amp;</span> <a class="link" href="Plot.html#idp140297798021984-bb"><span class="identifier">parameters</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204612908832"></a><h2>Description</h2>
+<p>
+</p>
+<div class="refsect2">
+<a name="idp140204612909488"></a><h3>
+<a name="alps.plot.Plotconstruct-copy-destruct"></a><code class="computeroutput">Plot</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+<pre class="literallayout"><a name="idp140297798023072-bb"></a><span class="identifier">Plot</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> name <span class="special">=</span> <span class="string">""</span><span class="special">,</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">Parameters</span> <span class="keyword">const</span> <span class="special">&amp;</span> p <span class="special">=</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">Parameters</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+     <span class="keyword">bool</span> show_legend <span class="special">=</span> <span class="keyword">true</span><span class="special">)</span><span class="special">;</span></pre>Constructor of a plot. <p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="computeroutput">name</code></span></p></td>
+<td><p>the title of the plot </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="computeroutput">show_legend</code></span></p></td>
+<td><p>indicates whether a legend should be shown </p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr></tbody>
+</table></div>
+</li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204612931280"></a><h3>
+<a name="idp140297797348960-bb"></a><code class="computeroutput">Plot</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><a class="link" href="Plot.html" title="Class template Plot">Plot</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297797349440-bb"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> s<span class="special">)</span><span class="special">;</span></pre>add a set to the plot </li>
+<li class="listitem">
+<pre class="literallayout"><a class="link" href="Plot.html" title="Class template Plot">Plot</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297797351680-bb"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">)</span><span class="special">;</span></pre>set the title </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a name="idp140297797353536-bb"></a><span class="identifier">name</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>get the title </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a name="idp140297797354752-bb"></a><span class="identifier">xaxis</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>get the x-axis label </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a name="idp140297797355968-bb"></a><span class="identifier">yaxis</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>get the y-axis label </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297797357184-bb"></a><span class="identifier">show_legend</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>will the legend be shown? </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp140297797358400-bb"></a><span class="identifier">set_name</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">)</span><span class="special">;</span></pre>set the name </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp140297797360000-bb"></a><span class="identifier">set_labels</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> xaxis<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> yaxis<span class="special">)</span><span class="special">;</span></pre>set the x- and y-axis labels </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp140297797362208-bb"></a><span class="identifier">show_legend</span><span class="special">(</span><span class="keyword">bool</span> show<span class="special">)</span><span class="special">;</span></pre>set whether the legend should be shown </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">int</span> <a name="idp140297798018560-bb"></a><span class="identifier">size</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>get the number of sets </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">const</span> <a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297798019776-bb"></a><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span><span class="special">(</span><span class="keyword">int</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>get the i-th set </li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">Parameters</span> <span class="keyword">const</span> <span class="special">&amp;</span> <a name="idp140297798021984-bb"></a><span class="identifier">parameters</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../parseargs.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../general/reference.html#header.alps.plot_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="Point.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

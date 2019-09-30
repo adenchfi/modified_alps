@@ -1,0 +1,101 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template Set</title>
+<link rel="stylesheet" href="../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../../index.html" title="The ALPS Libraries">
+<link rel="up" href="../../general/reference.html#header.alps.plot_h" title="Header &lt;alps/plot.h&gt;">
+<link rel="prev" href="Point.html" title="Class template Point">
+<link rel="next" href="SetType.html" title="Type SetType">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../../alps_logo.gif"></td>
+<td align="center"><a href="../.././index.html">Home</a></td>
+<td align="center"><a href="../.././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="../.././overview/license.html">License</a></td>
+<td align="center"><a href="../.././overview/support.html">Support</a></td>
+<td align="center"><a href="../.././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="Point.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../general/reference.html#header.alps.plot_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="SetType.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.plot.Set"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template Set</span></h2>
+<p>alps::plot::Set &#8212; a dataset is a vector of points </p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../general/reference.html#header.alps.plot_h" title="Header &lt;alps/plot.h&gt;">alps/plot.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> C<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="Set.html" title="Class template Set">Set</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">Point</span><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="Set.html#alps.plot.Setconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="Set.html#idp140297798069888-bb"><span class="identifier">Set</span></a><span class="special">(</span><span class="identifier">SetType</span> <span class="special">=</span> <span class="identifier">xy</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="Set.html#idp140297798054144-bb">public member functions</a></span>
+  <a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="Set.html#idp140297798054624-bb"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="identifier">C</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="Set.html#idp140297798057616-bb"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">tuples</span><span class="special">::</span><span class="identifier">tuple</span><span class="special">&lt;</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="Set.html#idp140297798059536-bb"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">tuples</span><span class="special">::</span><span class="identifier">tuple</span><span class="special">&lt;</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="Set.html#idp140297798061472-bb"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">tuples</span><span class="special">::</span><span class="identifier">tuple</span><span class="special">&lt;</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="Set.html#idp140297798063408-bb"><span class="keyword">operator</span><span class="special">&lt;&lt;</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a class="link" href="Set.html#idp140297798065264-bb"><span class="identifier">label</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">SetType</span> <a class="link" href="Set.html#idp140297798066480-bb"><span class="identifier">type</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="Set.html#idp140297798067776-bb"><span class="identifier">push_back</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Point.html" title="Class template Point">Point</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204613231648"></a><h2>Description</h2>
+<p>
+</p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p><a class="link" href="Point.html" title="Class template Point">alps::plot::Point</a> </p>
+<p>
+</p>
+<div class="refsect2">
+<a name="idp140204613233968"></a><h3>
+<a name="alps.plot.Setconstruct-copy-destruct"></a><code class="computeroutput">Set</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+<pre class="literallayout"><a name="idp140297798069888-bb"></a><span class="identifier">Set</span><span class="special">(</span><span class="identifier">SetType</span> st <span class="special">=</span> <span class="identifier">xy</span><span class="special">)</span><span class="special">;</span></pre>the default set type is <code class="computeroutput">xy</code>, i.e. no error bars </li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204613241936"></a><h3>
+<a name="idp140297798054144-bb"></a><code class="computeroutput">Set</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297798054624-bb"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="identifier">C</span> p<span class="special">)</span><span class="special">;</span></pre>add another value, building points step by step <p>depending on the plot type, 2, 3 or four values are collected to build a <code class="computeroutput"><a class="link" href="Point.html" title="Class template Point">Point</a></code>, which is then added to the set. </p>
+</li>
+<li class="listitem">
+<pre class="literallayout"><a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297798057616-bb"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">tuples</span><span class="special">::</span><span class="identifier">tuple</span><span class="special">&lt;</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre>adds a new point with two coordinates, if the plot type is XY </li>
+<li class="listitem">
+<pre class="literallayout"><a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297798059536-bb"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">tuples</span><span class="special">::</span><span class="identifier">tuple</span><span class="special">&lt;</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre>adds a new point with three coordinates, if the plot type is XDXY or XYDY </li>
+<li class="listitem">
+<pre class="literallayout"><a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297798061472-bb"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">tuples</span><span class="special">::</span><span class="identifier">tuple</span><span class="special">&lt;</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span><span class="special">,</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre>adds a new point with four coordinates, if the plot type is XDXYDY </li>
+<li class="listitem">
+<pre class="literallayout"><a class="link" href="Set.html" title="Class template Set">Set</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297798063408-bb"></a><span class="keyword">operator</span><span class="special">&lt;&lt;</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> label<span class="special">)</span><span class="special">;</span></pre>set the label (legend) for the set </li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a name="idp140297798065264-bb"></a><span class="identifier">label</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>returns the label (legend) for the set </li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">SetType</span> <a name="idp140297798066480-bb"></a><span class="identifier">type</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>returns the type of set, if it is an XY, XDXY, XYDY or XDXDY plot </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp140297798067776-bb"></a><span class="identifier">push_back</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Point.html" title="Class template Point">Point</a><span class="special">&lt;</span> <span class="identifier">C</span> <span class="special">&gt;</span> <span class="special">&amp;</span> NewPoint<span class="special">)</span><span class="special">;</span></pre>adds a new point </li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="Point.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../general/reference.html#header.alps.plot_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="SetType.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template singleton_property_map</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../lattice/reference.html#header.alps.lattice.propertymap_h" title="Header &lt;alps/lattice/propertymap.h&gt;">
+<link rel="prev" href="propert_idp140297829946240.html" title="Struct template property_map&lt;P, const G, Default&gt;">
+<link rel="next" href="simple_cell.html" title="Class template simple_cell">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="propert_idp140297829946240.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../lattice/reference.html#header.alps.lattice.propertymap_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="simple_cell.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.singleton_property_map"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template singleton_property_map</span></h2>
+<p>alps::singleton_property_map</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../lattice/reference.html#header.alps.lattice.propertymap_h" title="Header &lt;alps/lattice/propertymap.h&gt;">alps/lattice/propertymap.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> V<span class="special">,</span> <span class="keyword">typename</span> K <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">any</span><span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="singleton_property_map.html" title="Class template singleton_property_map">singleton_property_map</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">K</span>                              <a name="alps.singleton_property_map.key_type"></a><span class="identifier">key_type</span><span class="special">;</span>  
+  <span class="keyword">typedef</span> <span class="identifier">V</span>                              <a name="alps.singleton_property_map.value_type"></a><span class="identifier">value_type</span><span class="special">;</span>
+  <span class="keyword">typedef</span> <span class="identifier">V</span> <span class="special">&amp;</span>                            <a name="alps.singleton_property_map.reference"></a><span class="identifier">reference</span><span class="special">;</span> 
+  <span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">lvalue_property_map_tag</span> <a name="alps.singleton_property_map.category"></a><span class="identifier">category</span><span class="special">;</span>  
+
+  <span class="comment">// <a class="link" href="singleton_property_map.html#alps.singleton_property_mapconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="singleton_property_map.html#idp140297829963552-bb"><span class="identifier">singleton_property_map</span></a><span class="special">(</span><span class="identifier">V</span> <span class="special">=</span> <span class="identifier">V</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <a class="link" href="singleton_property_map.html" title="Class template singleton_property_map">singleton_property_map</a><span class="special">&lt;</span> <span class="identifier">V</span><span class="special">,</span> <span class="identifier">K</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="singleton_property_map.html#idp140297829964736-bb"><span class="keyword">operator</span><span class="special">=</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">V</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="singleton_property_map.html#idp140297829956160-bb">public member functions</a></span>
+  <a class="link" href="singleton_property_map.html#idp140297829956688-bb"><span class="keyword">operator</span> <span class="identifier">V</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">V</span> <a class="link" href="singleton_property_map.html#idp140297829957728-bb"><span class="identifier">value</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="identifier">V</span> <span class="special">&amp;</span> <a class="link" href="singleton_property_map.html#idp140297829958752-bb"><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span></a><span class="special">(</span><span class="identifier">T</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">const</span> <span class="identifier">V</span> <span class="special">&amp;</span> <a class="link" href="singleton_property_map.html#idp140297829960960-bb"><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span></a><span class="special">(</span><span class="identifier">T</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204653936928"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204653937328"></a><h3>
+<a name="alps.singleton_property_mapconstruct-copy-destruct"></a><code class="computeroutput">singleton_property_map</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297829963552-bb"></a><span class="identifier">singleton_property_map</span><span class="special">(</span><span class="identifier">V</span> v <span class="special">=</span> <span class="identifier">V</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <a class="link" href="singleton_property_map.html" title="Class template singleton_property_map">singleton_property_map</a><span class="special">&lt;</span> <span class="identifier">V</span><span class="special">,</span> <span class="identifier">K</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297829964736-bb"></a><span class="keyword">operator</span><span class="special">=</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">V</span> <span class="special">&amp;</span> v<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204653956336"></a><h3>
+<a name="idp140297829956160-bb"></a><code class="computeroutput">singleton_property_map</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297829956688-bb"></a><span class="keyword">operator</span> <span class="identifier">V</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">V</span> <a name="idp140297829957728-bb"></a><span class="identifier">value</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="identifier">V</span> <span class="special">&amp;</span> <a name="idp140297829958752-bb"></a><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span><span class="special">(</span><span class="identifier">T</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">const</span> <span class="identifier">V</span> <span class="special">&amp;</span> <a name="idp140297829960960-bb"></a><span class="keyword">operator</span><span class="special">[</span><span class="special">]</span><span class="special">(</span><span class="identifier">T</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="propert_idp140297829946240.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../lattice/reference.html#header.alps.lattice.propertymap_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="simple_cell.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

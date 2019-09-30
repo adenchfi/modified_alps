@@ -1,0 +1,102 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class AbstractWorker</title>
+<link rel="stylesheet" href="../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../../index.html" title="The ALPS Libraries">
+<link rel="up" href="../../scheduler/reference.html#header.alps.scheduler.worker_h" title="Header &lt;alps/scheduler/worker.h&gt;">
+<link rel="prev" href="../../ALPS_WRITE_ALL_XML.html" title="Macro ALPS_WRITE_ALL_XML">
+<link rel="next" href="RemoteWorker.html" title="Class RemoteWorker">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../../alps_logo.gif"></td>
+<td align="center"><a href="../.././index.html">Home</a></td>
+<td align="center"><a href="../.././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="../.././overview/license.html">License</a></td>
+<td align="center"><a href="../.././overview/support.html">Support</a></td>
+<td align="center"><a href="../.././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../../ALPS_WRITE_ALL_XML.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../scheduler/reference.html#header.alps.scheduler.worker_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="RemoteWorker.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.scheduler.AbstractWorker"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class AbstractWorker</span></h2>
+<p>alps::scheduler::AbstractWorker</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../scheduler/reference.html#header.alps.scheduler.worker_h" title="Header &lt;alps/scheduler/worker.h&gt;">alps/scheduler/worker.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="AbstractWorker.html" title="Class AbstractWorker">AbstractWorker</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="AbstractWorker.html#alps.scheduler.AbstractWorkerconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="AbstractWorker.html#idp140297830627664-bb"><span class="identifier">AbstractWorker</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="AbstractWorker.html#idp140297830627920-bb"><span class="special">~</span><span class="identifier">AbstractWorker</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="AbstractWorker.html#idp140297830608528-bb">public member functions</a></span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="AbstractWorker.html#idp140297830609008-bb"><span class="identifier">save</span></a><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">archive</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="AbstractWorker.html#idp140297830610800-bb"><span class="identifier">load</span></a><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">archive</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> 
+  <a class="link" href="AbstractWorker.html#idp140297830612368-bb"><span class="identifier">save_to_file</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> 
+               <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> 
+  <a class="link" href="AbstractWorker.html#idp140297830614768-bb"><span class="identifier">load_from_file</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> 
+                 <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="AbstractWorker.html#idp140297830617168-bb"><span class="identifier">set_parameters</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <a class="link" href="TaskInfo.html" title="Class TaskInfo">TaskInfo</a> <a class="link" href="AbstractWorker.html#idp140297830618960-bb"><span class="identifier">get_info</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">double</span> <a class="link" href="AbstractWorker.html#idp140297830620272-bb"><span class="identifier">work_done</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="AbstractWorker.html#idp140297830621456-bb"><span class="identifier">start_worker</span></a><span class="special">(</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="AbstractWorker.html#idp140297830622640-bb"><span class="identifier">halt_worker</span></a><span class="special">(</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">bool</span> <a class="link" href="AbstractWorker.html#idp140297830623824-bb"><span class="identifier">handle_message</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Process</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">int32_t</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <a class="link" href="../../scheduler/reference.html#alps.scheduler.ResultType">ResultType</a> <a class="link" href="AbstractWorker.html#idp140297830626224-bb"><span class="identifier">get_summary</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204668300064"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204668300464"></a><h3>
+<a name="alps.scheduler.AbstractWorkerconstruct-copy-destruct"></a><code class="computeroutput">AbstractWorker</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297830627664-bb"></a><span class="identifier">AbstractWorker</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297830627920-bb"></a><span class="special">~</span><span class="identifier">AbstractWorker</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204668309840"></a><h3>
+<a name="idp140297830608528-bb"></a><code class="computeroutput">AbstractWorker</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297830609008-bb"></a><span class="identifier">save</span><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">archive</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297830610800-bb"></a><span class="identifier">load</span><span class="special">(</span><span class="identifier">hdf5</span><span class="special">::</span><span class="identifier">archive</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> 
+<a name="idp140297830612368-bb"></a><span class="identifier">save_to_file</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> 
+<a name="idp140297830614768-bb"></a><span class="identifier">load_from_file</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">,</span> 
+               <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297830617168-bb"></a><span class="identifier">set_parameters</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> parms<span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <a class="link" href="TaskInfo.html" title="Class TaskInfo">TaskInfo</a> <a name="idp140297830618960-bb"></a><span class="identifier">get_info</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">double</span> <a name="idp140297830620272-bb"></a><span class="identifier">work_done</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297830621456-bb"></a><span class="identifier">start_worker</span><span class="special">(</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297830622640-bb"></a><span class="identifier">halt_worker</span><span class="special">(</span><span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">bool</span> <a name="idp140297830623824-bb"></a><span class="identifier">handle_message</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Process</span> <span class="special">&amp;</span> runmaster<span class="special">,</span> <span class="identifier">int32_t</span> tag<span class="special">)</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <a class="link" href="../../scheduler/reference.html#alps.scheduler.ResultType">ResultType</a> <a name="idp140297830626224-bb"></a><span class="identifier">get_summary</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../../ALPS_WRITE_ALL_XML.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../scheduler/reference.html#header.alps.scheduler.worker_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="RemoteWorker.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

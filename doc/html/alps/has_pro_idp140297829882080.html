@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Struct template has_property&lt;P, boost::adjacency_list&lt; s1, s2, s3, VP, EP, GP, s4 &gt;, D&gt;</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../lattice/reference.html#header.alps.lattice.propertymap_h" title="Header &lt;alps/lattice/propertymap.h&gt;">
+<link rel="prev" href="has_property.html" title="Struct template has_property">
+<link rel="next" href="has_pro_idp140297829911488.html" title="Struct template has_property&lt;P, const boost::adjacency_list&lt; s1, s2, s3, VP, EP, GP, s4 &gt;, D&gt;">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="has_property.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../lattice/reference.html#header.alps.lattice.propertymap_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="has_pro_idp140297829911488.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.has_pro_idp140297829882080"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Struct template has_property&lt;P, boost::adjacency_list&lt; s1, s2, s3, VP, EP, GP, s4 &gt;, D&gt;</span></h2>
+<p>alps::has_property&lt;P, boost::adjacency_list&lt; s1, s2, s3, VP, EP, GP, s4 &gt;, D&gt;</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../lattice/reference.html#header.alps.lattice.propertymap_h" title="Header &lt;alps/lattice/propertymap.h&gt;">alps/lattice/propertymap.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> s1<span class="special">,</span> <span class="keyword">typename</span> s2<span class="special">,</span> <span class="keyword">typename</span> s3<span class="special">,</span> <span class="keyword">typename</span> VP<span class="special">,</span> <span class="keyword">typename</span> EP<span class="special">,</span> 
+         <span class="keyword">typename</span> GP<span class="special">,</span> <span class="keyword">typename</span> s4<span class="special">,</span> <span class="keyword">typename</span> P<span class="special">,</span> <span class="keyword">typename</span> D<span class="special">&gt;</span> 
+<span class="keyword">struct</span> <a class="link" href="has_pro_idp140297829882080.html" title="Struct template has_property&lt;P, boost::adjacency_list&lt; s1, s2, s3, VP, EP, GP, s4 &gt;, D&gt;">has_property</a><span class="special">&lt;</span><span class="identifier">P</span><span class="special">,</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adjacency_list</span><span class="special">&lt;</span> <span class="identifier">s1</span><span class="special">,</span> <span class="identifier">s2</span><span class="special">,</span> <span class="identifier">s3</span><span class="special">,</span> <span class="identifier">VP</span><span class="special">,</span> <span class="identifier">EP</span><span class="special">,</span> <span class="identifier">GP</span><span class="special">,</span> <span class="identifier">s4</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">D</span><span class="special">&gt;</span> <span class="special">{</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <a class="link" href="../boost/adjacency_list.html" title="Class template adjacency_list">boost::adjacency_list</a><span class="special">&lt;</span> <span class="identifier">s1</span><span class="special">,</span> <span class="identifier">s2</span><span class="special">,</span> <span class="identifier">s3</span><span class="special">,</span> <span class="identifier">VP</span><span class="special">,</span> <span class="identifier">EP</span><span class="special">,</span> <span class="identifier">GP</span><span class="special">,</span> <span class="identifier">s4</span> <span class="special">&gt;</span>                                                                                                        <a name="alps.has_pro_idp140297829882080.Graph"></a><span class="identifier">Graph</span><span class="special">;</span>               
+  <span class="keyword">typedef</span> <span class="emphasis"><em><span class="identifier">unspecified</span></em></span>                                                                                                                                                <a name="alps.has_pro_idp140297829882080.vertex_property_type"></a><span class="identifier">vertex_property_type</span><span class="special">;</span>
+  <span class="keyword">typedef</span> <span class="emphasis"><em><span class="identifier">unspecified</span></em></span>                                                                                                                                                <a name="alps.has_pro_idp140297829882080.edge_property_type"></a><span class="identifier">edge_property_type</span><span class="special">;</span>  
+  <span class="keyword">typedef</span> <span class="emphasis"><em><span class="identifier">unspecified</span></em></span>                                                                                                                                                <a name="alps.has_pro_idp140297829882080.graph_property_type"></a><span class="identifier">graph_property_type</span><span class="special">;</span> 
+  <span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">mpl</span><span class="special">::</span><span class="identifier">if_c</span><span class="special">&lt;</span> <span class="identifier">edge_property</span><span class="special">,</span> <span class="identifier">edge_property_type</span><span class="special">,</span> <span class="keyword">typename</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">mpl</span><span class="special">::</span><span class="identifier">if_c</span><span class="special">&lt;</span> <span class="identifier">vertex_property</span><span class="special">,</span> <span class="identifier">vertex_property_type</span><span class="special">,</span> <span class="identifier">graph_property_type</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">type</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">type</span> <a name="alps.has_pro_idp140297829882080.property_type"></a><span class="identifier">property_type</span><span class="special">;</span>       
+  <span class="keyword">typedef</span> <span class="identifier">property_type</span>                                                                                                                                              <a name="alps.has_pro_idp140297829882080.type"></a><span class="identifier">type</span><span class="special">;</span>                
+  <span class="keyword">typedef</span> <span class="identifier">vertex_property_type</span>                                                                                                                                       <a name="alps.has_pro_idp140297829882080.site_property_type"></a><span class="identifier">site_property_type</span><span class="special">;</span>  
+  <span class="keyword">typedef</span> <span class="identifier">edge_property_type</span>                                                                                                                                         <a name="alps.has_pro_idp140297829882080.bond_property_type"></a><span class="identifier">bond_property_type</span><span class="special">;</span>  
+
+  <span class="comment">// <a class="link" href="has_pro_idp140297829882080.html#idp140297829897136-bb">public member functions</a></span>
+   <a class="link" href="has_pro_idp140297829882080.html#idp140297829897664-bb"><span class="identifier">BOOST_STATIC_CONSTANT</span></a><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">vertex_property</span> <span class="special">=</span> <span class="emphasis"><em><span class="identifier">unspecified</span></em></span><span class="special">)</span><span class="special">;</span>
+   <a class="link" href="has_pro_idp140297829882080.html#idp140297829900000-bb"><span class="identifier">BOOST_STATIC_CONSTANT</span></a><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">edge_property</span> <span class="special">=</span> <span class="emphasis"><em><span class="identifier">unspecified</span></em></span><span class="special">)</span><span class="special">;</span>
+   <a class="link" href="has_pro_idp140297829882080.html#idp140297829902336-bb"><span class="identifier">BOOST_STATIC_CONSTANT</span></a><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">graph_property</span> <span class="special">=</span> <span class="emphasis"><em><span class="identifier">unspecified</span></em></span><span class="special">)</span><span class="special">;</span>
+   <a class="link" href="has_pro_idp140297829882080.html#idp140297829904672-bb"><span class="identifier">BOOST_STATIC_CONSTANT</span></a><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> 
+                         <span class="identifier">any_property</span> <span class="special">=</span> <span class="special">(</span><span class="identifier">edge_property</span><span class="special">||</span><span class="identifier">vertex_property</span><span class="special">||</span><span class="identifier">graph_property</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+   <a class="link" href="has_pro_idp140297829882080.html#idp140297829906928-bb"><span class="identifier">BOOST_STATIC_CONSTANT</span></a><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">site_property</span> <span class="special">=</span> <span class="identifier">vertex_property</span><span class="special">)</span><span class="special">;</span>
+   <a class="link" href="has_pro_idp140297829882080.html#idp140297829909136-bb"><span class="identifier">BOOST_STATIC_CONSTANT</span></a><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">bond_property</span> <span class="special">=</span> <span class="identifier">edge_property</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204653558832"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204653559232"></a><h3>
+<a name="idp140297829897136-bb"></a><code class="computeroutput">has_property</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"> <a name="idp140297829897664-bb"></a><span class="identifier">BOOST_STATIC_CONSTANT</span><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">vertex_property</span> <span class="special">=</span> <span class="emphasis"><em><span class="identifier">unspecified</span></em></span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"> <a name="idp140297829900000-bb"></a><span class="identifier">BOOST_STATIC_CONSTANT</span><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">edge_property</span> <span class="special">=</span> <span class="emphasis"><em><span class="identifier">unspecified</span></em></span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"> <a name="idp140297829902336-bb"></a><span class="identifier">BOOST_STATIC_CONSTANT</span><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">graph_property</span> <span class="special">=</span> <span class="emphasis"><em><span class="identifier">unspecified</span></em></span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"> <a name="idp140297829904672-bb"></a><span class="identifier">BOOST_STATIC_CONSTANT</span><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> 
+                       <span class="identifier">any_property</span> <span class="special">=</span> <span class="special">(</span><span class="identifier">edge_property</span><span class="special">||</span><span class="identifier">vertex_property</span><span class="special">||</span><span class="identifier">graph_property</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"> <a name="idp140297829906928-bb"></a><span class="identifier">BOOST_STATIC_CONSTANT</span><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">site_property</span> <span class="special">=</span> <span class="identifier">vertex_property</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"> <a name="idp140297829909136-bb"></a><span class="identifier">BOOST_STATIC_CONSTANT</span><span class="special">(</span><span class="keyword">bool</span><span class="special">,</span> <span class="identifier">bond_property</span> <span class="special">=</span> <span class="identifier">edge_property</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="has_property.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../lattice/reference.html#header.alps.lattice.propertymap_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="has_pro_idp140297829911488.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

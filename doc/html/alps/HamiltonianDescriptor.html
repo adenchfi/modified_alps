@@ -1,0 +1,95 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template HamiltonianDescriptor</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../model/reference.html#header.alps.model.hamiltonian_h" title="Header &lt;alps/model/hamiltonian.h&gt;">
+<link rel="prev" href="half_integer/to_distinguish.html" title="Struct to_distinguish">
+<link rel="next" href="numeric/matrix.html" title="Class template matrix">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="half_integer/to_distinguish.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.hamiltonian_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="numeric/matrix.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.HamiltonianDescriptor"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template HamiltonianDescriptor</span></h2>
+<p>alps::HamiltonianDescriptor</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../model/reference.html#header.alps.model.hamiltonian_h" title="Header &lt;alps/model/hamiltonian.h&gt;">alps/model/hamiltonian.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> I<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="HamiltonianDescriptor.html" title="Class template HamiltonianDescriptor">HamiltonianDescriptor</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">GlobalOperator</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <a class="link" href="BasisDescriptor.html" title="Class template BasisDescriptor">BasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <a name="alps.HamiltonianDescriptor.basis_map"></a><span class="identifier">basis_map</span><span class="special">;</span>   
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <a class="link" href="GlobalOperator.html" title="Class GlobalOperator">GlobalOperator</a> <span class="special">&gt;</span>       <a name="alps.HamiltonianDescriptor.operator_map"></a><span class="identifier">operator_map</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="HamiltonianDescriptor.html#alps.HamiltonianDescriptorconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="HamiltonianDescriptor.html#idp140297834692096-bb"><span class="identifier">HamiltonianDescriptor</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="HamiltonianDescriptor.html#idp140297834692352-bb"><span class="identifier">HamiltonianDescriptor</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> 
+                        <span class="keyword">const</span> <span class="identifier">basis_map</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">basis_map</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                        <span class="keyword">const</span> <span class="identifier">operator_map</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">operator_map</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="HamiltonianDescriptor.html#idp140297834683776-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="HamiltonianDescriptor.html#idp140297834684160-bb"><span class="identifier">write_xml</span></a><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a class="link" href="HamiltonianDescriptor.html#idp140297834685440-bb"><span class="identifier">name</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">const</span> <a class="link" href="BasisDescriptor.html" title="Class template BasisDescriptor">BasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="HamiltonianDescriptor.html#idp140297834686208-bb"><span class="identifier">basis</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <a class="link" href="BasisDescriptor.html" title="Class template BasisDescriptor">BasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a class="link" href="HamiltonianDescriptor.html#idp140297834687360-bb"><span class="identifier">basis</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> <a class="link" href="HamiltonianDescriptor.html#idp140297834688256-bb"><span class="identifier">default_parameters</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="HamiltonianDescriptor.html#idp140297834689024-bb"><span class="identifier">set_parameters</span></a><span class="special">(</span><span class="identifier">Parameters</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> G<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="HamiltonianDescriptor.html#idp140297834690176-bb"><span class="identifier">create_terms</span></a><span class="special">(</span><span class="identifier">graph_helper</span><span class="special">&lt;</span> <span class="identifier">G</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204658662400"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204658662800"></a><h3>
+<a name="alps.HamiltonianDescriptorconstruct-copy-destruct"></a><code class="computeroutput">HamiltonianDescriptor</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297834692096-bb"></a><span class="identifier">HamiltonianDescriptor</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297834692352-bb"></a><span class="identifier">HamiltonianDescriptor</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">XMLTag</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> 
+                      <span class="keyword">const</span> <span class="identifier">basis_map</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">basis_map</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                      <span class="keyword">const</span> <span class="identifier">operator_map</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">operator_map</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204658685552"></a><h3>
+<a name="idp140297834683776-bb"></a><code class="computeroutput">HamiltonianDescriptor</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297834684160-bb"></a><span class="identifier">write_xml</span><span class="special">(</span><span class="identifier">oxstream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> <a name="idp140297834685440-bb"></a><span class="identifier">name</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <a class="link" href="BasisDescriptor.html" title="Class template BasisDescriptor">BasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297834686208-bb"></a><span class="identifier">basis</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a class="link" href="BasisDescriptor.html" title="Class template BasisDescriptor">BasisDescriptor</a><span class="special">&lt;</span> <span class="identifier">I</span> <span class="special">&gt;</span> <span class="special">&amp;</span> <a name="idp140297834687360-bb"></a><span class="identifier">basis</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> <a name="idp140297834688256-bb"></a><span class="identifier">default_parameters</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297834689024-bb"></a><span class="identifier">set_parameters</span><span class="special">(</span><span class="identifier">Parameters</span> p<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> G<span class="special">&gt;</span> <span class="keyword">void</span> <a name="idp140297834690176-bb"></a><span class="identifier">create_terms</span><span class="special">(</span><span class="identifier">graph_helper</span><span class="special">&lt;</span> <span class="identifier">G</span> <span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span> l<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="half_integer/to_distinguish.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.hamiltonian_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="numeric/matrix.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

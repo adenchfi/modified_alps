@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template Info</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="reference.html#header.alps.src.ietl.lanczos_h" title="Header &lt;alps/src/ietl/lanczos.h&gt;">
+<link rel="prev" href="tfqmr_wrapper.html" title="Class template tfqmr_wrapper">
+<link rel="next" href="lanczos.html" title="Class template lanczos">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="tfqmr_wrapper.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="reference.html#header.alps.src.ietl.lanczos_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="lanczos.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="ietl.Info"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template Info</span></h2>
+<p>ietl::Info</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="reference.html#header.alps.src.ietl.lanczos_h" title="Header &lt;alps/src/ietl/lanczos.h&gt;">alps/src/ietl/lanczos.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> magnitude_type <span class="special">=</span> <span class="keyword">double</span><span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="Info.html" title="Class template Info">Info</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+
+  <span class="keyword">enum</span> <a name="ietl.Info.errorinfo"></a>errorinfo <span class="special">{</span> ok = = 0, no_eigenvalue, not_calculated <span class="special">}</span><span class="special">;</span>
+  <span class="comment">// <a class="link" href="Info.html#ietl.Infoconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="Info.html#idp140297845764864-bb"><span class="identifier">Info</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="Info.html#idp140297845765136-bb"><span class="identifier">Info</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span><span class="special">,</span> 
+       <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">magnitude_type</span> <span class="special">&gt;</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">magnitude_type</span> <span class="special">&gt;</span><span class="special">,</span> 
+       <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">errorinfo</span> <span class="special">&gt;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="Info.html#idp140297845753424-bb">public member functions</a></span>
+  <span class="keyword">int</span> <a class="link" href="Info.html#idp140297845753952-bb"><span class="identifier">m1</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">int</span> <a class="link" href="Info.html#idp140297845755616-bb"><span class="identifier">m2</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">int</span> <a class="link" href="Info.html#idp140297845757280-bb"><span class="identifier">ma</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">int</span> <a class="link" href="Info.html#idp140297845758944-bb"><span class="identifier">size</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">magnitude_type</span> <a class="link" href="Info.html#idp140297845759728-bb"><span class="identifier">eigenvalue</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">magnitude_type</span> <a class="link" href="Info.html#idp140297845761392-bb"><span class="identifier">residual</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">errorinfo</span> <a class="link" href="Info.html#idp140297845763056-bb"><span class="identifier">error_info</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204675054576"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204675054976"></a><h3>
+<a name="ietl.Infoconstruct-copy-destruct"></a><code class="computeroutput">Info</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297845764864-bb"></a><span class="identifier">Info</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297845765136-bb"></a><span class="identifier">Info</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span> M1<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span> M2<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="keyword">int</span> <span class="special">&gt;</span> Ma<span class="special">,</span> 
+     <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">magnitude_type</span> <span class="special">&gt;</span> Eigenvalue<span class="special">,</span> 
+     <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">magnitude_type</span> <span class="special">&gt;</span> Residuum<span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">errorinfo</span> <span class="special">&gt;</span> Status<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204675087440"></a><h3>
+<a name="idp140297845753424-bb"></a><code class="computeroutput">Info</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">int</span> <a name="idp140297845753952-bb"></a><span class="identifier">m1</span><span class="special">(</span><span class="keyword">int</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">int</span> <a name="idp140297845755616-bb"></a><span class="identifier">m2</span><span class="special">(</span><span class="keyword">int</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">int</span> <a name="idp140297845757280-bb"></a><span class="identifier">ma</span><span class="special">(</span><span class="keyword">int</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">int</span> <a name="idp140297845758944-bb"></a><span class="identifier">size</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">magnitude_type</span> <a name="idp140297845759728-bb"></a><span class="identifier">eigenvalue</span><span class="special">(</span><span class="keyword">int</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">magnitude_type</span> <a name="idp140297845761392-bb"></a><span class="identifier">residual</span><span class="special">(</span><span class="keyword">int</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">errorinfo</span> <a name="idp140297845763056-bb"></a><span class="identifier">error_info</span><span class="special">(</span><span class="keyword">int</span> i<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2011 Matthias Troyer, Bela Bauer, Robin Jäger</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="tfqmr_wrapper.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="reference.html#header.alps.src.ietl.lanczos_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="lanczos.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

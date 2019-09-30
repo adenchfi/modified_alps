@@ -1,0 +1,150 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template buffered_rng</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../random/reference.html#header.alps.random.buffered_rng_h" title="Header &lt;alps/random/buffered_rng.h&gt;">
+<link rel="prev" href="../ALPS_BUFFERED_GENERATOR_BUFFER_SIZE.html" title="Macro ALPS_BUFFERED_GENERATOR_BUFFER_SIZE">
+<link rel="next" href="buffered_rng_base.html" title="Class buffered_rng_base">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../ALPS_BUFFERED_GENERATOR_BUFFER_SIZE.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../random/reference.html#header.alps.random.buffered_rng_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="buffered_rng_base.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.buffered_rng"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template buffered_rng</span></h2>
+<p>alps::buffered_rng</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../random/reference.html#header.alps.random.buffered_rng_h" title="Header &lt;alps/random/buffered_rng.h&gt;">alps/random/buffered_rng.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RNG<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="buffered_rng.html" title="Class template buffered_rng">buffered_rng</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">buffered_rng_base</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="buffered_rng.html#alps.buffered_rngconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="buffered_rng.html#idp140297800236496-bb"><span class="identifier">buffered_rng</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="buffered_rng.html#idp140297800237008-bb"><span class="identifier">buffered_rng</span></a><span class="special">(</span><span class="identifier">RNG</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="buffered_rng.html#idp140297800214208-bb">private member functions</a></span>
+   <a class="link" href="buffered_rng.html#idp140297800214688-bb"><span class="identifier">BOOST_STATIC_ASSERT</span></a><span class="special">(</span><span class="special">(</span><span class="special">::</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_same</span><span class="special">&lt;</span> <span class="keyword">typename</span> <span class="identifier">RNG</span><span class="special">::</span><span class="identifier">result_type</span><span class="special">,</span> <span class="identifier">uint32_t</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">value</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="buffered_rng.html#idp140297800216112-bb">public member functions</a></span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> IT<span class="special">&gt;</span> <span class="keyword">void</span> <a class="link" href="buffered_rng.html#idp140297800216592-bb"><span class="identifier">seed</span></a><span class="special">(</span><span class="identifier">IT</span><span class="special">,</span> <span class="identifier">IT</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="buffered_rng.html#idp140297800219280-bb"><span class="identifier">seed</span></a><span class="special">(</span><span class="identifier">uint32_t</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="buffered_rng.html#idp140297800222224-bb"><span class="identifier">seed</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="buffered_rng.html#idp140297800223440-bb"><span class="identifier">seed</span></a><span class="special">(</span><a class="link" href="pseudo_des.html" title="Class pseudo_des">pseudo_des</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="identifier">result_type</span> <span class="identifier">min</span> <a class="link" href="buffered_rng.html#idp140297800226128-bb"><span class="identifier">BOOST_PREVENT_MACRO_SUBSTITUTION</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="identifier">result_type</span> <span class="identifier">max</span> <a class="link" href="buffered_rng.html#idp140297800227312-bb"><span class="identifier">BOOST_PREVENT_MACRO_SUBSTITUTION</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="buffered_rng.html#idp140297800228496-bb"><span class="identifier">write</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="buffered_rng.html#idp140297800230544-bb"><span class="identifier">read</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="buffered_rng.html#idp140297800232368-bb"><span class="identifier">write_all</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="buffered_rng.html#idp140297800234480-bb"><span class="identifier">read_all</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="buffered_rng.html#idp140297800238704-bb">protected member functions</a></span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="buffered_rng.html#idp140297800239184-bb"><span class="identifier">fill_buffer</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204614452256"></a><h2>Description</h2>
+<p>a concrete implementation of a buffered random number generator 
+</p>
+<div class="refsect2">
+<a name="idp140204614452992"></a><h3>
+<a name="alps.buffered_rngconstruct-copy-destruct"></a><code class="computeroutput">buffered_rng</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><a name="idp140297800236496-bb"></a><span class="identifier">buffered_rng</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>constructs a default-seeded generator </li>
+<li class="listitem">
+<pre class="literallayout"><a name="idp140297800237008-bb"></a><span class="identifier">buffered_rng</span><span class="special">(</span><span class="identifier">RNG</span> rng<span class="special">)</span><span class="special">;</span></pre>
+<p>constructs a generator by copying the argument 
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="computeroutput">rng</code></span></p></td>
+<td><p>generator to be copied </p></td>
+</tr></tbody>
+</table></div></td>
+</tr></tbody>
+</table></div>
+</li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204614465840"></a><h3>
+<a name="idp140297800214208-bb"></a><code class="computeroutput">buffered_rng</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"> <a name="idp140297800214688-bb"></a><span class="identifier">BOOST_STATIC_ASSERT</span><span class="special">(</span><span class="special">(</span><span class="special">::</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">is_same</span><span class="special">&lt;</span> <span class="keyword">typename</span> <span class="identifier">RNG</span><span class="special">::</span><span class="identifier">result_type</span><span class="special">,</span> <span class="identifier">uint32_t</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">value</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204614479872"></a><h3>
+<a name="idp140297800216112-bb"></a><code class="computeroutput">buffered_rng</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> IT<span class="special">&gt;</span> <span class="keyword">void</span> <a name="idp140297800216592-bb"></a><span class="identifier">seed</span><span class="special">(</span><span class="identifier">IT</span> start<span class="special">,</span> <span class="identifier">IT</span> end<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297800219280-bb"></a><span class="identifier">seed</span><span class="special">(</span><span class="identifier">uint32_t</span> s<span class="special">)</span><span class="special">;</span></pre>
+<p>seed from an integer using seed_with_sequence </p>
+<p><span class="bold"><strong>See Also:</strong></span></p>
+<p>seed_with_sequence() </p>
+<p>
+</p>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297800222224-bb"></a><span class="identifier">seed</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>seed with the default value </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297800223440-bb"></a><span class="identifier">seed</span><span class="special">(</span><a class="link" href="pseudo_des.html" title="Class pseudo_des">pseudo_des</a> <span class="special">&amp;</span> inigen<span class="special">)</span><span class="special">;</span></pre>seed with the <code class="computeroutput"><a class="link" href="pseudo_des.html" title="Class pseudo_des">pseudo_des</a></code> generator </li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="identifier">result_type</span> <span class="identifier">min</span> <a name="idp140297800226128-bb"></a><span class="identifier">BOOST_PREVENT_MACRO_SUBSTITUTION</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="identifier">result_type</span> <span class="identifier">max</span> <a name="idp140297800227312-bb"></a><span class="identifier">BOOST_PREVENT_MACRO_SUBSTITUTION</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297800228496-bb"></a><span class="identifier">write</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>write the state to a std::ostream </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297800230544-bb"></a><span class="identifier">read</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre>read the state from a std::istream </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297800232368-bb"></a><span class="identifier">write_all</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream</span> <span class="special">&amp;</span> os<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>write the full state (including buffer) to a std::ostream </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297800234480-bb"></a><span class="identifier">read_all</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre>read the full state (including buffer) from a std::istream </li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204614550160"></a><h3>
+<a name="idp140297800238704-bb"></a><code class="computeroutput">buffered_rng</code> protected member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+<pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297800239184-bb"></a><span class="identifier">fill_buffer</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>refills the buffer </li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2006-2008 Brigitte Surer,
+      Matthias Troyer</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../ALPS_BUFFERED_GENERATOR_BUFFER_SIZE.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../random/reference.html#header.alps.random.buffered_rng_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="buffered_rng_base.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

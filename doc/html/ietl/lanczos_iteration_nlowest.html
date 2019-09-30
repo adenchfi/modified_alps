@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template lanczos_iteration_nlowest</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="reference.html#header.alps.src.ietl.iteration_h" title="Header &lt;alps/src/ietl/iteration.h&gt;">
+<link rel="prev" href="lanczos_iteration_nhighest.html" title="Class template lanczos_iteration_nhighest">
+<link rel="next" href="lanczos_nlowest_better.html" title="Class template lanczos_nlowest_better">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="lanczos_iteration_nhighest.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="reference.html#header.alps.src.ietl.iteration_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="lanczos_nlowest_better.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="ietl.lanczos_iteration_nlowest"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template lanczos_iteration_nlowest</span></h2>
+<p>ietl::lanczos_iteration_nlowest</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="reference.html#header.alps.src.ietl.iteration_h" title="Header &lt;alps/src/ietl/iteration.h&gt;">alps/src/ietl/iteration.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="lanczos_iteration_nlowest.html" title="Class template lanczos_iteration_nlowest">lanczos_iteration_nlowest</a> <span class="special">:</span>
+  <span class="keyword">public</span> <span class="identifier">ietl</span><span class="special">::</span><span class="identifier">basic_lanczos_iteration</span><span class="special">&lt;</span> <span class="identifier">T</span><span class="special">,</span> <span class="identifier">lanczos_iteration_nlowest</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&gt;</span>
+<span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="lanczos_iteration_nlowest.html#ietl.lanczos_iteration_nlowestconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="lanczos_iteration_nlowest.html#idp140297845437648-bb"><span class="identifier">lanczos_iteration_nlowest</span></a><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span><span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> <span class="special">=</span> <span class="number">1</span><span class="special">,</span> 
+                            <span class="identifier">T</span> <span class="special">=</span> <span class="number">100</span><span class="special">.*</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">numeric_limits</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">epsilon</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                            <span class="identifier">T</span> <span class="special">=</span> <span class="number">100</span><span class="special">.*</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">numeric_limits</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">epsilon</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="lanczos_iteration_nlowest.html#idp140297845434112-bb">public member functions</a></span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Tmatrix<span class="special">&gt;</span> <span class="keyword">bool</span> <a class="link" href="lanczos_iteration_nlowest.html#idp140297845434640-bb"><span class="identifier">converged</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Tmatrix.html" title="Class template Tmatrix">Tmatrix</a> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204672640960"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204672641360"></a><h3>
+<a name="ietl.lanczos_iteration_nlowestconstruct-copy-destruct"></a><code class="computeroutput">lanczos_iteration_nlowest</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp140297845437648-bb"></a><span class="identifier">lanczos_iteration_nlowest</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="keyword">int</span> max_iter<span class="special">,</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> n <span class="special">=</span> <span class="number">1</span><span class="special">,</span> 
+                          <span class="identifier">T</span> r <span class="special">=</span> <span class="number">100</span><span class="special">.*</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">numeric_limits</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">epsilon</span><span class="special">(</span><span class="special">)</span><span class="special">,</span> 
+                          <span class="identifier">T</span> a <span class="special">=</span> <span class="number">100</span><span class="special">.*</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">numeric_limits</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span><span class="special">::</span><span class="identifier">epsilon</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204672667472"></a><h3>
+<a name="idp140297845434112-bb"></a><code class="computeroutput">lanczos_iteration_nlowest</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Tmatrix<span class="special">&gt;</span> <span class="keyword">bool</span> <a name="idp140297845434640-bb"></a><span class="identifier">converged</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Tmatrix.html" title="Class template Tmatrix">Tmatrix</a> <span class="special">&amp;</span> tmatrix<span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2011 Matthias Troyer, Bela Bauer, Robin Jäger</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="lanczos_iteration_nhighest.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="reference.html#header.alps.src.ietl.iteration_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="lanczos_nlowest_better.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

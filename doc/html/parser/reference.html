@@ -1,0 +1,137 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Reference</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../parser.html" title="Chapter 5. Alps/Parser Library">
+<link rel="prev" href="../parser.html" title="Chapter 5. Alps/Parser Library">
+<link rel="next" href="../alps/XMLTag.html" title="Struct XMLTag">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../parser.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../parser.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../alps/XMLTag.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="parser.reference"></a>Reference</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="reference.html#header.alps.parser.parser_h">Header &lt;alps/parser/parser.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.parser.xmlattributes_h">Header &lt;alps/parser/xmlattributes.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.parser.xmlhandler_h">Header &lt;alps/parser/xmlhandler.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.parser.xmlparser_h">Header &lt;alps/parser/xmlparser.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.parser.xmlstream_h">Header &lt;alps/parser/xmlstream.h&gt;</a></span></dt>
+<dt><span class="section"><a href="reference.html#header.alps.parser.xslt_path_h">Header &lt;alps/parser/xslt_path.h&gt;</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.parser.parser_h"></a>Header &lt;<a href="../../../alps/parser/parser.h" target="_top">alps/parser/parser.h</a>&gt;</h3></div></div></div>
+<p>a very simple XML parser </p>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">struct</span> <a class="link" href="../alps/XMLTag.html" title="Struct XMLTag">XMLTag</a><span class="special">;</span>
+
+  <span class="comment">// reads an XML tag or attribute name from a <code class="computeroutput">std::istream</code></span>
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a name="alps.parse_identifier"></a><span class="identifier">parse_identifier</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span> in<span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a class="link" href="../alps/parse_parameter_name.html" title="Function parse_parameter_name"><span class="identifier">parse_parameter_name</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a class="link" href="../alps/read_until.html" title="Function read_until"><span class="identifier">read_until</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">char</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="keyword">void</span> <a class="link" href="../alps/check_character.html" title="Function check_character"><span class="identifier">check_character</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">char</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <a class="link" href="../alps/XMLTag.html" title="Struct XMLTag">XMLTag</a> <a class="link" href="../alps/parse_tag.html" title="Function parse_tag"><span class="identifier">parse_tag</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">true</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// reads the contents of an element, until the first &lt; character found </span>
+  <span class="identifier">ALPS_DECL</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a name="alps.parse_content"></a><span class="identifier">parse_content</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span> in<span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="keyword">void</span> <a class="link" href="../alps/skip_element.html" title="Function skip_element"><span class="identifier">skip_element</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <a class="link" href="../alps/XMLTag.html" title="Struct XMLTag">XMLTag</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="keyword">void</span> <a class="link" href="../alps/check_tag.html" title="Function check_tag"><span class="identifier">check_tag</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">istream</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.parser.xmlattributes_h"></a>Header &lt;<a href="../../../alps/parser/xmlattributes.h" target="_top">alps/parser/xmlattributes.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/XMLAttribute.html" title="Class XMLAttribute">XMLAttribute</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/XMLAttributes.html" title="Class XMLAttributes">XMLAttributes</a><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.parser.xmlhandler_h"></a>Header &lt;<a href="../../../alps/parser/xmlhandler.h" target="_top">alps/parser/xmlhandler.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/CompositeXMLHandler.html" title="Class CompositeXMLHandler">CompositeXMLHandler</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/DummyXMLHandler.html" title="Class DummyXMLHandler">DummyXMLHandler</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/PrintXMLHandler.html" title="Class PrintXMLHandler">PrintXMLHandler</a><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="keyword">class</span> <a class="link" href="../alps/SimpleXMLHandler.html" title="Class template SimpleXMLHandler">SimpleXMLHandler</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/StylesheetXMLHandler.html" title="Class StylesheetXMLHandler">StylesheetXMLHandler</a><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">,</span> <span class="keyword">typename</span> C <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;</span><span class="special">,</span> 
+           <span class="keyword">typename</span> H <span class="special">=</span> <a class="link" href="../alps/SimpleXMLHandler.html" title="Class template SimpleXMLHandler">SimpleXMLHandler</a><span class="special">&lt;</span><span class="identifier">T</span><span class="special">&gt;</span> <span class="special">&gt;</span> 
+    <span class="keyword">class</span> <a class="link" href="../alps/VectorXMLHandler.html" title="Class template VectorXMLHandler">VectorXMLHandler</a><span class="special">;</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/XMLHandlerBase.html" title="Class XMLHandlerBase">XMLHandlerBase</a><span class="special">;</span>
+  <span class="keyword">namespace</span> <span class="identifier">xml</span> <span class="special">{</span>
+
+    <span class="keyword">enum</span> <a name="alps.xml.tag_type"></a>tag_type <span class="special">{</span> element, processing_instruction, stylesheet <span class="special">}</span><span class="special">;</span>
+  <span class="special">}</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.parser.xmlparser_h"></a>Header &lt;<a href="../../../alps/parser/xmlparser.h" target="_top">alps/parser/xmlparser.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/XMLParser.html" title="Class XMLParser">XMLParser</a><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.parser.xmlstream_h"></a>Header &lt;<a href="../../../alps/parser/xmlstream.h" target="_top">alps/parser/xmlstream.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis">
+
+<a class="link" href="../ALPS_XMLSTREAM_DO_TYPE.html" title="Macro ALPS_XMLSTREAM_DO_TYPE">ALPS_XMLSTREAM_DO_TYPE</a>(T)</pre>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="keyword">class</span> <a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a><span class="special">;</span>
+  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="alps.header"></a><span class="identifier">header</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> enc<span class="special">)</span><span class="special">;</span>
+  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="alps.stylesheet"></a><span class="identifier">stylesheet</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> url<span class="special">)</span><span class="special">;</span>
+  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="alps.processing_instruction"></a><span class="identifier">processing_instruction</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">)</span><span class="special">;</span>
+  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="alps.start_tag"></a><span class="identifier">start_tag</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">)</span><span class="special">;</span>
+  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="alps.end_tag"></a><span class="identifier">end_tag</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name <span class="special">=</span> <span class="string">""</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
+    <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="alps.attribute"></a><span class="identifier">attribute</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> value<span class="special">)</span><span class="special">;</span>
+  <span class="emphasis"><em><span class="identifier">unspecified</span></em></span> <a name="alps.xml_namespace"></a><span class="identifier">xml_namespace</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> url<span class="special">)</span><span class="special">;</span>
+  <a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> <a name="alps.start_comment"></a><span class="identifier">start_comment</span><span class="special">(</span><a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> oxs<span class="special">)</span><span class="special">;</span>
+  <a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> <a name="alps.end_comment"></a><span class="identifier">end_comment</span><span class="special">(</span><a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> oxs<span class="special">)</span><span class="special">;</span>
+  <a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> <a name="alps.start_cdata"></a><span class="identifier">start_cdata</span><span class="special">(</span><a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> oxs<span class="special">)</span><span class="special">;</span>
+  <a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> <a name="alps.end_cdata"></a><span class="identifier">end_cdata</span><span class="special">(</span><a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> oxs<span class="special">)</span><span class="special">;</span>
+  <a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> <a name="alps.no_linebreak"></a><span class="identifier">no_linebreak</span><span class="special">(</span><a class="link" href="../alps/oxstream.html" title="Class oxstream">oxstream</a> <span class="special">&amp;</span> oxs<span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a name="alps.convert"></a><span class="identifier">convert</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> str<span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a name="alps.precision"></a><span class="identifier">precision</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> d<span class="special">,</span> <span class="keyword">int</span> n<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="keyword">namespace</span> <span class="identifier">std</span> <span class="special">{</span>
+  <a class="link" href="../alps/oxstream.html" title="Class oxstream">alps::oxstream</a> <span class="special">&amp;</span> <a name="std.endl"></a><span class="identifier">endl</span><span class="special">(</span><a class="link" href="../alps/oxstream.html" title="Class oxstream">alps::oxstream</a> <span class="special">&amp;</span> oxs<span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="header.alps.parser.xslt_path_h"></a>Header &lt;<a href="../../../alps/parser/xslt_path.h" target="_top">alps/parser/xslt_path.h</a>&gt;</h3></div></div></div>
+<pre class="synopsis"><span class="keyword">namespace</span> <span class="identifier">alps</span> <span class="special">{</span>
+  <span class="identifier">ALPS_DECL</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a class="link" href="../alps/xslt_path.html" title="Function xslt_path"><span class="identifier">xslt_path</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <a class="link" href="../alps/search_xml_library_path.html" title="Function search_xml_library_path"><span class="identifier">search_xml_library_path</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ALPS_DECL</span> <span class="keyword">void</span> <a class="link" href="../alps/copy_stylesheet.html" title="Function copy_stylesheet"><span class="identifier">copy_stylesheet</span></a><span class="special">(</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="keyword">const</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span></pre>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../parser.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../parser.html"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../alps/XMLTag.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

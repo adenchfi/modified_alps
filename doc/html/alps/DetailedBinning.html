@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template DetailedBinning</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../alea/reference.html#header.alps.alea.detailedbinning_h" title="Header &lt;alps/alea/detailedbinning.h&gt;">
+<link rel="prev" href="BasicDetailedBinning.html" title="Class template BasicDetailedBinning">
+<link rel="next" href="FixedBinning.html" title="Class template FixedBinning">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="BasicDetailedBinning.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea/reference.html#header.alps.alea.detailedbinning_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="FixedBinning.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.DetailedBinning"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template DetailedBinning</span></h2>
+<p>alps::DetailedBinning</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../alea/reference.html#header.alps.alea.detailedbinning_h" title="Header &lt;alps/alea/detailedbinning.h&gt;">alps/alea/detailedbinning.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="DetailedBinning.html" title="Class template DetailedBinning">DetailedBinning</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">BasicDetailedBinning</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">T</span> <a name="alps.DetailedBinning.value_type"></a><span class="identifier">value_type</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="DetailedBinning.html#alps.DetailedBinningconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="DetailedBinning.html#idp140297828824864-bb"><span class="identifier">DetailedBinning</span></a><span class="special">(</span><span class="identifier">uint32_t</span> <span class="special">=</span> <span class="number">128</span><span class="special">,</span> <span class="identifier">uint32_t</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="DetailedBinning.html#idp140297828821984-bb">public member functions</a></span>
+   <a class="link" href="DetailedBinning.html#idp140297828822512-bb"><span class="identifier">BOOST_STATIC_CONSTANT</span></a><span class="special">(</span><span class="keyword">int</span><span class="special">,</span> <span class="identifier">magic_id</span> <span class="special">=</span> <span class="number">4</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204624415536"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204624415936"></a><h3>
+<a name="alps.DetailedBinningconstruct-copy-destruct"></a><code class="computeroutput">DetailedBinning</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp140297828824864-bb"></a><span class="identifier">DetailedBinning</span><span class="special">(</span><span class="identifier">uint32_t</span> binnum <span class="special">=</span> <span class="number">128</span><span class="special">,</span> <span class="identifier">uint32_t</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204624425552"></a><h3>
+<a name="idp140297828821984-bb"></a><code class="computeroutput">DetailedBinning</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"> <a name="idp140297828822512-bb"></a><span class="identifier">BOOST_STATIC_CONSTANT</span><span class="special">(</span><span class="keyword">int</span><span class="special">,</span> <span class="identifier">magic_id</span> <span class="special">=</span> <span class="number">4</span><span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2004, 2012 Matthias Troyer, Synge Todo, Maximilian Poprawe</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="BasicDetailedBinning.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../alea/reference.html#header.alps.alea.detailedbinning_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="FixedBinning.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

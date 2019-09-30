@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class OMPDump</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../osiris/reference.html#header.alps.osiris.mpdump_h" title="Header &lt;alps/osiris/mpdump.h&gt;">
+<link rel="prev" href="IMPDump.html" title="Class IMPDump">
+<link rel="next" href="Process.html" title="Class Process">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="IMPDump.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris/reference.html#header.alps.osiris.mpdump_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="Process.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.OMPDump"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class OMPDump</span></h2>
+<p>alps::OMPDump</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../osiris/reference.html#header.alps.osiris.mpdump_h" title="Header &lt;alps/osiris/mpdump.h&gt;">alps/osiris/mpdump.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="OMPDump.html" title="Class OMPDump">OMPDump</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">alps</span><span class="special">::</span><span class="identifier">ODump</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="OMPDump.html#alps.OMPDumpconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="OMPDump.html#idp140297782528864-bb"><span class="identifier">OMPDump</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="OMPDump.html#idp140297782529120-bb"><span class="special">~</span><span class="identifier">OMPDump</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="OMPDump.html#idp140297782519232-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="OMPDump.html#idp140297782519712-bb"><span class="identifier">init</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="OMPDump.html#idp140297782520448-bb"><span class="identifier">send</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Process.html" title="Class Process">Process</a> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">int32_t</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="OMPDump.html#idp140297782522880-bb"><span class="identifier">send</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">int32_t</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="OMPDump.html#idp140297782524832-bb"><span class="identifier">broadcast</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Process.html" title="Class Process">alps::Process</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="OMPDump.html#idp140297782526560-bb"><span class="identifier">write_string</span></a><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="keyword">const</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204618389232"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204618389632"></a><h3>
+<a name="alps.OMPDumpconstruct-copy-destruct"></a><code class="computeroutput">OMPDump</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297782528864-bb"></a><span class="identifier">OMPDump</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297782529120-bb"></a><span class="special">~</span><span class="identifier">OMPDump</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204618398976"></a><h3>
+<a name="idp140297782519232-bb"></a><code class="computeroutput">OMPDump</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782519712-bb"></a><span class="identifier">init</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782520448-bb"></a><span class="identifier">send</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Process.html" title="Class Process">Process</a> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">int32_t</span> tag<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782522880-bb"></a><span class="identifier">send</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span><span class="special">,</span> <span class="identifier">int32_t</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297782524832-bb"></a><span class="identifier">broadcast</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="Process.html" title="Class Process">alps::Process</a> <span class="special">&amp;</span> thisprocess<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297782526560-bb"></a><span class="identifier">write_string</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">size_t</span><span class="special">,</span> <span class="keyword">const</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="IMPDump.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../osiris/reference.html#header.alps.osiris.mpdump_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="Process.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

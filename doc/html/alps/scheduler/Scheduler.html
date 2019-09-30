@@ -1,0 +1,114 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class Scheduler</title>
+<link rel="stylesheet" href="../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../../index.html" title="The ALPS Libraries">
+<link rel="up" href="../../scheduler/reference.html#header.alps.scheduler.scheduler_h" title="Header &lt;alps/scheduler/scheduler.h&gt;">
+<link rel="prev" href="MPPScheduler.html" title="Class MPPScheduler">
+<link rel="next" href="SerialScheduler.html" title="Class SerialScheduler">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../../alps_logo.gif"></td>
+<td align="center"><a href="../.././index.html">Home</a></td>
+<td align="center"><a href="../.././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="../.././overview/license.html">License</a></td>
+<td align="center"><a href="../.././overview/support.html">Support</a></td>
+<td align="center"><a href="../.././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="MPPScheduler.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../scheduler/reference.html#header.alps.scheduler.scheduler_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="SerialScheduler.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.scheduler.Scheduler"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class Scheduler</span></h2>
+<p>alps::scheduler::Scheduler</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../scheduler/reference.html#header.alps.scheduler.scheduler_h" title="Header &lt;alps/scheduler/scheduler.h&gt;">alps/scheduler/scheduler.h</a>&gt;
+
+</span>
+<span class="keyword">class</span> <a class="link" href="Scheduler.html" title="Class Scheduler">Scheduler</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">noncopyable</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// <a class="link" href="Scheduler.html#alps.scheduler.Schedulerconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="Scheduler.html#idp140297830379504-bb"><span class="identifier">Scheduler</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="NoJobfileOptions.html" title="Class NoJobfileOptions">NoJobfileOptions</a> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <a class="link" href="Factory.html" title="Class Factory">Factory</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="Scheduler.html#idp140297830381744-bb"><span class="special">~</span><span class="identifier">Scheduler</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="Scheduler.html#idp140297830362928-bb">public member functions</a></span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="Scheduler.html#idp140297830363408-bb"><span class="identifier">set_new_jobfile</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">int</span> <a class="link" href="Scheduler.html#idp140297830364976-bb"><span class="identifier">run</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="Scheduler.html#idp140297830365936-bb"><span class="identifier">makeSummary</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">ResultsType</span> <a class="link" href="Scheduler.html#idp140297830366672-bb"><span class="identifier">getSummary</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <a class="link" href="AbstractTask.html" title="Class AbstractTask">AbstractTask</a> <span class="special">*</span> 
+  <a class="link" href="Scheduler.html#idp140297830367632-bb"><span class="identifier">make_task</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="AbstractTask.html" title="Class AbstractTask">AbstractTask</a> <span class="special">*</span> <a class="link" href="Scheduler.html#idp140297830369840-bb"><span class="identifier">make_task</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="AbstractWorker.html" title="Class AbstractWorker">AbstractWorker</a> <span class="special">*</span> 
+  <a class="link" href="Scheduler.html#idp140297830371440-bb"><span class="identifier">make_worker</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="AbstractWorker.html" title="Class AbstractWorker">AbstractWorker</a> <span class="special">*</span> <a class="link" href="Scheduler.html#idp140297830374512-bb"><span class="identifier">make_worker</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="Scheduler.html#idp140297830376112-bb"><span class="identifier">set_time_limit</span></a><span class="special">(</span><span class="keyword">double</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">virtual</span> <span class="keyword">void</span> <a class="link" href="Scheduler.html#idp140297830377680-bb"><span class="identifier">checkpoint</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">int</span> <a class="link" href="Scheduler.html#idp140297830378640-bb"><span class="identifier">check_signals</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="Scheduler.html#idp140297830382000-bb">public static functions</a></span>
+  <span class="keyword">static</span> <span class="keyword">void</span> <a class="link" href="Scheduler.html#idp140297830382480-bb"><span class="identifier">make_slave_task</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Process</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">static</span> <span class="keyword">void</span> <a class="link" href="Scheduler.html#idp140297830384048-bb"><span class="identifier">delete_slave_task</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Process</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// public data members</span>
+  <span class="keyword">const</span> <a class="link" href="Factory.html" title="Class Factory">Factory</a> <span class="special">&amp;</span> <span class="identifier">proc</span><span class="special">;</span>
+  <a class="link" href="SignalHandler.html" title="Class SignalHandler">SignalHandler</a> <span class="identifier">sig</span><span class="special">;</span>
+  <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="identifier">programname</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204666533296"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204666533696"></a><h3>
+<a name="alps.scheduler.Schedulerconstruct-copy-destruct"></a><code class="computeroutput">Scheduler</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><a name="idp140297830379504-bb"></a><span class="identifier">Scheduler</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="NoJobfileOptions.html" title="Class NoJobfileOptions">NoJobfileOptions</a> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <a class="link" href="Factory.html" title="Class Factory">Factory</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a name="idp140297830381744-bb"></a><span class="special">~</span><span class="identifier">Scheduler</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204666547552"></a><h3>
+<a name="idp140297830362928-bb"></a><code class="computeroutput">Scheduler</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297830363408-bb"></a><span class="identifier">set_new_jobfile</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">int</span> <a name="idp140297830364976-bb"></a><span class="identifier">run</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297830365936-bb"></a><span class="identifier">makeSummary</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">ResultsType</span> <a name="idp140297830366672-bb"></a><span class="identifier">getSummary</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a class="link" href="AbstractTask.html" title="Class AbstractTask">AbstractTask</a> <span class="special">*</span> <a name="idp140297830367632-bb"></a><span class="identifier">make_task</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a class="link" href="AbstractTask.html" title="Class AbstractTask">AbstractTask</a> <span class="special">*</span> <a name="idp140297830369840-bb"></a><span class="identifier">make_task</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">filesystem</span><span class="special">::</span><span class="identifier">path</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a class="link" href="AbstractWorker.html" title="Class AbstractWorker">AbstractWorker</a> <span class="special">*</span> <a name="idp140297830371440-bb"></a><span class="identifier">make_worker</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">ProcessList</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">int</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><a class="link" href="AbstractWorker.html" title="Class AbstractWorker">AbstractWorker</a> <span class="special">*</span> <a name="idp140297830374512-bb"></a><span class="identifier">make_worker</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297830376112-bb"></a><span class="identifier">set_time_limit</span><span class="special">(</span><span class="keyword">double</span> limit<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">virtual</span> <span class="keyword">void</span> <a name="idp140297830377680-bb"></a><span class="identifier">checkpoint</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">int</span> <a name="idp140297830378640-bb"></a><span class="identifier">check_signals</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204666622704"></a><h3>
+<a name="idp140297830382000-bb"></a><code class="computeroutput">Scheduler</code> public static functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="keyword">static</span> <span class="keyword">void</span> <a name="idp140297830382480-bb"></a><span class="identifier">make_slave_task</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Process</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">static</span> <span class="keyword">void</span> <a name="idp140297830384048-bb"></a><span class="identifier">delete_slave_task</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">Process</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="MPPScheduler.html"><img src="../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../scheduler/reference.html#header.alps.scheduler.scheduler_h"><img src="../../images/up.png" alt="Up"></a><a accesskey="h" href="../../index.html"><img src="../../images/home.png" alt="Home"></a><a accesskey="n" href="SerialScheduler.html"><img src="../../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template multivariate_normal_distribution</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../random/reference.html#header.alps.random.multivariate_normal_distribution_hpp" title="Header &lt;alps/random/multivariate_normal_distribution.hpp&gt;">
+<link rel="prev" href="buffered_uniform_01.html" title="Class template buffered_uniform_01">
+<link rel="next" href="../PRIMELISTSIZE1.html" title="Macro PRIMELISTSIZE1">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="buffered_uniform_01.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../random/reference.html#header.alps.random.multivariate_normal_distribution_hpp"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../PRIMELISTSIZE1.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.multiva_idp140297800368576"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template multivariate_normal_distribution</span></h2>
+<p>alps::multivariate_normal_distribution &#8212; a distribution creating correlated multi-variate normally distributed numbers </p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../random/reference.html#header.alps.random.multivariate_normal_distribution_hpp" title="Header &lt;alps/random/multivariate_normal_distribution.hpp&gt;">alps/random/multivariate_normal_distribution.hpp</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RealType <span class="special">=</span> <span class="keyword">double</span><span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="multiva_idp140297800368576.html" title="Class template multivariate_normal_distribution">multivariate_normal_distribution</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">RealType</span>                                  <a name="alps.multiva_idp140297800368576.result_type"></a><span class="identifier">result_type</span><span class="special">;</span>  <span class="comment">// the type of random numbers produced </span>
+  <span class="keyword">typedef</span> <span class="identifier">RealType</span>                                  <a name="alps.multiva_idp140297800368576.input_type"></a><span class="identifier">input_type</span><span class="special">;</span>   <span class="comment">// the input type </span>
+  <span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">::</span><span class="identifier">ublas</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">RealType</span> <span class="special">&gt;</span> <a name="alps.multiva_idp140297800368576.vector_type"></a><span class="identifier">vector_type</span><span class="special">;</span>  <span class="comment">// the type of the vector of mean values </span>
+  <span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">::</span><span class="identifier">ublas</span><span class="special">::</span><span class="identifier">matrix</span><span class="special">&lt;</span> <span class="identifier">RealType</span> <span class="special">&gt;</span> <a name="alps.multiva_idp140297800368576.matrix_type"></a><span class="identifier">matrix_type</span><span class="special">;</span>  <span class="comment">// the type of the matrix storing the Cholesky decomposition of the covariance matrix </span>
+
+  <span class="comment">// <a class="link" href="multiva_idp140297800368576.html#alps.multiva_idp140297800368576construct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="multiva_idp140297800368576.html#idp140297800384816-bb"><span class="identifier">multivariate_normal_distribution</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">matrix_type</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">vector_type</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">explicit</span> <a class="link" href="multiva_idp140297800368576.html#idp140297800388400-bb"><span class="identifier">multivariate_normal_distribution</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">matrix_type</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="multiva_idp140297800368576.html#idp140297800376080-bb">public member functions</a></span>
+  <span class="identifier">vector_type</span> <span class="keyword">const</span> <span class="special">&amp;</span> <a class="link" href="multiva_idp140297800368576.html#idp140297800376560-bb"><span class="identifier">mean</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">matrix_type</span> <span class="keyword">const</span> <span class="special">&amp;</span> <a class="link" href="multiva_idp140297800368576.html#idp140297800378288-bb"><span class="identifier">cholesky</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="multiva_idp140297800368576.html#idp140297800380080-bb"><span class="identifier">reset</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Engine<span class="special">&gt;</span> <span class="identifier">result_type</span> <a class="link" href="multiva_idp140297800368576.html#idp140297800381536-bb"><span class="keyword">operator</span><span class="special">(</span><span class="special">)</span></a><span class="special">(</span><span class="identifier">Engine</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204615314032"></a><h2>Description</h2>
+<p>the multivariate normal distribution creates correlated random numbers with a specified mean vector and covariance matrix. Instead of using a vector as the <code class="computeroutput">result_type</code>, the <code class="computeroutput">result_type</code> is a scalar real number, and the <code class="computeroutput">operator()</code> should be called once for each element of the vector. </p>
+<div class="refsect2">
+<a name="idp140204615316896"></a><h3>
+<a name="alps.multiva_idp140297800368576construct-copy-destruct"></a><code class="computeroutput">multivariate_normal_distribution</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><a name="idp140297800384816-bb"></a><span class="identifier">multivariate_normal_distribution</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">matrix_type</span> <span class="special">&amp;</span> cholesky<span class="special">,</span> 
+                                 <span class="keyword">const</span> <span class="identifier">vector_type</span> <span class="special">&amp;</span> mean<span class="special">)</span><span class="special">;</span></pre>the constructor of the multi-variate normal distribution <p>
+The Cholesky decomposition has to be a square matrix and its dimension has to be the same as that of the mean vector. Instead of a Cholesky decomposition any other square root of the covariance matrix could be passed.</p>
+<p>Requires: mean.size() == cholesky.size1() and cholesky.size1() == cholesky.size2() </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="computeroutput">cholesky</code></span></p></td>
+<td><p>the Cholesky decomposition of the covariance matrix</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="computeroutput">mean</code></span></p></td>
+<td><p>the vector of mean values </p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">explicit</span> <a name="idp140297800388400-bb"></a><span class="identifier">multivariate_normal_distribution</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">matrix_type</span> <span class="special">&amp;</span> cholesky<span class="special">)</span><span class="special">;</span></pre>the constructor of the multi-variate normal distribution with zero mean <p>
+Instead of a Cholesky decomposition any other square root of the covariance matrix could be passed.</p>
+<p>Requires: cholesky.size1() == cholesky.size2() </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="computeroutput">cholesky</code></span></p></td>
+<td><p>the Cholesky decomposition of the covariance matrix</p></td>
+</tr></tbody>
+</table></div></td>
+</tr></tbody>
+</table></div>
+</li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204615341808"></a><h3>
+<a name="idp140297800376080-bb"></a><code class="computeroutput">multivariate_normal_distribution</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">vector_type</span> <span class="keyword">const</span> <span class="special">&amp;</span> <a name="idp140297800376560-bb"></a><span class="identifier">mean</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>the vector of mean values </p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">matrix_type</span> <span class="keyword">const</span> <span class="special">&amp;</span> <a name="idp140297800378288-bb"></a><span class="identifier">cholesky</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>the Cholesky decomposition of the covariance marix </p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp140297800380080-bb"></a><span class="identifier">reset</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>purges the cache. <p>Purges the cache. The next call to oeprator() will create a new vector. </p>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> Engine<span class="special">&gt;</span> <span class="identifier">result_type</span> <a name="idp140297800381536-bb"></a><span class="keyword">operator</span><span class="special">(</span><span class="special">)</span><span class="special">(</span><span class="identifier">Engine</span> <span class="special">&amp;</span> eng<span class="special">)</span><span class="special">;</span></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>On the first call, it creates a vector of n multivariate normally distributed random numbers, caches it, and returns the first value. The next n-1 calls return the next elements of the vector. The n+1-st call again creates a new vector of multivariate normally distributed random numbers. </p></td>
+</tr></tbody>
+</table></div>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2006-2008 Brigitte Surer,
+      Matthias Troyer</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="buffered_uniform_01.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../random/reference.html#header.alps.random.multivariate_normal_distribution_hpp"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../PRIMELISTSIZE1.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

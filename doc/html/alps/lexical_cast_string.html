@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template lexical_cast_string</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../general/reference.html#header.alps.stringvalue_h" title="Header &lt;alps/stringvalue.h&gt;">
+<link rel="prev" href="stop_callback.html" title="Class stop_callback">
+<link rel="next" href="../random.html" title="Chapter 3. ALPS.Random">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="stop_callback.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../general/reference.html#header.alps.stringvalue_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../random.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.lexical_cast_string"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template lexical_cast_string</span></h2>
+<p>alps::lexical_cast_string &#8212; a string class with built-in conversion to other types using lexical_cast </p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../general/reference.html#header.alps.stringvalue_h" title="Header &lt;alps/stringvalue.h&gt;">alps/stringvalue.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> StringBase <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="lexical_cast_string.html" title="Class template lexical_cast_string">lexical_cast_string</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">StringBase</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">StringBase</span> <a name="alps.lexical_cast_string.string_type"></a><span class="identifier">string_type</span><span class="special">;</span>  <span class="comment">// the underlying string class </span>
+
+  <span class="comment">// <a class="link" href="lexical_cast_string.html#alps.lexical_cast_stringconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="lexical_cast_string.html#idp140297798106912-bb"><span class="identifier">lexical_cast_string</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">string_type</span> <span class="special">&amp;</span> <span class="special">=</span> <span class="identifier">string_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="lexical_cast_string.html#idp140297798108288-bb"><span class="identifier">lexical_cast_string</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="lexical_cast_string.html" title="Class template lexical_cast_string">lexical_cast_string</a> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <a class="link" href="lexical_cast_string.html#idp140297798109792-bb"><span class="identifier">lexical_cast_string</span></a><span class="special">(</span><span class="keyword">const</span> <span class="keyword">char</span> <span class="special">*</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> InputItr<span class="special">&gt;</span> <a class="link" href="lexical_cast_string.html#idp140297798110912-bb"><span class="identifier">lexical_cast_string</span></a><span class="special">(</span><span class="identifier">InputItr</span><span class="special">,</span> <span class="identifier">InputItr</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a class="link" href="lexical_cast_string.html#idp140297798113376-bb"><span class="identifier">lexical_cast_string</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="lexical_cast_string.html#idp140297798101312-bb">public member functions</a></span>
+  <span class="keyword">bool</span> <a class="link" href="lexical_cast_string.html#idp140297798101792-bb"><span class="identifier">valid</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="identifier">T</span> <a class="link" href="lexical_cast_string.html#idp140297798103008-bb"><span class="identifier">get</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <a class="link" href="lexical_cast_string.html#idp140297798105024-bb"><span class="keyword">operator</span> <span class="keyword">bool</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204613512864"></a><h2>Description</h2>
+<p>This class, derived from a std::string or similar implements additional conversion operations and constructors implemented using boost::lexical_cast 
+</p>
+<div class="refsect2">
+<a name="idp140204613513680"></a><h3>
+<a name="alps.lexical_cast_stringconstruct-copy-destruct"></a><code class="computeroutput">lexical_cast_string</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><a name="idp140297798106912-bb"></a><span class="identifier">lexical_cast_string</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">string_type</span> <span class="special">&amp;</span> s <span class="special">=</span> <span class="identifier">string_type</span><span class="special">(</span><span class="special">)</span><span class="special">)</span><span class="special">;</span></pre>constructor from a string </li>
+<li class="listitem">
+<pre class="literallayout"><a name="idp140297798108288-bb"></a><span class="identifier">lexical_cast_string</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="lexical_cast_string.html" title="Class template lexical_cast_string">lexical_cast_string</a> <span class="special">&amp;</span> s<span class="special">)</span><span class="special">;</span></pre>copy-contructor </li>
+<li class="listitem">
+<pre class="literallayout"><a name="idp140297798109792-bb"></a><span class="identifier">lexical_cast_string</span><span class="special">(</span><span class="keyword">const</span> <span class="keyword">char</span> <span class="special">*</span> s<span class="special">)</span><span class="special">;</span></pre>constructor from a C-style string </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> InputItr<span class="special">&gt;</span> <a name="idp140297798110912-bb"></a><span class="identifier">lexical_cast_string</span><span class="special">(</span><span class="identifier">InputItr</span> first<span class="special">,</span> <span class="identifier">InputItr</span> last<span class="special">)</span><span class="special">;</span></pre>constructor from a character sequence </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <a name="idp140297798113376-bb"></a><span class="identifier">lexical_cast_string</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">T</span> <span class="special">&amp;</span> x<span class="special">)</span><span class="special">;</span></pre>constructor from arbitrary types implemented using boost::lexical_cast </li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204613549920"></a><h3>
+<a name="idp140297798101312-bb"></a><code class="computeroutput">lexical_cast_string</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297798101792-bb"></a><span class="identifier">valid</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>check whether the string is not empty </li>
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T<span class="special">&gt;</span> <span class="identifier">T</span> <a name="idp140297798103008-bb"></a><span class="identifier">get</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>convert the string to type T using boost::lexical_cast </li>
+<li class="listitem">
+<pre class="literallayout"><a name="idp140297798105024-bb"></a><span class="keyword">operator</span> <span class="keyword">bool</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>convert the string to bool <p>the strings "true" and "false" are valid ways to specify tryue or false boolean values. Any other value will be converted to bool using boost::lexical_cast </p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="stop_callback.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../general/reference.html#header.alps.stringvalue_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="../random.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

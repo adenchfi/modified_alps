@@ -1,0 +1,144 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template lcg64</title>
+<link rel="stylesheet" href="../../../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../../../index.html" title="The ALPS Libraries">
+<link rel="up" href="../../../random/reference.html#header.alps.random.parallel.lcg64_hpp" title="Header &lt;alps/random/parallel/lcg64.hpp&gt;">
+<link rel="prev" href="../../../ALPS_RANDOM_MAXARITY.html" title="Macro ALPS_RANDOM_MAXARITY">
+<link rel="next" href="seed_idp140297800448032.html" title="Function template seed">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../../../alps_logo.gif"></td>
+<td align="center"><a href="../../.././index.html">Home</a></td>
+<td align="center"><a href="../../.././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="../../.././overview/license.html">License</a></td>
+<td align="center"><a href="../../.././overview/support.html">Support</a></td>
+<td align="center"><a href="../../.././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../../../ALPS_RANDOM_MAXARITY.html"><img src="../../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../../random/reference.html#header.alps.random.parallel.lcg64_hpp"><img src="../../../images/up.png" alt="Up"></a><a accesskey="h" href="../../../index.html"><img src="../../../images/home.png" alt="Home"></a><a accesskey="n" href="seed_idp140297800448032.html"><img src="../../../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.random.parallel.lcg64"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template lcg64</span></h2>
+<p>alps::random::parallel::lcg64 &#8212; a 64-bit linear congruential generator </p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../../../random/reference.html#header.alps.random.parallel.lcg64_hpp" title="Header &lt;alps/random/parallel/lcg64.hpp&gt;">alps/random/parallel/lcg64.hpp</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="identifier">uint64_t</span> a<span class="special">,</span> <span class="identifier">uint64_t</span> val<span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="lcg64.html" title="Class template lcg64">lcg64</a> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">uint64_t</span> <a name="alps.random.parallel.lcg64.result_type"></a><span class="identifier">result_type</span><span class="special">;</span>  <span class="comment">// The result type is a 64-bit unsigned integer. </span>
+
+  <span class="comment">// <a class="link" href="lcg64.html#alps.random.parallel.lcg64construct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="lcg64.html#idp140297800434192-bb"><span class="identifier">lcg64</span></a><span class="special">(</span><span class="special">...</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="lcg64.html#idp140297800426448-bb">public member functions</a></span>
+  <span class="keyword">void</span> <a class="link" href="lcg64.html#idp140297800426928-bb"><span class="identifier">seed</span></a><span class="special">(</span><span class="special">...</span><span class="special">)</span><span class="special">;</span>
+  <span class="identifier">result_type</span> <a class="link" href="lcg64.html#idp140297800429040-bb"><span class="identifier">min</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">result_type</span> <a class="link" href="lcg64.html#idp140297800430768-bb"><span class="identifier">max</span></a><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">result_type</span> <a class="link" href="lcg64.html#idp140297800432560-bb"><span class="keyword">operator</span><span class="special">(</span><span class="special">)</span></a><span class="special">(</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="lcg64.html#idp140297800435824-bb">public static functions</a></span>
+  <span class="keyword">static</span> <span class="keyword">bool</span> <a class="link" href="lcg64.html#idp140297800436304-bb"><span class="identifier">validation</span></a><span class="special">(</span><span class="identifier">uint64_t</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// public data members</span>
+  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">bool</span> <span class="identifier">has_fixed_range</span><span class="special">;</span>  <span class="comment">// This generator has a fixed range. </span>
+  <span class="keyword">static</span> <span class="keyword">const</span> <span class="identifier">result_type</span> <span class="identifier">min_value</span><span class="special">;</span>  <span class="comment">// The minimum vaue is 0. </span>
+  <span class="keyword">static</span> <span class="keyword">const</span> <span class="identifier">result_type</span> <span class="identifier">max_value</span><span class="special">;</span>  <span class="comment">// The maximum value is the largest unsigned 64 bit integer. </span>
+  <span class="keyword">static</span> <span class="keyword">const</span> <span class="identifier">result_type</span> <span class="identifier">max_streams</span><span class="special">;</span>  <span class="comment">// The maximum number of streams is 146138719, the number of primes among all 64-bit unsigned integer values. </span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204615575824"></a><h2>Description</h2>
+<p>A 64-bit parallel linear congruential generator, following the implementation of the SPRNG library </p>
+<div class="refsect2">
+<a name="idp140204615576592"></a><h3>
+<a name="alps.random.parallel.lcg64construct-copy-destruct"></a><code class="computeroutput">lcg64</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+<pre class="literallayout"><a name="idp140297800434192-bb"></a><span class="identifier">lcg64</span><span class="special">(</span><span class="special">...</span><span class="special">)</span><span class="special">;</span></pre>the constructors <p>All standard and named parameter constructors of random number generator and parallel random number generators are provided </p>
+</li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204615583136"></a><h3>
+<a name="idp140297800426448-bb"></a><code class="computeroutput">lcg64</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<pre class="literallayout"><span class="keyword">void</span> <a name="idp140297800426928-bb"></a><span class="identifier">seed</span><span class="special">(</span><span class="special">...</span><span class="special">)</span><span class="special">;</span></pre>the seed fuctions <p>All standard and named parameter seed functions of random number generator and parallel random number generators are provided </p>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">result_type</span> <a name="idp140297800429040-bb"></a><span class="identifier">min</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>the minimum value 0 </p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">result_type</span> <a name="idp140297800430768-bb"></a><span class="identifier">max</span><span class="special">(</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>the maximum value, the largest unsigned 64-bit integer </p></td>
+</tr></tbody>
+</table></div>
+</li>
+<li class="listitem">
+<pre class="literallayout"><span class="identifier">result_type</span> <a name="idp140297800432560-bb"></a><span class="keyword">operator</span><span class="special">(</span><span class="special">)</span><span class="special">(</span><span class="special">)</span><span class="special">;</span></pre>
+<p>
+</p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Returns:</span></p></td>
+<td><p>the next random number </p></td>
+</tr></tbody>
+</table></div>
+</li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204615609488"></a><h3>
+<a name="idp140297800435824-bb"></a><code class="computeroutput">lcg64</code> public static functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+<pre class="literallayout"><span class="keyword">static</span> <span class="keyword">bool</span> <a name="idp140297800436304-bb"></a><span class="identifier">validation</span><span class="special">(</span><span class="identifier">uint64_t</span> x<span class="special">)</span><span class="special">;</span></pre>the validation function <p>The validation function checks whether the passed value is the 10'000-th integer generated from a default-seeded generator </p>
+</li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2006-2008 Brigitte Surer,
+      Matthias Troyer</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="../../../ALPS_RANDOM_MAXARITY.html"><img src="../../../images/prev.png" alt="Prev"></a><a accesskey="u" href="../../../random/reference.html#header.alps.random.parallel.lcg64_hpp"><img src="../../../images/up.png" alt="Up"></a><a accesskey="h" href="../../../index.html"><img src="../../../images/home.png" alt="Home"></a><a accesskey="n" href="seed_idp140297800448032.html"><img src="../../../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

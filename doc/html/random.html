@@ -1,0 +1,1029 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Chapter 3. ALPS.Random</title>
+<link rel="stylesheet" href="boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="The ALPS Libraries">
+<link rel="up" href="index.html" title="The ALPS Libraries">
+<link rel="prev" href="alps/lexical_cast_string.html" title="Class template lexical_cast_string">
+<link rel="next" href="random/reference.html" title="Reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="alps_logo.gif"></td>
+<td align="center"><a href="./index.html">Home</a></td>
+<td align="center"><a href="./overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="./overview/license.html">License</a></td>
+<td align="center"><a href="./overview/support.html">Support</a></td>
+<td align="center"><a href="./overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="alps/lexical_cast_string.html"><img src="images/prev.png" alt="Prev"></a><a accesskey="u" href="index.html"><img src="images/up.png" alt="Up"></a><a accesskey="h" href="index.html"><img src="images/home.png" alt="Home"></a><a accesskey="n" href="random/reference.html"><img src="images/next.png" alt="Next"></a>
+</div>
+<div class="chapter">
+<div class="titlepage"><div>
+<div><h1 class="title">
+<a name="random"></a>Chapter 3. ALPS.Random</h1></div>
+<div><div class="author"><h3 class="author">
+<span class="firstname">Brigitte</span> <span class="surname">Surer</span>
+</h3></div></div>
+<div><div class="author"><h3 class="author">
+<span class="firstname">Matthias</span> <span class="surname">Troyer</span>
+</h3></div></div>
+<div><p class="copyright">Copyright © 2006-2008 Brigitte Surer,
+      Matthias Troyer</p></div>
+<div><div class="legalnotice">
+<a name="random.legal"></a><p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">
+        http://www.boost.org/LICENSE_1_0.txt </a>)
+      </p>
+</div></div>
+</div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl class="toc">
+<dt><span class="section"><a href="random.html#random.rand">The Random Library</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="random.html#random.multivariate">Multivariate normal distribution</a></span></dt>
+<dt><span class="section"><a href="random.html#random.buffered">Runtime-polymorphic buffered generator classes</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel">Parallel random number generators</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel_sprng">Wrappers to the SPRNG parallel random number library</a></span></dt>
+</dl></dd>
+<dt><span class="section"><a href="random/reference.html">Reference</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.buffered_generator_hpp">Header &lt;alps/random/buffered_generator.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.buffered_rng_h">Header &lt;alps/random/buffered_rng.h&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.buffered_uniform_01_hpp">Header &lt;alps/random/buffered_uniform_01.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.mersenne_twister_hpp">Header &lt;alps/random/parallel/mersenne_twister.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.multivariate_normal_distribution_hpp">Header &lt;alps/random/multivariate_normal_distribution.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.detail.get_prime_hpp">Header &lt;alps/random/parallel/detail/get_prime.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.detail.primelist_64_hpp">Header &lt;alps/random/parallel/detail/primelist_64.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.primelist_64_hpp">Header &lt;alps/random/parallel/primelist_64.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.detail.seed_macros_hpp">Header &lt;alps/random/parallel/detail/seed_macros.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.keyword_hpp">Header &lt;alps/random/parallel/keyword.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.sprng.keyword_hpp">Header &lt;alps/random/sprng/keyword.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.lcg64_hpp">Header &lt;alps/random/parallel/lcg64.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.sprng.lcg64_hpp">Header &lt;alps/random/sprng/lcg64.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.mpi_hpp">Header &lt;alps/random/parallel/mpi.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.seed_hpp">Header &lt;alps/random/parallel/seed.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.parallel.well_hpp">Header &lt;alps/random/parallel/well.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.pseudo_des_h">Header &lt;alps/random/pseudo_des.h&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.random_choice_hpp">Header &lt;alps/random/random_choice.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.rngfactory_h">Header &lt;alps/random/rngfactory.h&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.seed_h">Header &lt;alps/random/seed.h&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.sprng.cmrg_hpp">Header &lt;alps/random/sprng/cmrg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.sprng.detail.buffer_hpp">Header &lt;alps/random/sprng/detail/buffer.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.sprng.lcg_hpp">Header &lt;alps/random/sprng/lcg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.sprng.lfg_hpp">Header &lt;alps/random/sprng/lfg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.sprng.mlfg_hpp">Header &lt;alps/random/sprng/mlfg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.sprng.pmlcg_hpp">Header &lt;alps/random/sprng/pmlcg.hpp&gt;</a></span></dt>
+<dt><span class="section"><a href="random/reference.html#header.alps.random.uniform_on_sphere_n_h">Header &lt;alps/random/uniform_on_sphere_n.h&gt;</a></span></dt>
+</dl></dd>
+</dl>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="random.rand"></a>The Random Library</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="random.html#random.multivariate">Multivariate normal distribution</a></span></dt>
+<dt><span class="section"><a href="random.html#random.buffered">Runtime-polymorphic buffered generator classes</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel">Parallel random number generators</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel_sprng">Wrappers to the SPRNG parallel random number library</a></span></dt>
+</dl></div>
+<p>
+      The <code class="computeroutput"><span class="identifier">Random</span></code> library provides
+      extensions to the Boost Random library, in particular a multivariate normal
+      distribution and parallel random number generators.
+    </p>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="random.multivariate"></a>Multivariate normal distribution</h3></div></div></div>
+<p>
+        The <code class="computeroutput"><a class="link" href="alps/multiva_idp140297800368576.html" title="Class template multivariate_normal_distribution">multivariate_normal_distribution</a></code>
+        class template implements a multi-variate normal distribution of correlated
+        normally distributed random numbers.
+      </p>
+<p>
+        Multivariate normally distributed random numbers are sequences of n random
+        numbers, distributed with given mean values M(i), and covariance matrix Cov(i,j).
+      </p>
+<p>
+        Instead of using a sequence type a<code class="computeroutput"><span class="identifier">result_type</span></code>
+        the design decision was to keep the underlying real number type as the <code class="computeroutput"><span class="identifier">result_type</span></code>. Hence, n succesive calls are
+        required to obtain all n multivariate normal numbers. This removes the need
+        to choose a specific container type as<code class="computeroutput"><span class="identifier">result_type</span></code>,
+        while still allowing any container to be filled using, for example, <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">generate</span></code>.
+      </p>
+<p>
+        The constructor of the distribution takes the Cholesky decomposition C of
+        the covariance matrix Cov = C[sup T]C, and the vector of mean values M. The
+        algoritm used first creates a vector v of n normally distributed random numbers
+        with 0 mean and unit variance and then calculates the multivariate randim
+        numbers using the equation m + C * v.
+      </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="random.buffered"></a>Runtime-polymorphic buffered generator classes</h3></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="random.html#random.buffered_intro">Introduction</a></span></dt>
+<dt><span class="section"><a href="random.html#random.buffer_example1">Example 1: a buffered generator</a></span></dt>
+<dt><span class="section"><a href="random.html#random.buffer_example2">Example 2: a buffered engine</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.buffered_intro"></a>Introduction</h4></div></div></div>
+<p>
+          Boost.Random and the TR1 random number library provide a number of efficient
+          pseudo random number generators. These pseudo random number generators
+          follow an algorithmic prescription to generate numbers that look "sufficiently"
+          random to be used in place of true random numbers. Since, however these
+          "random numbers" are not truly random, one has to be careful
+          when using them for high-precision Monte Carlo simulations. Experience
+          has shown that the only reliable test for the quality of a random number
+          generator for a given application is to redo the calculation with more
+          than one type of random number generator.
+        </p>
+<p>
+          In order to facilitate the switching of random number engines at runtime,
+          we here provide polymorphic generator classes. Since the cost os a virtual
+          <code class="computeroutput"><span class="keyword">operator</span><span class="special">()</span></code>,
+          requiring a virtual function call for every single number is prohibitive
+          in high performance applications, the <code class="computeroutput"><a class="link" href="alps/buffered_generator.html" title="Class template buffered_generator">buffered_generator</a></code>
+          uses a virtual function [memfunref alps::buffered_generator::fill_buffer
+          fill_buffer] to generate not just one but a sequence of numbers, and then
+          return values from that buffer using an inlines &lt;code&gt;operator()&lt;/code&gt;
+          until the buffer is exhausted.
+        </p>
+<p>
+          We provide an abstract class template <code class="computeroutput"><a class="link" href="alps/buffered_generator.html" title="Class template buffered_generator">buffered_generator&lt;ResultType&gt;</a></code>
+          and a concrete derived class template <code class="computeroutput"><a class="link" href="alps/basic_buffered_generator.html" title="Class template basic_buffered_generator">basic_buffered_generator&lt;GeneratorType,ResultType&gt;</a></code>
+          which uses a given generator to fill the buffer.
+        </p>
+<p>
+          Since generators can have different ranges, we additionally provide, for
+          convenience, a <code class="computeroutput"><a class="link" href="alps/buffered_uniform_01.html" title="Class template buffered_uniform_01">buffered_uniform_01&lt;GeneratorType,ResultType&gt;</a></code>
+          random number generator class template. This template models a uniform
+          random number generator by providing <code class="computeroutput"><span class="identifier">min</span><span class="special">()</span></code> and <code class="computeroutput"><span class="identifier">max</span><span class="special">()</span></code> functions and can thus be used with any
+          of the distributions of Boost.Random.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.buffer_example1"></a>Example 1: a buffered generator</h4></div></div></div>
+<p>
+          The first example shows how a buffered generator can be created and used
+          in a simulation.
+        </p>
+<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">alps</span><span class="special">/</span><span class="identifier">random</span><span class="special">/</span><span class="identifier">buffered_generator</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">random</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iostream</span><span class="special">&gt;</span>
+
+<span class="comment">// A simple example simulation - usually it will be much more complex</span>
+<span class="keyword">double</span> <span class="identifier">simulate</span><span class="special">(</span><span class="identifier">alps</span><span class="special">::</span><span class="identifier">buffered_generator</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;&amp;</span> <span class="identifier">gen</span><span class="special">)</span>
+<span class="special">{</span>
+  <span class="keyword">double</span> <span class="identifier">sum</span><span class="special">=</span><span class="number">0</span><span class="special">;</span>
+  <span class="keyword">for</span> <span class="special">(</span><span class="keyword">int</span> <span class="identifier">i</span><span class="special">=</span><span class="number">0</span><span class="special">;</span><span class="identifier">i</span><span class="special">&lt;</span><span class="number">100000</span><span class="special">;</span><span class="identifier">i</span><span class="special">++)</span>
+    <span class="identifier">sum</span> <span class="special">+=</span> <span class="identifier">gen</span><span class="special">();</span>
+  <span class="keyword">return</span> <span class="identifier">sum</span><span class="special">;</span>
+<span class="special">}</span>
+
+<span class="comment">// create a buffered_generator</span>
+<span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">RNG</span><span class="special">&gt;</span>
+<span class="keyword">void</span> <span class="identifier">simulate_it</span><span class="special">()</span>
+<span class="special">{</span>
+  <span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">variate_generator</span><span class="special">&lt;</span><span class="identifier">RNG</span><span class="special">&amp;,</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">normal_distribution</span><span class="special">&lt;&gt;</span> <span class="special">&gt;</span> <span class="identifier">gen_type</span><span class="special">;</span>
+  <span class="identifier">RNG</span> <span class="identifier">engine</span><span class="special">;</span>
+  <span class="identifier">alps</span><span class="special">::</span><span class="identifier">basic_buffered_generator</span><span class="special">&lt;</span><span class="identifier">gen_type</span><span class="special">,</span><span class="keyword">double</span><span class="special">&gt;</span>
+    <span class="identifier">gen</span><span class="special">(</span><span class="identifier">gen_type</span><span class="special">(</span><span class="identifier">engine</span><span class="special">,</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">normal_distribution</span><span class="special">&lt;&gt;()));</span>
+
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">simulate</span><span class="special">(</span><span class="identifier">gen</span><span class="special">)</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
+<span class="special">}</span>
+
+<span class="comment">// call the simulation with two different generators</span>
+<span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span>
+<span class="special">{</span>
+  <span class="identifier">simulate_it</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">mt11213b</span><span class="special">&gt;();</span>
+  <span class="identifier">simulate_it</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">mt19937</span><span class="special">&gt;();</span>
+<span class="special">}</span>
+</pre>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.buffer_example2"></a>Example 2: a buffered engine</h4></div></div></div>
+<p>
+          The next example uses a polymorphic &lt;code&gt;buffered_uniform_01&lt;/code&gt;
+          generator as a uniform random number generation engine to create variates
+          with different distributions: uniform and normally distributed. Note that
+          the &lt;code&gt;buffered_generator&lt;/code&gt; is a model of Generator
+          but not of UniformRandomNumberGenerator and can thus not be used as an
+          engine in a &lt;code&gt;variate_generator&lt;/code&gt;.
+        </p>
+<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">alps</span><span class="special">/</span><span class="identifier">random</span><span class="special">/</span><span class="identifier">buffered_uniform_01</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">random</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iostream</span><span class="special">&gt;</span>
+
+<span class="comment">// A simple example simulation - usually it will be much more complex</span>
+<span class="keyword">double</span> <span class="identifier">simulate</span><span class="special">(</span><span class="identifier">alps</span><span class="special">::</span><span class="identifier">buffered_uniform_01</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;&amp;</span> <span class="identifier">gen</span><span class="special">)</span>
+<span class="special">{</span>
+  <span class="keyword">double</span> <span class="identifier">sum</span><span class="special">=</span><span class="number">0</span><span class="special">;</span>
+  <span class="keyword">for</span> <span class="special">(</span><span class="keyword">int</span> <span class="identifier">i</span><span class="special">=</span><span class="number">0</span><span class="special">;</span><span class="identifier">i</span><span class="special">&lt;</span><span class="number">100000</span><span class="special">;</span><span class="identifier">i</span><span class="special">++)</span>
+    <span class="identifier">sum</span> <span class="special">+=</span> <span class="identifier">gen</span><span class="special">();</span>
+
+  <span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">variate_generator</span><span class="special">&lt;</span><span class="identifier">alps</span><span class="special">::</span><span class="identifier">buffered_uniform_01</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;&amp;,</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">normal_distribution</span><span class="special">&lt;&gt;</span> <span class="special">&gt;</span> <span class="identifier">gen_type</span><span class="special">;</span>
+  <span class="identifier">gen_type</span> <span class="identifier">gauss</span><span class="special">(</span><span class="identifier">gen</span><span class="special">,</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">normal_distribution</span><span class="special">&lt;&gt;());</span>
+  <span class="keyword">for</span> <span class="special">(</span><span class="keyword">int</span> <span class="identifier">i</span><span class="special">=</span><span class="number">0</span><span class="special">;</span><span class="identifier">i</span><span class="special">&lt;</span><span class="number">100000</span><span class="special">;</span><span class="identifier">i</span><span class="special">++)</span>
+    <span class="identifier">sum</span> <span class="special">+=</span> <span class="identifier">gauss</span><span class="special">();</span>
+  <span class="keyword">return</span> <span class="identifier">sum</span><span class="special">;</span>
+<span class="special">}</span>
+
+<span class="comment">// create a buffered_generator</span>
+<span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">RNG</span><span class="special">&gt;</span>
+<span class="keyword">void</span> <span class="identifier">simulate_it</span><span class="special">()</span>
+<span class="special">{</span>
+  <span class="identifier">alps</span><span class="special">::</span><span class="identifier">basic_buffered_uniform_01</span><span class="special">&lt;</span><span class="identifier">RNG</span><span class="special">&gt;</span> <span class="identifier">gen</span><span class="special">;</span>
+  <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">simulate</span><span class="special">(</span><span class="identifier">gen</span><span class="special">)</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
+<span class="special">}</span>
+
+<span class="comment">// call the simulation with two different generators</span>
+<span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span>
+<span class="special">{</span>
+  <span class="identifier">simulate_it</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">mt11213b</span><span class="special">&gt;();</span>
+  <span class="identifier">simulate_it</span><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">::</span><span class="identifier">mt19937</span><span class="special">&gt;();</span>
+<span class="special">}</span>
+</pre>
+</div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="random.parallel"></a>Parallel random number generators</h3></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="random.html#random.parallel_intro">Introduction</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel_uniform_rng">Parallel Uniform Random Number Generator concept</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel_named">Named parameters interface</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel_seed">Parallel seeding functions</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel_generators">Parallel random number generators</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.parallel_intro"></a>Introduction</h4></div></div></div>
+<p>
+          Stochastic simulations on parallel machines face an additional problem
+          over simulations on a single CPU: we not only need one random number stream
+          but uncorrelated random number streams for each CPU. Since massively parallel
+          machines with 65536 CPUs exist, this can be a formidable challenge.
+        </p>
+<p>
+          The <a href="http://sprng.cs.fsu.edu/" target="_top">Scalable Parallel Pseuo Random
+          Number Generators Library (SPRNG)</a> is a C-library that was designed
+          to solve this challenge. As explained in detail in the <a href="http://sprng.cs.fsu.edu/Version1.0/paper/node7.html" target="_top">SPRNG
+          paper</a>, there are several methods of creating independent parallel
+          random number streams, using parametrization of the generator, or cycle
+          division techniques.
+        </p>
+<p>
+          Since the method to create independent streams depends on the choice of
+          generator, no generic seeding can be implemented, but the seeding mechanism
+          is specific to the generator. However, a common interface is possible,
+          and we follow the design of the SPRNG library by requiring the following
+          two parameters next to a global seed
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">stream_number</span></code>: the
+              number of the current stream
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">total_streams</span></code>: the
+              total number of streams required
+            </li>
+</ul></div>
+<p>
+          Any parallel random number generator has to guarantee that generators created
+          with the same values of <code class="computeroutput"><span class="identifier">total_streams</span></code>,
+          <code class="computeroutput"><span class="identifier">global_seed</span></code> but different
+          values for <code class="computeroutput"><span class="identifier">stream_number</span></code>
+          produce independent non-overlapping sequences of random numbers. In a parallel
+          application, typically the node number is chosen as <code class="computeroutput"><span class="identifier">stream_number</span></code>
+          and the total number of nodes as <code class="computeroutput"><span class="identifier">total_streams</span></code>.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.parallel_uniform_rng"></a>Parallel Uniform Random Number Generator concept</h4></div></div></div>
+<p>
+          A parallel uniform random number generator is a refinement of the <code class="computeroutput"><span class="identifier">UniformRandomNumberGenerator</span></code> that provides
+          not one but many independent streams (sequences) of uniform random numbers.
+        </p>
+<p>
+          In the following table,
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">X</span></code> denotes a model of
+              the concept <code class="computeroutput"><span class="identifier">ParallelUniformRandomNumberGenerator</span></code>.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">v</span></code> is an object of type<code class="computeroutput"><span class="identifier">X</span></code>.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">s</span></code> is an integral value.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">num</span></code> and <code class="computeroutput"><span class="identifier">total</span></code> are unsigned integral values
+              saitsfying <code class="computeroutput"><span class="identifier">num</span> <span class="special">&lt;</span>
+              <span class="identifier">total</span></code>.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">first</span></code> and <code class="computeroutput"><span class="identifier">last</span></code> are input iterators with a value
+              type convertible to <code class="computeroutput"><span class="keyword">unsigned</span>
+              <span class="keyword">int</span></code>. <code class="computeroutput"><span class="identifier">first</span></code>
+              is required to be non-const.
+            </li>
+</ul></div>
+<p>
+          Parallel uniform random number generators seeded with the same values of<code class="computeroutput"><span class="identifier">num</span></code> and <code class="computeroutput"><span class="identifier">total</span></code>
+          must produce independent non-overlapping sequences of random numbers, if
+          all other arguments besides <code class="computeroutput"><span class="identifier">v</span></code>
+          are equivalent, including where applicable, the values of the range [<code class="computeroutput"><span class="identifier">first</span></code>, <code class="computeroutput"><span class="identifier">last</span></code>).
+        </p>
+<div class="table">
+<a name="random.rand.parallel.parallel_uniform_rng.t0"></a><p class="title"><b>Table 3.1. ParallelUniformRandomNumberGenerator requirements</b></p>
+<div class="table-contents"><table class="table" summary="ParallelUniformRandomNumberGenerator requirements">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Expression
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Return type
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Note
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">seed</span><span class="special">(</span><span class="identifier">v</span><span class="special">,</span><span class="identifier">num</span><span class="special">,</span><span class="identifier">total</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    default parallel seeding of <code class="computeroutput"><span class="identifier">v</span></code>
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">seed</span><span class="special">(</span><span class="identifier">v</span><span class="special">,</span><span class="identifier">num</span><span class="special">,</span><span class="identifier">total</span><span class="special">,</span><span class="identifier">s</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    parallel seeding of <code class="computeroutput"><span class="identifier">v</span></code>
+                    from a seed <code class="computeroutput"><span class="identifier">s</span></code>
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">seed</span><span class="special">(</span><span class="identifier">v</span><span class="special">,</span><span class="identifier">num</span><span class="special">,</span><span class="identifier">total</span><span class="special">,</span><span class="identifier">first</span><span class="special">,</span><span class="identifier">last</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    parallel seeding of <code class="computeroutput"><span class="identifier">v</span></code>
+                    from two iterators. The semantics is identical to that of the
+                    seeding of a <code class="computeroutput"><span class="identifier">UniformRandomNumberGenerator</span></code>
+                    from a pair of iterators, with the only distinction that for
+                    identical elements in the range [<code class="computeroutput"><span class="identifier">first</span></code>,
+                    <code class="computeroutput"><span class="identifier">last</span></code>) and identical
+                    values of <code class="computeroutput"><span class="identifier">total</span></code>
+                    but different values of <code class="computeroutput"><span class="identifier">num</span></code>,
+                    independent non-overlapping sequences of random numbers will
+                    be produced by the generator.
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break">
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.parallel_named"></a>Named parameters interface</h4></div></div></div>
+<p>
+          To simplify seeding of parallel random number generators, the generators
+          provided in this library implement a named parameter interface:
+        </p>
+<div class="table">
+<a name="random.rand.parallel.parallel_named.t0"></a><p class="title"><b>Table 3.2. ParallelUniformRandomNumberGenerator named parameters interface</b></p>
+<div class="table-contents"><table class="table" summary="ParallelUniformRandomNumberGenerator named parameters interface">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Expression
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Return type
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Note
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">X</span><span class="special">::</span><span class="identifier">max_streams</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">int</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    the maximum number of independent streams provided by <code class="computeroutput"><span class="identifier">X</span></code>
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">X</span><span class="special">(...)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">X</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    creates an object of type <code class="computeroutput"><span class="identifier">X</span></code>
+                    with the named parameter arguments given in the table below
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">v</span><span class="special">.</span><span class="identifier">seed</span><span class="special">(...)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    seeds <code class="computeroutput"><span class="identifier">v</span></code> with
+                    the named parameter arguments given in the table below
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">v</span><span class="special">.</span><span class="identifier">seed</span><span class="special">(</span><span class="identifier">first</span><span class="special">,</span><span class="identifier">last</span><span class="special">,...)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    seeds <code class="computeroutput"><span class="identifier">v</span></code> with
+                    the range of values given by [<code class="computeroutput"><span class="identifier">first</span></code>,
+                    <code class="computeroutput"><span class="identifier">last</span></code>), and the
+                    named parameter arguments given in the table below
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break"><p>
+          using the following parameters:
+        </p>
+<div class="table">
+<a name="random.rand.parallel.parallel_named.t1"></a><p class="title"><b>Table 3.3. Named parameters for seeding of a ParallelUniformRandomNumberGenerator</b></p>
+<div class="table-contents"><table class="table" summary="Named parameters for seeding of a ParallelUniformRandomNumberGenerator">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Parameter name
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Default
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Legal values
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">total_streams</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    1
+                  </p>
+                </td>
+<td>
+                  <p>
+                    0 &lt;= <code class="computeroutput"><span class="identifier">total_streams</span></code>
+                    &lt; <code class="computeroutput"><span class="identifier">X</span><span class="special">::</span><span class="identifier">max_streams</span></code>
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">stream_number</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    0
+                  </p>
+                </td>
+<td>
+                  <p>
+                    0 &lt;= <code class="computeroutput"><span class="identifier">stream_number</span></code>
+                    &lt; <code class="computeroutput"><span class="identifier">total_streams</span></code>
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">global_seed</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    0
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br class="table-break"><p>
+          Parallel uniform random number generators created with the same values
+          of <code class="computeroutput"><span class="identifier">total_streams</span></code>, <code class="computeroutput"><span class="identifier">global_seed</span></code> but different values for
+          <code class="computeroutput"><span class="identifier">stream_number</span></code> will produce
+          independent non-overlapping sequences of random numbers.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.parallel_seed"></a>Parallel seeding functions</h4></div></div></div>
+<p>
+          The headers <code class="computeroutput"><a class="link" href="random/reference.html#header.alps.random.parallel.seed_hpp" title="Header &lt;alps/random/parallel/seed.hpp&gt;">alps/random/parallel/seed.hpp</a></code>
+          and <code class="computeroutput"><a class="link" href="random/reference.html#header.alps.random.parallel.mpi_hpp" title="Header &lt;alps/random/parallel/mpi.hpp&gt;">alps/random/parallel/mpi.hpp</a></code>
+          provide default implementations of the parallel seeding functions required
+          by the <code class="computeroutput"><span class="identifier">ParallelUniformRandomNumberGenerator</span></code>
+          concept, and additional convencience functions.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.parallel_generators"></a>Parallel random number generators</h4></div></div></div>
+<p>
+          The ALPS Random library includes a 64-bit linear congruential generator
+          and the WELL generators in the headers <code class="computeroutput"><a class="link" href="random/reference.html#header.alps.random.parallel.lcg64_hpp" title="Header &lt;alps/random/parallel/lcg64.hpp&gt;">alps/random/parallel/lcg64.hpp</a></code>
+          and <code class="computeroutput"><a class="link" href="random/reference.html#header.alps.random.parallel.well_hpp" title="Header &lt;alps/random/parallel/well.hpp&gt;">alps/random/parallel/well.hpp</a></code>.
+        </p>
+<p>
+          The 64-bit linear congruential generator template <code class="computeroutput"><a class="link" href="alps/random/parallel/lcg64.html" title="Class template lcg64">alps::random::parallel::lcg64</a></code>
+          comes with three predfined instantiations <code class="computeroutput"><a class="link" href="random/reference.html#alps.lcg64a">lcg64a</a></code>,
+          <code class="computeroutput"><a class="link" href="random/reference.html#alps.lcg64b">lcg64b</a></code>, and <code class="computeroutput"><a class="link" href="random/reference.html#alps.lcg64c">lcg64c</a></code>,
+          using three well-tested choices of multipliers. As for other linear congruential
+          generators, the recursion relation x(n+1) := (a * x(n) + c) mod m is used.
+          In this implementation, m=2^64 and the multiplier <code class="computeroutput"><span class="identifier">a</span></code>,
+          which is given as template parameter is different for the three generators
+          . The prime additive constant <code class="computeroutput"><span class="identifier">c</span></code>
+          is chosen depending on the stream number, thus giving independent sequences
+          for each stream.
+        </p>
+<p>
+          The WELL generators provided by two instantiations <code class="computeroutput"><a class="link" href="random/reference.html#alps.random.parallel.well512a">well512a</a></code>
+          and <code class="computeroutput"><a class="link" href="random/reference.html#alps.random.parallel.well1024a">well1024a</a></code>
+          of the class template<code class="computeroutput"><a class="link" href="alps/random/parallel/well.html" title="Class template well">alps::random::parallel::well</a></code>
+          model a parallel uniform pseude random number generator, whose algorithm
+          is described in <a href="http://www.iro.umontreal.ca/~panneton/WELLRNG.html" target="_top">Improved
+          Long-Period Generators Based on Linear Recurrences Modulo 2, F. Panneton,
+          P. L'Ecuyer and M. Matsumoto, submitted to ACM TOMS</a>. The parallel
+          seeding is based on stochastic cycle division: * The single seed method
+          calls a pseudo-random number generator (default: <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">mt19937</span></code>),
+          which provides the random seeds for <code class="computeroutput"><span class="identifier">total_streams</span></code>
+          WELL generators. * In the iterator method the state vector of all <code class="computeroutput"><span class="identifier">total_streams</span></code> WELL generators is filled
+          from a buffer.
+        </p>
+</div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="random.parallel_sprng"></a>Wrappers to the SPRNG parallel random number library</h3></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="random.html#random.parallel_sprng_intro">Introduction</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel_sprng_wrappers">SPRNG wrappers</a></span></dt>
+<dt><span class="section"><a href="random.html#random.parallel_sprng_building">Building SPRNG</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.parallel_sprng_intro"></a>Introduction</h4></div></div></div>
+<p>
+          The <a href="http://sprng.cs.fsu.edu/" target="_top">Scalable Parallel Pseuo Random
+          Number Generators Library (SPRNG)</a> is the most widely used and portable
+          C-library for parallel random number generators. This header provides Boost.Random
+          and TR1-conforming wrappers to the generators in the SPRNG library.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.parallel_sprng_wrappers"></a>SPRNG wrappers</h4></div></div></div>
+<p>
+          In addition to the members required for a parallel random number generator
+          the SPNRG wrappers provide the follwing, where <code class="computeroutput"><span class="identifier">X</span></code>
+          is the type of a SPRNG generators and <code class="computeroutput"><span class="identifier">v</span></code>
+          and object of that type:
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Expression
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Notes
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">X</span><span class="special">::</span><span class="identifier">sprng_type</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    the integer SPRNG random number generator type
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">X</span><span class="special">::</span><span class="identifier">max_param</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    the number of different parameter values allowed for the generator
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+          The named parameters follow the convention for parallel random number generators,
+          with the addition of one extra named parameter.
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Parameter name
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Default
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Legal values
+                  </p>
+                </th>
+</tr></thead>
+<tbody><tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">parameter</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    0
+                  </p>
+                </td>
+<td>
+                  <p>
+                    0 &lt;= <code class="computeroutput"><span class="identifier">parameter</span></code>
+                    &lt; <code class="computeroutput"><span class="identifier">X</span><span class="special">::</span><span class="identifier">max_param</span></code>
+                  </p>
+                </td>
+</tr></tbody>
+</table></div>
+<p>
+          This parameter parametrizes the generators, e.g. by choosing different
+          multipliers in a linear congruential generator. Generators with identical
+          seeds, but different parameters are guaranteed to provide independent sequences
+          of random numbers. Since the value of <code class="computeroutput"><span class="identifier">max_param</span></code>
+          is typically small, the use of this extra parameter is limited, and it
+          is in general better to obtain independent sequences by using different
+          values for the <code class="computeroutput"><span class="identifier">stream_number</span></code>
+          parameter.
+        </p>
+<p>
+          The following table lists the specific values of the constants for the
+          various SPRNG Generators:
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    SPRNG generator
+                  </p>
+                </th>
+<th>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">sprng_type</span></code>
+                  </p>
+                </th>
+<th>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">max_streams</span></code>
+                  </p>
+                </th>
+<th>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">max_param</span></code>
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">sprng</span><span class="special">::</span><span class="identifier">lfg</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    0
+                  </p>
+                </td>
+<td>
+                  <p>
+                    2^31-1
+                  </p>
+                </td>
+<td>
+                  <p>
+                    11
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">sprng</span><span class="special">::</span><span class="identifier">lcg</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    1
+                  </p>
+                </td>
+<td>
+                  <p>
+                    2^19
+                  </p>
+                </td>
+<td>
+                  <p>
+                    7
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">sprng</span><span class="special">::</span><span class="identifier">lcg64</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    2
+                  </p>
+                </td>
+<td>
+                  <p>
+                    146138719
+                  </p>
+                </td>
+<td>
+                  <p>
+                    3
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">sprng</span><span class="special">::</span><span class="identifier">cmrg</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    3
+                  </p>
+                </td>
+<td>
+                  <p>
+                    146138719
+                  </p>
+                </td>
+<td>
+                  <p>
+                    3
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">sprng</span><span class="special">::</span><span class="identifier">mlfg</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    4
+                  </p>
+                </td>
+<td>
+                  <p>
+                    2^31-1
+                  </p>
+                </td>
+<td>
+                  <p>
+                    11
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">alps</span><span class="special">::</span><span class="identifier">random</span><span class="special">::</span><span class="identifier">sprng</span><span class="special">::</span><span class="identifier">pmlcg</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    5
+                  </p>
+                </td>
+<td>
+                  <p>
+                    2^30
+                  </p>
+                </td>
+<td>
+                  <p>
+                    1
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+          The class members and their semantics are the same as those defined in
+          the parallel random number generator concepts.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="random.parallel_sprng_building"></a>Building SPRNG</h4></div></div></div>
+<p>
+          The SPRNG wrappers are a header-only library but executables will need
+          to be linked with the SPRNG library, which can be downloaded in source
+          form from the <a href="http://sprng.cs.fsu.edu/" target="_top">SPRNG web page</a>.
+        </p>
+<p>
+          The path to the SPRNG library needs to be specified by either a statement
+        </p>
+<pre class="programlisting"><span class="keyword">using</span> <span class="identifier">sprng</span> <span class="special">:</span> <span class="identifier">path</span><span class="special">-</span><span class="identifier">to</span><span class="special">-</span><span class="identifier">sprng</span><span class="special">-</span><span class="identifier">library</span> <span class="special">;</span>
+</pre>
+<p>
+          in the user-config.jam file or by setting the environment variable <code class="computeroutput"><span class="identifier">SPRNG_ROOT</span></code>. The path can point either
+          to a compiled library or alternatively to the source distribution. In the
+          latter case the SPRNG library is built from source when needed.
+        </p>
+<p>
+          The PMLCG generator additionally needs the <a href="http://www.gnu.org/software/gmp/" target="_top">GMP</a>
+          library. To use this generator the GMP library needs to be installed, and
+          its path specified as the optional second argument to
+        </p>
+<pre class="programlisting"><span class="keyword">using</span> <span class="identifier">sprng</span> <span class="special">:</span> <span class="identifier">path</span><span class="special">-</span><span class="identifier">to</span><span class="special">-</span><span class="identifier">sprng</span><span class="special">-</span><span class="identifier">library</span> <span class="special">:</span> <span class="identifier">path</span><span class="special">-</span><span class="identifier">to</span><span class="special">-</span><span class="identifier">gmp</span><span class="special">-</span><span class="identifier">library</span> <span class="special">;</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"><small><p>Last revised: January 13, 2017 at 08:45:50 GMT</p></small></td>
+<td align="right"><small></small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="alps/lexical_cast_string.html"><img src="images/prev.png" alt="Prev"></a><a accesskey="u" href="index.html"><img src="images/up.png" alt="Up"></a><a accesskey="h" href="index.html"><img src="images/home.png" alt="Home"></a><a accesskey="n" href="random/reference.html"><img src="images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,1420 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Chapter 12. IETL</title>
+<link rel="stylesheet" href="boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="index.html" title="The ALPS Libraries">
+<link rel="up" href="index.html" title="The ALPS Libraries">
+<link rel="prev" href="hdf5/examples.html" title="Examples">
+<link rel="next" href="ietl/reference.html" title="Reference">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="alps_logo.gif"></td>
+<td align="center"><a href="./index.html">Home</a></td>
+<td align="center"><a href="./overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href="./overview/license.html">License</a></td>
+<td align="center"><a href="./overview/support.html">Support</a></td>
+<td align="center"><a href="./overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="hdf5/examples.html"><img src="images/prev.png" alt="Prev"></a><a accesskey="u" href="index.html"><img src="images/up.png" alt="Up"></a><a accesskey="h" href="index.html"><img src="images/home.png" alt="Home"></a><a accesskey="n" href="ietl/reference.html"><img src="images/next.png" alt="Next"></a>
+</div>
+<div class="chapter">
+<div class="titlepage"><div>
+<div><h1 class="title">
+<a name="ietl"></a>Chapter 12. IETL</h1></div>
+<div><div class="author"><h3 class="author">
+<span class="firstname">Robin</span> <span class="surname">Jäger</span>
+</h3></div></div>
+<div><p class="copyright">Copyright © 2011 Matthias Troyer, Bela Bauer, Robin Jäger</p></div>
+<div><div class="legalnotice">
+<a name="ietl.legal"></a><p>
+        Distributed under the Boost Software License, Version 1.0. (See accompanying
+        file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">
+        http://www.boost.org/LICENSE_1_0.txt </a>)
+      </p>
+</div></div>
+</div></div>
+<div class="toc">
+<p><b>Table of Contents</b></p>
+<dl class="toc">
+<dt><span class="section"><a href="ietl.html#ietl.ietl">IETL</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="ietl.html#ietl.concept">IETL Concepts and Interfaces</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.jd">Jacobi-Davidson</a></span></dt>
+</dl></dd>
+<dt><span class="section"><a href="ietl/reference.html">Reference</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.bandlanczos_h">Header &lt;alps/src/ietl/bandlanczos.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.bicgstabl_h">Header &lt;alps/src/ietl/bicgstabl.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.cg_h">Header &lt;alps/src/ietl/cg.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.complex_h">Header &lt;alps/src/ietl/complex.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.fmatrix_h">Header &lt;alps/src/ietl/fmatrix.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.gmres_h">Header &lt;alps/src/ietl/gmres.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.ietl2lapack_h">Header &lt;alps/src/ietl/ietl2lapack.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.interface.blas_h">Header &lt;alps/src/ietl/interface/blas.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.interface.blitz_h">Header &lt;alps/src/ietl/interface/blitz.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.interface.mtl_h">Header &lt;alps/src/ietl/interface/mtl.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.interface.ublas_h">Header &lt;alps/src/ietl/interface/ublas.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.interface.valarray_h">Header &lt;alps/src/ietl/interface/valarray.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.inverse_h">Header &lt;alps/src/ietl/inverse.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.iteration_h">Header &lt;alps/src/ietl/iteration.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.jacobi_h">Header &lt;alps/src/ietl/jacobi.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.jd_h">Header &lt;alps/src/ietl/jd.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.krylov_wrapper_h">Header &lt;alps/src/ietl/krylov_wrapper.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.lanczos_h">Header &lt;alps/src/ietl/lanczos.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.matrix_h">Header &lt;alps/src/ietl/matrix.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.power_h">Header &lt;alps/src/ietl/power.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.rayleigh_h">Header &lt;alps/src/ietl/rayleigh.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.simple_arnoldi_h">Header &lt;alps/src/ietl/simple_arnoldi.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.tmatrix_h">Header &lt;alps/src/ietl/tmatrix.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.traits_h">Header &lt;alps/src/ietl/traits.h&gt;</a></span></dt>
+<dt><span class="section"><a href="ietl/reference.html#header.alps.src.ietl.vectorspace_h">Header &lt;alps/src/ietl/vectorspace.h&gt;</a></span></dt>
+</dl></dd>
+</dl>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="ietl.ietl"></a>IETL</h2></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="ietl.html#ietl.concept">IETL Concepts and Interfaces</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.jd">Jacobi-Davidson</a></span></dt>
+</dl></div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="ietl.concept"></a>IETL Concepts and Interfaces</h3></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="ietl.html#ietl.vectorspace">The vector space concept</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.matreq">Requirements on the matrix</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.vecreq">Requirements on the vector</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.iterreq">Requirements on the standard iteration control object</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.lanczosreq">Requirements on the Lanczos iteration control object</a></span></dt>
+</dl></div>
+<p>
+        Here we define the requirements on the types necesary to use the IETL algorithms:
+      </p>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.vectorspace"></a>The vector space concept</h4></div></div></div>
+<p>
+          Linear eigensolvers mathematically rely on the concept of a vectorspace,
+          which also defines the necessary functionality for the IETL. Going beyond
+          the <a href="http://www.osl.iu.edu/research/itl/" target="_top">ITL</a> we expand
+          on the concept of a vectorspace and find the necessity to require a vector
+          space class to be passed to the algorithms. Let
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">VS</span></code> be a class modeling
+              the concept of vectorspace
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">vs</span></code> be an object of
+              type <code class="computeroutput"><span class="identifier">VS</span></code>
+            </li>
+</ul></div>
+<p>
+          then the following types have to be defined:
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Type
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Documentation
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">vector_type</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    the type of vectors in the vector space
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">scalar_type</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    the type of scalars in the vector space
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">magnitude_type</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    a scalar type appropriate for storing norms, usually the same
+                    as <code class="computeroutput"><span class="identifier">scalar_type</span></code>
+                    for real types, or the corresponding real type for complex types.
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">size_type</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    an integral type large enough to store the dimension of the vector
+                    space
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+          and the following expression have to be defined for the vector space object:
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Expression
+                  </p>
+                </th>
+<th>
+                  <p>
+                    return type
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Documentation
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">new_vector</span><span class="special">(</span><span class="identifier">vs</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">vector_type</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    creates a new vector of the vector space
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">vec_dimension</span><span class="special">(</span><span class="identifier">vs</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">size_type</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    returns the dimension of the vector space
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">project</span><span class="special">(</span><span class="identifier">x</span><span class="special">,</span><span class="identifier">vs</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    projects the vector <code class="computeroutput"><span class="identifier">x</span></code>
+                    into the vector space
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+          The <code class="computeroutput"><span class="identifier">new_vector</span></code> function
+          is necessary since we do not know the types and number of arguments needed
+          for the constructor of a vector. The <a href="http://www.osl.iu.edu/research/itl/" target="_top">ITL</a>
+          assumes there is a constructor taking only the vector size as argument
+          but this is insufficient in cases where more than the size is needed in
+          the constructor, such as:
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+              multi-dimensional arrays
+            </li>
+<li class="listitem">
+              distributed arrays taking additional information, requiring as the
+              data layout in the constructor
+            </li>
+</ul></div>
+<p>
+          The <code class="computeroutput"><span class="identifier">project</span></code> function is
+          required if the actual vector space is a subspace of the representation
+          space. E.g. if special boundary conditions are imposed on an array. For
+          the most common case, where the vector models the concept of an STL Container
+          we provide two model implementations: <code class="computeroutput"><a class="link" href="ietl/reference.html#header.alps.src.ietl.vectorspace_h" title="Header &lt;alps/src/ietl/vectorspace.h&gt;">vectorspace</a></code>
+          and <code class="computeroutput"><a class="link" href="ietl/wrapper_vectorspace.html" title="Class template wrapper_vectorspace">wrapper_vectorspace</a></code>.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.matreq"></a>Requirements on the matrix</h4></div></div></div>
+<p>
+          Iterative algorithms require the matrix (linear operator) of which eigenvalues
+          and eigenvectors are to be calculated only in the form of matrix-vector
+          products. Hence only a single function is required. Let
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">VS</span></code> be a class modeling
+              the concept of vectorspace
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">x</span></code>, <code class="computeroutput"><span class="identifier">y</span></code>
+              be an vectors in the vector space ( of type <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">vector_type</span></code>
+              )
+            </li>
+<li class="listitem">
+              a be the matrix
+            </li>
+</ul></div>
+<p>
+          then the following expression needs to be defined
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Expression
+                  </p>
+                </th>
+<th>
+                  <p>
+                    return type
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Documentation
+                  </p>
+                </th>
+</tr></thead>
+<tbody><tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">mult</span><span class="special">(</span><span class="identifier">a</span><span class="special">,</span><span class="identifier">x</span><span class="special">,</span><span class="identifier">y</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    calculates the matrix-vector product y=a*x
+                  </p>
+                </td>
+</tr></tbody>
+</table></div>
+<p>
+          For all uBlas matrix types, the <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">mult</span></code>
+          function with <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">:</span><span class="identifier">ublas</span><span class="special">::</span><span class="identifier">vector</span></code> as vector type is implemented
+          in the header <code class="computeroutput"><a class="link" href="ietl/reference.html#header.alps.src.ietl.interface.ublas_h" title="Header &lt;alps/src/ietl/interface/ublas.h&gt;">ietl/interface/ublas.h</a></code>
+          .
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.vecreq"></a>Requirements on the vector</h4></div></div></div>
+<p>
+          The vector type needs to fulfill the following requirements.
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">VS</span></code> be a class modeling
+              the concept of vectorspace
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">V</span></code> be the type <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">vector_type</span></code>
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">S</span></code> be the type <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">scalar_type</span></code>
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">M</span></code> be the type <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace_traits</span><span class="special">&lt;</span><span class="identifier">VS</span><span class="special">&gt;::</span><span class="identifier">magnitude_type</span></code>
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">x</span></code>, <code class="computeroutput"><span class="identifier">y</span></code>
+              be a vectors in the vector space, of type <code class="computeroutput"><span class="identifier">V</span></code>
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">t</span></code> be a scalar, of type
+              <code class="computeroutput"><span class="identifier">S</span></code>
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">g</span></code> be a model of a generator
+              producing values of type <code class="computeroutput"><span class="identifier">S</span></code>
+            </li>
+</ul></div>
+<p>
+          Then the following expressions need to be defined for all IETL algorithms.
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Expression
+                  </p>
+                </th>
+<th>
+                  <p>
+                    return type
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Documentation
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">generate</span><span class="special">(</span><span class="identifier">x</span><span class="special">,</span><span class="identifier">g</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    fills the vector <code class="computeroutput"><span class="identifier">x</span></code>
+                    with numbers from the generator g. For a standard container this
+                    can be implemented as <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">generate</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">begin</span><span class="special">(),</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">end</span><span class="special">(),</span><span class="identifier">g</span><span class="special">);</span></code>
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">std</span><span class="special">::</span><span class="identifier">swap</span><span class="special">(</span><span class="identifier">x</span><span class="special">,</span><span class="identifier">y</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    swaps the two vectors <code class="computeroutput"><span class="identifier">x</span></code>
+                    and <code class="computeroutput"><span class="identifier">y</span></code>
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">dot</span><span class="special">(</span><span class="identifier">x</span><span class="special">,</span><span class="identifier">y</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">S</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    calculates the scalar product of the two vectors <code class="computeroutput"><span class="identifier">x</span></code> and <code class="computeroutput"><span class="identifier">y</span></code>.
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">two_norm</span><span class="special">(</span><span class="identifier">x</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">M</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    calculates the 2-norm of the vector <code class="computeroutput"><span class="identifier">x</span></code>.
+                    This is equivalent to <code class="computeroutput"><span class="identifier">sqrt</span><span class="special">(</span><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">dot</span><span class="special">(</span><span class="identifier">x</span><span class="special">,</span><span class="identifier">x</span><span class="special">))</span></code>.
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">copy</span><span class="special">(</span><span class="identifier">x</span><span class="special">,</span><span class="identifier">y</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    a deep copy <code class="computeroutput"><span class="identifier">y</span> <span class="special">=</span> <span class="identifier">x</span></code>.
+                    Modifications of <code class="computeroutput"><span class="identifier">x</span></code>
+                    after the call are not allowed to modify <code class="computeroutput"><span class="identifier">y</span></code>.
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">y</span> <span class="special">=</span>
+                    <span class="identifier">x</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">const</span> <span class="identifier">V</span><span class="special">&amp;</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    a (possibly shallow) copy
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">x</span> <span class="special">*=</span>
+                    <span class="identifier">t</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">const</span> <span class="identifier">V</span><span class="special">&amp;</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">x</span> <span class="special">/=</span>
+                    <span class="identifier">t</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">const</span> <span class="identifier">V</span><span class="special">&amp;</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">x</span> <span class="special">+=</span>
+                    <span class="identifier">y</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">const</span> <span class="identifier">V</span><span class="special">&amp;</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">x</span> <span class="special">+=</span>
+                    <span class="identifier">t</span><span class="special">*</span><span class="identifier">y</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">const</span> <span class="identifier">V</span><span class="special">&amp;</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">x</span> <span class="special">-=</span>
+                    <span class="identifier">t</span><span class="special">*</span><span class="identifier">y</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">const</span> <span class="identifier">V</span><span class="special">&amp;</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">x</span> <span class="special">=</span>
+                    <span class="identifier">t</span><span class="special">*</span><span class="identifier">y</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">const</span> <span class="identifier">V</span><span class="special">&amp;</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+          The necessary functions are implemented in the header <code class="computeroutput"><a class="link" href="ietl/reference.html#header.alps.src.ietl.interface.ublas_h" title="Header &lt;alps/src/ietl/interface/ublas.h&gt;">ietl/interface/ublas.h</a></code>
+          for ublas vectors, and in <code class="computeroutput"><a class="link" href="ietl/reference.html#header.alps.src.ietl.interface.blitz_h" title="Header &lt;alps/src/ietl/interface/blitz.h&gt;">ietl/interface/blitz.h</a></code>
+          for Blitz++ arrays.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.iterreq"></a>Requirements on the standard iteration control object</h4></div></div></div>
+<p>
+          Iterative algorithms run until the desired accuracy is reached. To control
+          the termination of the iteration, the IETL algorithms take an iteration
+          control object. Let <code class="computeroutput"><span class="identifier">it</span></code>
+          be the iteration control object, <code class="computeroutput"><span class="identifier">lambda</span></code>
+          the best estimate for the eigenvalue and residual be the residual ||A v
+          - lambda v|| then the following expressions need to be defined:
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Expression
+                  </p>
+                </th>
+<th>
+                  <p>
+                    return type
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Documentation
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="special">++</span><span class="identifier">it</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    is called at the start of a new iteration
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">it</span><span class="special">.</span><span class="identifier">finished</span><span class="special">(</span><span class="identifier">residual</span><span class="special">,</span>
+                    <span class="identifier">lambda</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">bool</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    returns <code class="computeroutput"><span class="keyword">true</span></code> if
+                    the desired accuracy is reached and the iteration can be terminated,
+                    returns <code class="computeroutput"><span class="keyword">false</span></code> otherwise.
+                    <code class="computeroutput"><span class="identifier">residual</span></code> and
+                    <code class="computeroutput"><span class="identifier">lambda</span></code> are of
+                    the <code class="computeroutput"><span class="identifier">magnitude_type</span></code>
+                    and are the residual and and latest estimate of the eigenvalue
+                    respectively
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+          A model implementation <code class="computeroutput"><span class="identifier">basic_iteration</span></code>
+          is provided in <code class="computeroutput"><a class="link" href="ietl/reference.html#header.alps.src.ietl.iteration_h" title="Header &lt;alps/src/ietl/iteration.h&gt;">ietl/iteration.h</a></code>.
+        </p>
+<p>
+          Some algorithms require more complex iteration control objects. They will
+          be discussed with the algorithms.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.lanczosreq"></a>Requirements on the Lanczos iteration control object</h4></div></div></div>
+<p>
+          Iterative algorithms run until the desired accuracy is reached. To control
+          the termination of the iteration, the IETL algorithms take an iteration
+          control object. Let <code class="computeroutput"><span class="identifier">it</span></code>
+          be the iteration control object, <code class="computeroutput"><span class="identifier">lambda</span></code>
+          the best estimate for the eigenvalue and residual be the residual ||A v
+          - lambda v|| then the following expressions need to be defined:
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Expression
+                  </p>
+                </th>
+<th>
+                  <p>
+                    return type
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Documentation
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="special">++</span><span class="identifier">it</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">void</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    is called at the start of a new iteration
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">it</span><span class="special">.</span><span class="identifier">finished</span><span class="special">(</span><span class="identifier">tmatrix</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">bool</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    returns <code class="computeroutput"><span class="keyword">true</span></code> if
+                    the desired accuracy is reached and the iteration can be terminated,
+                    returns <code class="computeroutput"><span class="keyword">false</span></code> otherwise.
+                    The <span class="emphasis"><em>T</em></span>-matrix of the Lanczos iterations is
+                    passed as argument.
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+<p>
+          Model implementation are provided <code class="computeroutput"><a class="link" href="ietl/reference.html#header.alps.src.ietl.iteration_h" title="Header &lt;alps/src/ietl/iteration.h&gt;">ietl/iteration.h</a></code>.
+        </p>
+</div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="ietl.jd"></a>Jacobi-Davidson</h3></div></div></div>
+<div class="toc"><dl class="toc">
+<dt><span class="section"><a href="ietl.html#ietl.intro">Usage</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.iter">Iterator</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.krylov">Krylov Solver</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.example1">Example 1 A simple Hamiltonian</a></span></dt>
+<dt><span class="section"><a href="ietl.html#ietl.example2">Example 2 Jacobi preconditioning for a random matrix</a></span></dt>
+</dl></div>
+<p>
+        Generic implementation of the Jacobi-Davidson algorithm for hermitian hamiltonians.
+      </p>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.intro"></a>Usage</h4></div></div></div>
+<p>
+          This eigensolver can be used with any linear algebra library fullfilling
+          the <a class="link" href="ietl.html#ietl.vecreq" title="Requirements on the vector">requirements</a> of the IETL.
+        </p>
+<div class="note"><table border="0" summary="Note">
+<tr>
+<td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="images/note.png"></td>
+<th align="left">Note</th>
+</tr>
+<tr><td align="left" valign="top"><p>
+            Note that a function ietl::mult(A, x, b), calculating the matrix-vector
+            product b = A x, must be defined and has to be declared before including
+            the header <code class="computeroutput"><a class="link" href="ietl/reference.html#header.alps.src.ietl.jd_h" title="Header &lt;alps/src/ietl/jd.h&gt;">ietl/jd.h</a></code>.
+          </p></td></tr>
+</table></div>
+<p>
+          If you are using the boost::ublas library, <code class="computeroutput"><a class="link" href="ietl/reference.html#header.alps.src.ietl.interface.ublas_h" title="Header &lt;alps/src/ietl/interface/ublas.h&gt;">ietl/interface/ublas.h</a></code>
+          holds the proper function interface.
+        </p>
+<p>
+          The <span class="bold"><strong>constructor</strong></span> has the following syntax:
+</p>
+<pre class="programlisting"><span class="identifier">jd</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">MATRIX</span><span class="special">&amp;</span> <span class="identifier">A</span><span class="special">,</span> <span class="identifier">VS</span><span class="special">&amp;</span> <span class="identifier">vspace</span><span class="special">,</span> <span class="identifier">size_t</span> <span class="identifier">verbose</span> <span class="special">=</span> <span class="number">0</span><span class="special">)</span>
+</pre>
+<p>
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">A</span></code> is a matrix fullfilling
+              the <a class="link" href="ietl.html#ietl.matreq" title="Requirements on the matrix">requirements</a>.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">VS</span></code> is a <code class="computeroutput"><a class="link" href="ietl.html#ietl.vectorspace" title="The vector space concept">vectorspace</a></code>.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><span class="identifier">verbose</span></code> is <span class="bold"><strong>optional</strong></span>,
+              <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; ">
+<li class="listitem">
+                    <code class="computeroutput"><span class="number">0</span></code>, for errors only
+                  </li>
+<li class="listitem">
+                    <code class="computeroutput"><span class="number">1</span></code>, print message
+                    when converged
+                  </li>
+<li class="listitem">
+                    <code class="computeroutput"><span class="number">2</span></code>, print current
+                    iteration and residual
+                  </li>
+</ul></div>
+            </li>
+</ul></div>
+<p>
+          The class <code class="computeroutput"><a class="link" href="ietl.html#ietl.jd" title="Jacobi-Davidson">ietl::jd</a></code> basically provides
+          two functions:
+        </p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem">
+              <code class="computeroutput"><a class="link" href="ietl/jd.html#idp140297845572960-bb">eigensystem()</a></code>
+              to calculate exterior eigenpairs.
+            </li>
+<li class="listitem">
+              <code class="computeroutput"><a class="link" href="ietl/jd.html#idp140297845586240-bb">eigensystem_harmonic()</a></code>
+              to calculate interior eigenpairs.
+            </li>
+</ul></div>
+<p>
+          These are implementations of the algorithm templates <a href="http://web.eecs.utk.edu/~dongarra/etemplates/node144.html#alg:jdqr" target="_top">jdqr</a>
+          and <a href="http://web.eecs.utk.edu/~dongarra/etemplates/node145.html#alg:jdqrhar" target="_top">jdqrhar</a>.
+          The first can be used with a constant preconditioner.
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Parameter
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Description
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Example
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Info
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">IT</span><span class="special">&amp;</span>
+                    <span class="identifier">iter</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <a class="link" href="ietl.html#ietl.iter" title="Iterator">Iterator</a> object
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">jd_iteration</span><span class="special">(</span><span class="identifier">N</span><span class="special">)</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">GEN</span><span class="special">&amp;</span>
+                    <span class="identifier">gen</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    Random number generator for generating a starting vector
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">lagged_fibonacci607</span><span class="special">()</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">size_t</span> <span class="identifier">k</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    Number of eigenpairs to be calculated
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="number">3</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">PREC</span><span class="special">&amp;</span>
+                    <span class="identifier">K</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    Constant Preconditioner
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <a class="link" href="ietl.html#ietl.example2" title="Example 2 Jacobi preconditioning for a random matrix">example2</a>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <span class="bold"><strong>optional</strong></span> for <code class="computeroutput"><span class="identifier">eigensystem</span><span class="special">()</span></code>
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">SOLV</span><span class="special">&amp;</span>
+                    <span class="identifier">solver</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <a class="link" href="ietl.html#ietl.krylov" title="Krylov Solver">Krylov solver</a>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">ietl</span><span class="special">::</span><span class="identifier">gmres_wrapper</span><span class="special">()</span></code>
+                  </p>
+                </td>
+<td>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="keyword">bool</span> <span class="identifier">search_highest</span>
+                    <span class="special">=</span> <span class="keyword">false</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    On default search for the lowest eigenpairs
+                  </p>
+                </td>
+<td>
+                  <p>
+                    true
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <span class="bold"><strong>only</strong></span> for eigensystem()
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">real_t</span> <span class="identifier">tau</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    Target value near which eigenpairs are searched
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="number">0.</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <span class="bold"><strong>only</strong></span> for eigensystem_harmonic()
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.iter"></a>Iterator</h4></div></div></div>
+<p>
+          The iterator <code class="computeroutput"><a class="link" href="ietl/jd_iteration.html" title="Class template jd_iteration">jd_iteration</a></code>
+          contains all required parameters.
+        </p>
+<div class="informaltable"><table class="table">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+                  <p>
+                    Parameter
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Description
+                  </p>
+                </th>
+<th>
+                  <p>
+                    Default
+                  </p>
+                </th>
+<th>
+                  <p>
+                    reasonable constraints
+                  </p>
+                </th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">size_t</span> <span class="identifier">max_iter</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    max. number of iterations
+                  </p>
+                </td>
+<td>
+                </td>
+<td>
+                  <p>
+                    ~N
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">size_t</span> <span class="identifier">m_min</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    size of the vectorset after a restart
+                  </p>
+                </td>
+<td>
+                  <p>
+                    10
+                  </p>
+                </td>
+<td>
+                  <p>
+                    &gt;= 3
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">size_t</span> <span class="identifier">m_max</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    max. size of the vectorset
+                  </p>
+                </td>
+<td>
+                  <p>
+                    20
+                  </p>
+                </td>
+<td>
+                  <p>
+                    &gt; m_min
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">T</span> <span class="identifier">reltol</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    relative tolerance
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">sqrt</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">numeric_limits</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;::</span><span class="identifier">epsilon</span><span class="special">())</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    &gt;= default
+                  </p>
+                </td>
+</tr>
+<tr>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">T</span> <span class="identifier">abstol</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    absolute tolerance
+                  </p>
+                </td>
+<td>
+                  <p>
+                    <code class="computeroutput"><span class="identifier">sqrt</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">numeric_limits</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;::</span><span class="identifier">epsilon</span><span class="special">())</span></code>
+                  </p>
+                </td>
+<td>
+                  <p>
+                    &gt;= default
+                  </p>
+                </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.krylov"></a>Krylov Solver</h4></div></div></div>
+<p>
+          For the Jacobi-Davidson algorithm one needs a Krylov solver to approximately
+          solve the correction equation (I - QQ*)(A - \theta I)(I - QQ*) t = -r.
+          The krylov-solver has to be wrapped in a function object. Already provided
+          are <code class="computeroutput">MAKE_WRAPPER</code> and <code class="computeroutput"><a class="link" href="ietl/bicgstab_wrapper.html" title="Class template bicgstab_wrapper">BiCGSTAB(L)</a></code>.
+        </p>
+<p>
+          The function object must have the following syntax:
+</p>
+<pre class="programlisting"><span class="keyword">class</span> <span class="identifier">krylov_wrapper</span> <span class="special">{</span>
+   <span class="keyword">public</span><span class="special">:</span>
+       <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">VECTOR</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">MATRIX</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">REAL</span><span class="special">&gt;</span>
+       <span class="comment">//solve x from A x = b</span>
+       <span class="identifier">VECTOR</span> <span class="keyword">operator</span><span class="special">()</span> <span class="special">(</span> <span class="keyword">const</span> <span class="identifier">MATRIX</span> <span class="special">&amp;</span> <span class="identifier">A</span><span class="special">,</span> <span class="comment">// deflated matrix</span>
+                           <span class="keyword">const</span> <span class="identifier">VECTOR</span> <span class="special">&amp;</span> <span class="identifier">b</span><span class="special">,</span>
+                           <span class="keyword">const</span> <span class="identifier">VECTOR</span> <span class="special">&amp;</span> <span class="identifier">x0</span><span class="special">,</span> <span class="comment">// starting vector</span>
+                           <span class="identifier">REAL</span> <span class="identifier">absolute_tolerance</span> <span class="special">)</span>
+<span class="special">};</span>
+</pre>
+<p>
+          The class <code class="computeroutput">detail::deflated_matrix</code>
+          defines a deflated matrix-vector product.
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.example1"></a>Example 1 A simple Hamiltonian</h4></div></div></div>
+<p>
+          In this example a hamiltonian of a simple one particle system with periodic
+          boundary conditions is shown, it does not store a matrix. The lowest eigenvalue
+          is <code class="computeroutput"><span class="special">-</span><span class="number">2</span></code>
+          and all interior eigenvalues are two-fold degenerate. Here is part of the
+          code. To see the full sourcecode, look at <a href="/Users/dolfim/PhD/alps/build_tgz/alps/example/ietl/jacobidavidson1.cpp" target="_top">jacobidavidson1.cpp</a>.
+        </p>
+<p>
+</p>
+<pre class="programlisting"><span class="keyword">namespace</span> <span class="identifier">ietl</span> <span class="special">{</span>
+    <span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">Vector</span><span class="special">&gt;</span>
+    <span class="keyword">void</span> <span class="identifier">mult</span><span class="special">(</span><span class="identifier">Hamiltonian</span><span class="special">&lt;</span><span class="identifier">Vector</span><span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="identifier">H</span><span class="special">,</span> <span class="identifier">Vector</span><span class="special">&amp;</span> <span class="identifier">x</span><span class="special">,</span> <span class="identifier">Vector</span><span class="special">&amp;</span> <span class="identifier">y</span><span class="special">)</span>
+    <span class="special">{</span>
+        <span class="identifier">H</span><span class="special">.</span><span class="identifier">mult</span><span class="special">(</span><span class="identifier">x</span><span class="special">,</span> <span class="identifier">y</span><span class="special">);</span>
+    <span class="special">}</span>
+<span class="special">}</span>
+
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">ietl</span><span class="special">/</span><span class="identifier">jd</span><span class="special">.</span><span class="identifier">h</span><span class="special">&gt;</span>
+
+<span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">numeric</span><span class="special">::</span><span class="identifier">ublas</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;</span> <span class="identifier">vector_t</span><span class="special">;</span>
+<span class="keyword">typedef</span> <span class="identifier">ietl</span><span class="special">::</span><span class="identifier">vectorspace</span><span class="special">&lt;</span><span class="identifier">vector_t</span><span class="special">&gt;</span> <span class="identifier">vecspace_t</span><span class="special">;</span>
+<span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">lagged_fibonacci607</span> <span class="identifier">gen_t</span><span class="special">;</span>
+<span class="keyword">typedef</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">lagged_fibonacci44497</span> <span class="identifier">gen2_t</span><span class="special">;</span>
+<span class="keyword">typedef</span> <span class="identifier">Hamiltonian</span><span class="special">&lt;</span><span class="identifier">vector_t</span><span class="special">&gt;</span> <span class="identifier">ham_t</span><span class="special">;</span>
+
+<span class="keyword">int</span> <span class="identifier">main</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">argc</span><span class="special">,</span> <span class="keyword">char</span> <span class="special">**</span><span class="identifier">argv</span><span class="special">)</span>
+<span class="special">{</span>
+    <span class="keyword">int</span> <span class="identifier">L</span> <span class="special">=</span> <span class="number">100</span><span class="special">;</span>    <span class="comment">// dimension of the Hamiltonian</span>
+
+    <span class="identifier">vecspace_t</span> <span class="identifier">vs</span><span class="special">(</span><span class="identifier">L</span><span class="special">);</span>
+    <span class="identifier">ham_t</span> <span class="identifier">H</span><span class="special">(</span><span class="identifier">L</span><span class="special">);</span>
+
+    <span class="comment">// random generator to create a starting vector x0</span>
+    <span class="comment">// to find an eigenvector v, we require dot(x0,v) != 0</span>
+    <span class="identifier">gen_t</span> <span class="identifier">gen</span><span class="special">;</span>
+    <span class="identifier">gen2_t</span> <span class="identifier">gen2</span><span class="special">;</span>
+
+    <span class="keyword">int</span> <span class="identifier">n_evals</span> <span class="special">=</span> <span class="number">10</span><span class="special">;</span>   <span class="comment">// number of eigenpairs to be calculated</span>
+    <span class="keyword">int</span> <span class="identifier">max_iter</span> <span class="special">=</span> <span class="identifier">L</span><span class="special">*</span><span class="number">10</span><span class="special">;</span> <span class="comment">// maximal number of iterations</span>
+
+    <span class="keyword">int</span> <span class="identifier">m_max</span> <span class="special">=</span> <span class="number">40</span><span class="special">;</span>
+    <span class="keyword">int</span> <span class="identifier">m_min</span> <span class="special">=</span> <span class="number">20</span><span class="special">;</span>
+
+    <span class="comment">// tolerance</span>
+    <span class="keyword">double</span> <span class="identifier">rel_tol</span> <span class="special">=</span> <span class="identifier">sqrt</span><span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">numeric_limits</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;::</span><span class="identifier">epsilon</span><span class="special">());</span>
+    <span class="keyword">double</span> <span class="identifier">abs_tol</span> <span class="special">=</span> <span class="identifier">rel_tol</span><span class="special">;</span>
+
+    <span class="comment">// maximal iterations for the correction equation solver</span>
+    <span class="keyword">unsigned</span> <span class="identifier">max_cor_iter</span> <span class="special">=</span> <span class="number">10</span><span class="special">;</span>
+    <span class="comment">// on default 5 steps are used</span>
+
+    <span class="identifier">ietl</span><span class="special">::</span><span class="identifier">jd_iteration</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;</span> <span class="identifier">iter</span><span class="special">(</span><span class="identifier">max_iter</span><span class="special">,</span> <span class="identifier">m_min</span><span class="special">,</span> <span class="identifier">m_max</span><span class="special">,</span> <span class="identifier">rel_tol</span><span class="special">,</span> <span class="identifier">abs_tol</span><span class="special">);</span>
+    <span class="identifier">ietl</span><span class="special">::</span><span class="identifier">jd</span><span class="special">&lt;</span><span class="identifier">Hamiltonian</span><span class="special">&lt;</span><span class="identifier">vector_t</span><span class="special">&gt;,</span> <span class="identifier">vecspace_t</span><span class="special">&gt;</span> <span class="identifier">jd</span><span class="special">(</span><span class="identifier">H</span><span class="special">,</span> <span class="identifier">vs</span><span class="special">,</span> <span class="number">1</span> <span class="comment">/* for verbose mode */</span><span class="special">);</span>
+
+    <span class="comment">// the correction equation solver must be an function object</span>
+    <span class="identifier">ietl</span><span class="special">::</span><span class="identifier">ietl_gmres</span> <span class="identifier">gmres</span><span class="special">(</span><span class="identifier">max_cor_iter</span><span class="special">);</span>
+
+    <span class="comment">// to find degenerated (or not well seperated) eigenvalues in the right order</span>
+    <span class="comment">// the correction equation has to be solved exactly, this is very expensive. </span>
+    <span class="comment">// here we use different starting vectors instead.</span>
+    <span class="keyword">try</span> <span class="special">{</span>
+            <span class="identifier">jd</span><span class="special">.</span><span class="identifier">eigensystem</span><span class="special">(</span><span class="identifier">iter</span><span class="special">,</span> <span class="identifier">gen</span><span class="special">,</span> <span class="identifier">n_evals</span><span class="special">/</span><span class="number">2</span><span class="special">,</span> <span class="identifier">gmres</span><span class="special">);</span>
+            <span class="identifier">jd</span><span class="special">.</span><span class="identifier">eigensystem</span><span class="special">(</span><span class="identifier">iter</span><span class="special">,</span> <span class="identifier">gen2</span><span class="special">,</span> <span class="identifier">n_evals</span><span class="special">-</span><span class="identifier">n_evals</span><span class="special">/</span><span class="number">2</span><span class="special">,</span> <span class="identifier">gmres</span><span class="special">);</span>
+    <span class="special">}</span> <span class="keyword">catch</span> <span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">runtime_error</span><span class="special">&amp;</span> <span class="identifier">e</span><span class="special">)</span> <span class="special">{</span>
+            <span class="identifier">cerr</span> <span class="special">&lt;&lt;</span> <span class="string">"Error in eigenpair calculation with GMRES: "</span> <span class="special">&lt;&lt;</span> <span class="identifier">e</span><span class="special">.</span><span class="identifier">what</span><span class="special">()</span> <span class="special">&lt;&lt;</span> <span class="string">"\n"</span><span class="special">;</span>
+            <span class="keyword">return</span> <span class="number">1</span><span class="special">;</span>
+    <span class="special">}</span>
+
+    <span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="string">"Iterations used: "</span> <span class="special">&lt;&lt;</span> <span class="identifier">iter</span><span class="special">.</span><span class="identifier">iterations</span><span class="special">()</span> <span class="special">&lt;&lt;</span> <span class="identifier">endl</span><span class="special">;</span>
+
+    <span class="comment">// if you use std=c++0x gmres is used as default</span>
+
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;</span> <span class="identifier">evals</span> <span class="special">=</span> <span class="identifier">jd</span><span class="special">.</span><span class="identifier">eigenvalues</span><span class="special">();</span> <span class="comment">// copy eigenvalues</span>
+    <span class="comment">// cout &lt;&lt; "First eigenvector: \n" &lt;&lt; jd.eigenvector(0) &lt;&lt; "\n";</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span><span class="special">.</span><span class="identifier">precision</span><span class="special">(</span><span class="number">10</span><span class="special">);</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">sort</span><span class="special">(</span><span class="identifier">evals</span><span class="special">.</span><span class="identifier">begin</span><span class="special">(),</span> <span class="identifier">evals</span><span class="special">.</span><span class="identifier">end</span><span class="special">());</span>
+    <span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="string">"Sorted Eigenvalues: \n"</span><span class="special">;</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">copy</span><span class="special">(</span><span class="identifier">evals</span><span class="special">.</span><span class="identifier">begin</span><span class="special">(),</span> <span class="identifier">evals</span><span class="special">.</span><span class="identifier">end</span><span class="special">(),</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream_iterator</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;(</span><span class="identifier">cout</span><span class="special">,</span> <span class="string">"\n"</span><span class="special">));</span>
+<span class="special">}</span>
+</pre>
+<p>
+        </p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h4 class="title">
+<a name="ietl.example2"></a>Example 2 Jacobi preconditioning for a random matrix</h4></div></div></div>
+<p>
+          Here we calculate the eigenvalues of a diagonal dominant random matrix.
+          First we do this without preconditioning, then with preconditioning comparing
+          the iterations and time used until convergence is reached. Again here is
+          only the code skeleton of the example <a href="/Users/dolfim/PhD/alps/build_tgz/alps/example/ietl/jacobidavidson2.cpp" target="_top">jacobidavidson2.cpp</a>.
+          The preconditioner has to define a function ietl::mult(K, x, r) which approximates
+          r ~= K x.
+        </p>
+<p>
+          The preconditioner:
+        </p>
+<p>
+</p>
+<pre class="programlisting">    <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">MATRIX</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">SCALAR</span><span class="special">&gt;</span>
+    <span class="keyword">class</span> <span class="identifier">jacobi_prec</span> <span class="special">{</span>
+        <span class="keyword">public</span><span class="special">:</span>
+            <span class="identifier">jacobi_prec</span><span class="special">(</span> <span class="keyword">const</span> <span class="identifier">MATRIX</span><span class="special">&amp;</span> <span class="identifier">a</span><span class="special">,</span> <span class="identifier">SCALAR</span> <span class="identifier">l</span> <span class="special">)</span>
+             <span class="special">:</span> <span class="identifier">A_</span><span class="special">(</span><span class="identifier">a</span><span class="special">),</span> <span class="identifier">lambda_</span><span class="special">(</span><span class="identifier">l</span><span class="special">)</span> <span class="special">{}</span>
+
+            <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">VECTOR</span><span class="special">&gt;</span>
+            <span class="keyword">void</span> <span class="identifier">mult</span><span class="special">(</span> <span class="keyword">const</span> <span class="identifier">VECTOR</span> <span class="special">&amp;</span> <span class="identifier">x</span><span class="special">,</span> <span class="identifier">VECTOR</span> <span class="special">&amp;</span> <span class="identifier">y</span> <span class="special">)</span> <span class="keyword">const</span>
+            <span class="special">{</span>
+                <span class="identifier">assert</span><span class="special">(</span><span class="identifier">A_</span><span class="special">.</span><span class="identifier">size2</span><span class="special">()</span> <span class="special">==</span> <span class="identifier">x</span><span class="special">.</span><span class="identifier">size</span><span class="special">());</span>
+                <span class="keyword">if</span><span class="special">(</span><span class="identifier">y</span><span class="special">.</span><span class="identifier">size</span><span class="special">()</span> <span class="special">!=</span> <span class="identifier">x</span><span class="special">.</span><span class="identifier">size</span><span class="special">())</span>
+                    <span class="identifier">y</span> <span class="special">=</span> <span class="identifier">VECTOR</span><span class="special">(</span><span class="identifier">x</span><span class="special">.</span><span class="identifier">size</span><span class="special">());</span>
+
+                <span class="keyword">for</span><span class="special">(</span><span class="keyword">unsigned</span> <span class="identifier">i</span> <span class="special">=</span> <span class="number">0</span><span class="special">;</span> <span class="identifier">i</span> <span class="special">&lt;</span> <span class="identifier">x</span><span class="special">.</span><span class="identifier">size</span><span class="special">();</span> <span class="special">++</span><span class="identifier">i</span><span class="special">)</span>
+                    <span class="identifier">y</span><span class="special">(</span><span class="identifier">i</span><span class="special">)</span> <span class="special">=</span> <span class="identifier">x</span><span class="special">(</span><span class="identifier">i</span><span class="special">)</span> <span class="special">/</span> <span class="special">(</span> <span class="identifier">A_</span><span class="special">(</span><span class="identifier">i</span><span class="special">,</span><span class="identifier">i</span><span class="special">)</span> <span class="special">-</span> <span class="identifier">lambda_</span><span class="special">);</span>
+            <span class="special">}</span>
+        <span class="keyword">private</span><span class="special">:</span>
+            <span class="keyword">const</span> <span class="identifier">MATRIX</span><span class="special">&amp;</span> <span class="identifier">A_</span><span class="special">;</span>
+            <span class="identifier">SCALAR</span> <span class="identifier">lambda_</span><span class="special">;</span>
+    <span class="special">};</span>
+
+<span class="keyword">namespace</span> <span class="identifier">ietl</span> <span class="special">{</span>
+    <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">MATRIX</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">SCALAR</span><span class="special">,</span> <span class="keyword">class</span> <span class="identifier">VECTOR</span><span class="special">&gt;</span>
+    <span class="keyword">void</span> <span class="identifier">mult</span><span class="special">(</span> <span class="identifier">jacobi_prec</span><span class="special">&lt;</span><span class="identifier">MATRIX</span><span class="special">,</span><span class="identifier">SCALAR</span><span class="special">&gt;</span> <span class="keyword">const</span> <span class="special">&amp;</span> <span class="identifier">K</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">VECTOR</span> <span class="special">&amp;</span> <span class="identifier">x</span><span class="special">,</span> <span class="identifier">VECTOR</span> <span class="special">&amp;</span> <span class="identifier">y</span> <span class="special">)</span>
+    <span class="special">{</span>
+        <span class="identifier">K</span><span class="special">.</span><span class="identifier">mult</span><span class="special">(</span><span class="identifier">x</span><span class="special">,</span> <span class="identifier">y</span><span class="special">);</span>
+    <span class="special">}</span>
+<span class="special">}</span>
+</pre>
+<p>
+        </p>
+<p>
+          The function call:
+        </p>
+<p>
+</p>
+<pre class="programlisting"><span class="comment">// create jacobi preconditioner</span>
+<span class="identifier">jacobi_prec</span><span class="special">&lt;</span><span class="identifier">matrix_t</span><span class="special">,</span><span class="keyword">double</span><span class="special">&gt;</span> <span class="identifier">K</span><span class="special">(</span><span class="identifier">A</span><span class="special">,</span> <span class="identifier">lambda</span><span class="special">);</span>
+
+<span class="identifier">jd_test</span><span class="special">.</span><span class="identifier">reset</span><span class="special">();</span>
+<span class="comment">// correction equation solver steps are more expensive with preconditioning,</span>
+<span class="comment">// but fewer are needed to have 'good' convergence</span>
+<span class="identifier">ietl</span><span class="special">::</span><span class="identifier">ietl_gmres</span> <span class="identifier">solver2</span><span class="special">(</span><span class="number">3</span><span class="special">);</span>
+
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="string">"solve with jacobi preconditioning..."</span><span class="special">;</span>
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span><span class="special">.</span><span class="identifier">flush</span><span class="special">();</span>
+<span class="identifier">clock</span><span class="special">.</span><span class="identifier">restart</span><span class="special">();</span>
+<span class="keyword">try</span><span class="special">{</span>
+    <span class="identifier">jd_test</span><span class="special">.</span><span class="identifier">eigensystem</span><span class="special">(</span><span class="identifier">iter3</span><span class="special">,</span> <span class="identifier">gen</span><span class="special">,</span> <span class="identifier">k</span><span class="special">,</span> <span class="identifier">K</span><span class="special">,</span> <span class="identifier">solver2</span><span class="special">);</span>
+<span class="special">}</span>
+<span class="keyword">catch</span> <span class="special">(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">runtime_error</span><span class="special">&amp;</span> <span class="identifier">e</span><span class="special">)</span> <span class="special">{</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">cerr</span> <span class="special">&lt;&lt;</span> <span class="string">"Something went wrong: "</span> <span class="special">&lt;&lt;</span> <span class="identifier">e</span><span class="special">.</span><span class="identifier">what</span><span class="special">()</span> <span class="special">&lt;&lt;</span> <span class="string">"\n"</span><span class="special">;</span>
+<span class="special">}</span>
+</pre>
+<p>
+        </p>
+</div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"><small><p>Last revised: January 13, 2017 at 08:54:45 GMT</p></small></td>
+<td align="right"><small></small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="hdf5/examples.html"><img src="images/prev.png" alt="Prev"></a><a accesskey="u" href="index.html"><img src="images/up.png" alt="Up"></a><a accesskey="h" href="index.html"><img src="images/home.png" alt="Home"></a><a accesskey="n" href="ietl/reference.html"><img src="images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Class template OperatorSubstitution</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../model/reference.html#header.alps.model.operatorsubstitution_h" title="Header &lt;alps/model/operatorsubstitution.h&gt;">
+<link rel="prev" href="SiteBasisDescriptor.html" title="Class template SiteBasisDescriptor">
+<link rel="next" href="QuantumNumberDescriptor.html" title="Class template QuantumNumberDescriptor">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="SiteBasisDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.operatorsubstitution_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="QuantumNumberDescriptor.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.OperatorSubstitution"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Class template OperatorSubstitution</span></h2>
+<p>alps::OperatorSubstitution</p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../model/reference.html#header.alps.model.operatorsubstitution_h" title="Header &lt;alps/model/operatorsubstitution.h&gt;">alps/model/operatorsubstitution.h</a>&gt;
+
+</span><span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> T <span class="special">=</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">complex</span><span class="special">&lt;</span><span class="keyword">double</span><span class="special">&gt;</span> <span class="special">&gt;</span> 
+<span class="keyword">class</span> <a class="link" href="OperatorSubstitution.html" title="Class template OperatorSubstitution">OperatorSubstitution</a> <span class="special">:</span> <span class="keyword">public</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">ParameterEvaluator</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">{</span>
+<span class="keyword">public</span><span class="special">:</span>
+  <span class="comment">// types</span>
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <a class="link" href="SiteOperator.html" title="Class SiteOperator">SiteOperator</a> <span class="special">&gt;</span> <a name="alps.OperatorSubstitution.SiteOperatorMap"></a><span class="identifier">SiteOperatorMap</span><span class="special">;</span>
+  <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <a class="link" href="BondOperator.html" title="Class BondOperator">BondOperator</a> <span class="special">&gt;</span> <a name="alps.OperatorSubstitution.BondOperatorMap"></a><span class="identifier">BondOperatorMap</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="OperatorSubstitution.html#alps.OperatorSubstitutionconstruct-copy-destruct">construct/copy/destruct</a></span>
+  <a class="link" href="OperatorSubstitution.html#idp140297835045344-bb"><span class="identifier">OperatorSubstitution</span></a><span class="special">(</span><span class="keyword">const</span> <a class="link" href="ModelLibrary.html" title="Class ModelLibrary">ModelLibrary</a> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span><span class="special">,</span> 
+                       <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="OperatorSubstitution.html#idp140297835032512-bb">public member functions</a></span>
+  <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> 
+  <a class="link" href="OperatorSubstitution.html#idp140297835033040-bb"><span class="identifier">partial_evaluate</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">bool</span> <a class="link" href="OperatorSubstitution.html#idp140297835035664-bb"><span class="identifier">can_evaluate_function</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> 
+                             <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">,</span> 
+                             <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> 
+  <a class="link" href="OperatorSubstitution.html#idp140297835038960-bb"><span class="identifier">partial_evaluate_function</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> 
+                            <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">,</span> 
+                            <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="OperatorSubstitution.html#idp140297835042272-bb"><span class="identifier">substitute_arguments</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+  <span class="keyword">void</span> <a class="link" href="OperatorSubstitution.html#idp140297835043744-bb"><span class="identifier">set_sites</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span><span class="special">;</span>
+
+  <span class="comment">// <a class="link" href="OperatorSubstitution.html#idp140297835048000-bb">private member functions</a></span>
+  <span class="keyword">bool</span> <a class="link" href="OperatorSubstitution.html#idp140297835048528-bb"><span class="identifier">correct_arguments</span></a><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span>
+<span class="special">}</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204661891840"></a><h2>Description</h2>
+<div class="refsect2">
+<a name="idp140204661892240"></a><h3>
+<a name="alps.OperatorSubstitutionconstruct-copy-destruct"></a><code class="computeroutput">OperatorSubstitution</code> 
+        public
+       construct/copy/destruct</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><a name="idp140297835045344-bb"></a><span class="identifier">OperatorSubstitution</span><span class="special">(</span><span class="keyword">const</span> <a class="link" href="ModelLibrary.html" title="Class ModelLibrary">ModelLibrary</a> <span class="special">&amp;</span> lib<span class="special">,</span> <span class="keyword">const</span> <span class="identifier">Parameters</span> <span class="special">&amp;</span> p<span class="special">,</span> 
+                     <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&gt;</span> <span class="special">&amp;</span> s<span class="special">)</span><span class="special">;</span></pre></li></ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204661908736"></a><h3>
+<a name="idp140297835032512-bb"></a><code class="computeroutput">OperatorSubstitution</code> public member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><pre class="literallayout"><span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> 
+<a name="idp140297835033040-bb"></a><span class="identifier">partial_evaluate</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span> name<span class="special">,</span> <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297835035664-bb"></a><span class="identifier">can_evaluate_function</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> 
+                           <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">,</span> 
+                           <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> 
+<a name="idp140297835038960-bb"></a><span class="identifier">partial_evaluate_function</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&amp;</span><span class="special">,</span> 
+                          <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">,</span> 
+                          <span class="keyword">bool</span> <span class="special">=</span> <span class="keyword">false</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297835042272-bb"></a><span class="identifier">substitute_arguments</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">map</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&gt;</span> <span class="special">&amp;</span> p<span class="special">)</span><span class="special">;</span></pre></li>
+<li class="listitem"><pre class="literallayout"><span class="keyword">void</span> <a name="idp140297835043744-bb"></a><span class="identifier">set_sites</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">string</span> <span class="special">&gt;</span> <span class="special">&amp;</span> s<span class="special">)</span><span class="special">;</span></pre></li>
+</ol></div>
+</div>
+<div class="refsect2">
+<a name="idp140204661983600"></a><h3>
+<a name="idp140297835048000-bb"></a><code class="computeroutput">OperatorSubstitution</code> private member functions</h3>
+<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><pre class="literallayout"><span class="keyword">bool</span> <a name="idp140297835048528-bb"></a><span class="identifier">correct_arguments</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span> <span class="identifier">expression</span><span class="special">::</span><span class="identifier">Expression</span><span class="special">&lt;</span> <span class="identifier">T</span> <span class="special">&gt;</span> <span class="special">&gt;</span> <span class="special">&amp;</span><span class="special">)</span> <span class="keyword">const</span><span class="special">;</span></pre></li></ol></div>
+</div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 1994, 2002-2005 Matthias Troyer, Synge Todo</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="SiteBasisDescriptor.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../model/reference.html#header.alps.model.operatorsubstitution_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="QuantumNumberDescriptor.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>

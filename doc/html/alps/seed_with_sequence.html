@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Function template seed_with_sequence</title>
+<link rel="stylesheet" href="../boostbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+<link rel="home" href="../index.html" title="The ALPS Libraries">
+<link rel="up" href="../random/reference.html#header.alps.random.seed_h" title="Header &lt;alps/random/seed.h&gt;">
+<link rel="prev" href="rng_factory.html" title="Global rng_factory">
+<link rel="next" href="uniform_on_sphere_n.html" title="Class template uniform_on_sphere_n">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table cellpadding="2" width="100%">
+<td valign="top"><img alt="ALPS" width="197" height="70" src="../alps_logo.gif"></td>
+<td align="center"><a href=".././index.html">Home</a></td>
+<td align="center"><a href=".././overview.html#overview.libraries">Libraries</a></td>
+<td align="center"><a href=".././overview/license.html">License</a></td>
+<td align="center"><a href=".././overview/support.html">Support</a></td>
+<td align="center"><a href=".././overview/contributors.html">People</a></td>
+<td align="center"><a href="http://alps.comp-phys.org">ALPS Web Site</a></td>
+</table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="rng_factory.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../random/reference.html#header.alps.random.seed_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="uniform_on_sphere_n.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+<div class="refentry">
+<a name="alps.seed_with_sequence"></a><div class="titlepage"></div>
+<div class="refnamediv">
+<h2><span class="refentrytitle">Function template seed_with_sequence</span></h2>
+<p>alps::seed_with_sequence &#8212; a generic seeding function for random number generators </p>
+</div>
+<h2 xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv-title">Synopsis</h2>
+<div xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" class="refsynopsisdiv"><pre class="synopsis"><span class="comment">// In header: &lt;<a class="link" href="../random/reference.html#header.alps.random.seed_h" title="Header &lt;alps/random/seed.h&gt;">alps/random/seed.h</a>&gt;
+
+</span>
+<span class="keyword">template</span><span class="special">&lt;</span><span class="keyword">typename</span> RNG<span class="special">&gt;</span> <span class="keyword">void</span> <span class="identifier">seed_with_sequence</span><span class="special">(</span><span class="identifier">RNG</span> <span class="special">&amp;</span> rng<span class="special">,</span> <span class="identifier">uint32_t</span> seed<span class="special">)</span><span class="special">;</span></pre></div>
+<div class="refsect1">
+<a name="idp140204616568544"></a><h2>Description</h2>
+<p>
+seeds a random number generator following the Boost specifications for such generators with a unique sequence of random numbers obtained from the specified seed with the <code class="computeroutput"><a class="link" href="pseudo_des.html" title="Class pseudo_des">pseudo_des</a></code> generator. This function is useful to prepare seed blocks for Monte Carlo simulations or similar applications. </p>
+<div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term">Parameters:</span></p></td>
+<td><div class="variablelist"><table border="0" class="variablelist compact">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="computeroutput">rng</code></span></p></td>
+<td><p>the random number generator to be seeded </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="computeroutput">seed</code></span></p></td>
+<td><p>the seed block number</p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><small>Copyright © 2006-2008 Brigitte Surer,
+      Matthias Troyer</small></td>
+</tr></table>
+<hr>
+<div class="spirit-nav">
+<a accesskey="p" href="rng_factory.html"><img src="../images/prev.png" alt="Prev"></a><a accesskey="u" href="../random/reference.html#header.alps.random.seed_h"><img src="../images/up.png" alt="Up"></a><a accesskey="h" href="../index.html"><img src="../images/home.png" alt="Home"></a><a accesskey="n" href="uniform_on_sphere_n.html"><img src="../images/next.png" alt="Next"></a>
+</div>
+</body>
+</html>
